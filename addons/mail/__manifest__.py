@@ -44,6 +44,7 @@
         'data/mail_channel_demo.xml',
     ],
     'installable': True,
+    'auto_install': True,
     'application': True,
     'qweb': [
         'static/src/xml/activity.xml',
