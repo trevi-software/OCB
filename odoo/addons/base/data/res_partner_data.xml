@@ -29,6 +29,7 @@
             <field name="customer" eval="False"/>
             <field name="email">admin@example.com</field>
             <field name="image" type="base64" file="base/static/img/avatar.png"/>
+	    <field name="tz">Africa/Addis_Ababa</field>
         </record>
 
         <record id="public_partner" model="res.partner">
