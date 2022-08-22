@@ -60,7 +60,7 @@ class OAuthLogin(Home):
             return_url = request.httprequest.url_root + 'auth_oauth/signin'
             state = self.get_state(provider)
             params = dict(
-                response_type='token',
+                response_type='id_token',
                 client_id=provider['client_id'],
                 redirect_uri=return_url,
                 scope=provider['scope'],
