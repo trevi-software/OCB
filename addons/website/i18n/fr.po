@@ -5257,6 +5257,13 @@ msgid "Middle"
 msgstr "Moyen"
 
 #. module: website
+#. openerp-web
+#: code:addons/website/static/src/js/editor/snippets.options.js:0
+#, python-format
+msgid "Min-Height"
+msgstr ""
+
+#. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_blockquote_options
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Minimalist"
@@ -6719,6 +6726,13 @@ msgid "Sequence"
 msgstr "Séquence"
 
 #. module: website
+#. openerp-web
+#: code:addons/website/static/src/xml/website.editor.xml:0
+#, python-format
+msgid "Serve font from Google servers"
+msgstr "Police servie par les serveurs de Google"
+
+#. module: website
 #: model:ir.model,name:website.model_ir_actions_server
 #: model:ir.model.fields,field_description:website.field_website_snippet_filter__action_server_id
 msgid "Server Action"
@@ -7515,6 +7529,15 @@ msgid ""
 msgstr ""
 "Ce champ enregistrera le `arch_db` actuel avant d’écrire dessus.\n"
 "Utile pour réinitialiser une vue brisée."
+
+#. module: website
+#. openerp-web
+#: code:addons/website/static/src/xml/website.editor.xml:0
+#, python-format
+msgid "This font is hosted and served to your visitors by Google servers"
+msgstr ""
+"Cette police est hébergée et servie à vos visiteurs par les serveurs de "
+"Google"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.bs_debug_view
@@ -9543,3 +9566,10 @@ msgstr "⌙ Vidéo"
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "⌙ Width"
 msgstr "⌙ Largeur"
+
+#. module: website
+#. openerp-web
+#: code:addons/website/static/src/js/editor/snippets.options.js:0
+#, python-format
+msgid "└ Height"
+msgstr ""
