@@ -39,10 +39,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-27 14:12+0000\n"
+"POT-Creation-Date: 2023-03-09 15:44+0000\n"
 "PO-Revision-Date: 2020-09-07 08:17+0000\n"
 "Last-Translator: Malaz Abuidris <msea@odoo.com>, 2022\n"
-"Language-Team: Arabic (https://www.transifex.com/odoo/teams/41243/ar/)\n"
+"Language-Team: Arabic (https://app.transifex.com/odoo/teams/41243/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -870,7 +870,7 @@ msgid ""
 "As an example, if you sell pre-paid hours of services, Odoo recommends you\n"
 "                to sell extra hours when all ordered hours have been consumed."
 msgstr ""
-"كمثال، إذا قمب ببيع ساعات الخدمة المدفوعة مسبقاً، سوف يقترح أودو أن تقوم\n"
+"كمثال، إذا قمت ببيع ساعات الخدمة المدفوعة مسبقاً، سوف يقترح أودو أن تقوم\n"
 "                ببيع ساعات إضافية عندما يتم استهلاك كافة الساعات المطلوبة. "
 
 #. module: sale
@@ -972,7 +972,7 @@ msgstr "ملغي"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.view_order_form
 msgid "Capture Transaction"
-msgstr "التقاط المعاملة"
+msgstr "تسجيل المعاملة "
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line__product_uom_category_id
@@ -3945,7 +3945,7 @@ msgid ""
 "There is nothing to invoice!\n"
 "\n"
 "Reason(s) of this behavior could be:\n"
-"- You should deliver your products before invoicing them: Click on the \"truck\" icon (top-right of your screen) and follow instructions.\n"
+"- You should deliver your products before invoicing them.\n"
 "- You should modify the invoicing policy of your product: Open the product, go to the \"Sales tab\" and modify invoicing policy from \"delivered quantities\" to \"ordered quantities\".\n"
 "        "
 msgstr ""
@@ -4073,9 +4073,9 @@ msgid ""
 "list view and click on 'Portal Access Management' option in the dropdown "
 "menu *Action*."
 msgstr ""
-"لإرسال دعوات في حالة التبادل بين مؤسسة وأخرى، قم بفتح جهة اتصال أو اختر عدة "
-"جهات اتصال في قائمة واضغط على خيار 'إدارة الوصول لبوابة العملاء' من القائمة "
-"المنسدلة."
+"لإرسال دعوات في وضع العمل بين الشركات، قم بفتح جهة اتصال أو اختر عدة جهات "
+"اتصال في عرض القائمة واضغط على خيار 'إدارة الوصول إلى بوابة العملاء' من "
+"القائمة المنسدلة *إجراء*. "
 
 #. module: sale
 #. openerp-web

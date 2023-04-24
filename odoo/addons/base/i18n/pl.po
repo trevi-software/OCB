@@ -7,7 +7,6 @@
 # Andrzej Wiśniewski <a.wisniewski@hadron.eu.com>, 2020
 # Monika Grzelak <m.e.grzelak@gmail.com>, 2020
 # Zdzisław Krajewski <zdzichucb@gmail.com>, 2020
-# Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2020
 # Michał <michal.gorecki@esnc.pl>, 2020
 # Monika Motyczyńska <m.monia@op.pl>, 2020
 # Arek Smagacz <arek.smagacz@gmail.com>, 2020
@@ -30,14 +29,17 @@
 # Dariusz Żbikowski <darek@krokus.com.pl>, 2020
 # Tomasz Leppich <t.leppich@gmail.com>, 2020
 # Piotr Szlązak <szlazakpiotr@gmail.com>, 2020
-# Paweł Wodyński <pw@myodoo.pl>, 2020
 # Piotr Strębski <strebski@gmail.com>, 2021
 # Rafał Kozak <rafal.kozak@openglobe.pl>, 2021
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2021
 # Dawid Prus, 2021
 # Karol Rybak <karolrybak85@gmail.com>, 2022
 # Jacek Michalski <michalski.jck@gmail.com>, 2022
-# Maksym <ms@myodoo.pl>, 2022
+# Łukasz Grzenkowicz <lukasz.grzenkowicz@gmail.com>, 2022
+# Maksym <ms@myodoo.pl>, 2023
+# Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2023
+# Tymoteusz Motylewski, 2023
+# Paweł Wodyński <pw@myodoo.pl>, 2023
 # 
 msgid ""
 msgstr ""
@@ -45,8 +47,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 13:50+0000\n"
 "PO-Revision-Date: 2020-09-07 08:09+0000\n"
-"Last-Translator: Maksym <ms@myodoo.pl>, 2022\n"
-"Language-Team: Polish (https://www.transifex.com/odoo/teams/41243/pl/)\n"
+"Last-Translator: Paweł Wodyński <pw@myodoo.pl>, 2023\n"
+"Language-Team: Polish (https://app.transifex.com/odoo/teams/41243/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -342,6 +344,10 @@ msgid ""
 "discount to a customer.\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"Ten moduł pozwala kasjerowi udzielić szybko rabatu procentowego klientowi\n"
+"\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_loyalty
@@ -427,6 +433,10 @@ msgid ""
 "        Contains Balance Sheet, Profit/Loss reports\n"
 "    "
 msgstr ""
+"\n"
+"Raporty księgowe dla Litwy\n"
+"\n"
+"Zawierają Arkusz Bilansu oraz raporty Zysku/Straty"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_nl_reports
@@ -635,6 +645,9 @@ msgid ""
 "        Convert helpdesk tickets to field service tasks.\n"
 "    "
 msgstr ""
+"\n"
+"        Przekształć zgłoszenia pomocy technicznej w zadania serwisu terenowego.\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_product_unspsc
@@ -664,6 +677,8 @@ msgid ""
 "\n"
 "        Define default purchase journal on the warehouse"
 msgstr ""
+"\n"
+"        Zdefiniuj domyślny dziennik zakupów na magazynie"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_in_purchase_stock
@@ -682,6 +697,8 @@ msgid ""
 "\n"
 "        Define default sales journal on the warehouse"
 msgstr ""
+"\n"
+"Zdefiniuj domyślny dziennik księgowy magazynu"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_in_sale_stock
@@ -4967,7 +4984,7 @@ msgstr ""
 "\n"
 "Można to wykorzystać do łatwego tworzenia przepływów pracy w wiadomościach e-mail dla wielu dokumentów Odoo z obsługą wiadomości e-mail, takich jak:\n"
 "----------------------------------------------------------------------------------------------------------\n"
-"    * CRM kontakty / możliwości\n"
+"    * CRM sygnały/szansy\n"
 "    * Roszczenia CRM\n"
 "    * Problemy z projektem\n"
 "    * Zadania projektu\n"
@@ -9259,7 +9276,7 @@ msgstr ""
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "An email is required for find_or_create to work"
-msgstr ""
+msgstr "Email jest wymagany aby działało find_or_create"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_analytic
@@ -11851,12 +11868,12 @@ msgstr "Utwórz potencjalnego klienta z rozmowy przez czat"
 #. module: base
 #: model:ir.module.module,description:base.module_event_crm
 msgid "Create leads from event registrations."
-msgstr "Twórz szanse z rejestracji na wydarzenia."
+msgstr "Twórz sygnał z rejestracji na wydarzenia."
 
 #. module: base
 #: model:ir.module.module,description:base.module_crm_livechat
 msgid "Create new lead with using /lead command in the channel"
-msgstr "Utwórz nowego potencjalnego klienta, używając komedy /lead w kanale"
+msgstr "Utwórz nowego potencjalnego klienta, używając komendy /lead w kanale"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_survey
@@ -12729,7 +12746,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_users_form_simple_modif
 msgid "Developer API Keys"
-msgstr ""
+msgstr "Klucze API programisty"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_digest_enterprise
@@ -13517,7 +13534,7 @@ msgstr "Dostawa energii"
 #. module: base
 #: model:ir.module.module,summary:base.module_crm_iap_lead_enrich
 msgid "Enrich Leads/Opportunities using email address domain"
-msgstr "Wzbogacaj Szanse/Możliwości za pomocą domeny adresu e-mail"
+msgstr "Wzbogacaj Sygnały/Szanse za pomocą domeny adresu e-mail"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_server_action_form
@@ -13531,7 +13548,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.form_res_users_key_description
 msgid "Enter a description of and purpose for the key."
-msgstr ""
+msgstr "Wprowadź opis i przeznaczenie klucza."
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_event_track_gantt
@@ -14329,12 +14346,12 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_attachment__datas
 msgid "File Content (base64)"
-msgstr ""
+msgstr "Zawartość pliku (base64)"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_attachment__raw
 msgid "File Content (raw)"
-msgstr ""
+msgstr "Zawartość pliku (raw)"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_language_export__format
@@ -14584,7 +14601,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.identity_check_wizard
 msgid "Forgot password?"
-msgstr ""
+msgstr "Zapomniałeś hasło?"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_actions_act_window_view__view_mode__form
@@ -17012,7 +17029,7 @@ msgstr "Wersja 3 LGPL"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_lt_reports
-msgid "LT - Accounting Reports"
+msgid "Lithuania - Accounting Reports"
 msgstr ""
 
 #. module: base
@@ -17423,7 +17440,7 @@ msgstr "Wzbogacanie potencjalnych klientów"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_crm_iap_lead
 msgid "Lead Generation"
-msgstr "Generacja potencjalnych szans"
+msgstr "Generacja potencjalnych sygnałów"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_crm_iap_lead_website
@@ -17508,7 +17525,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.onboarding_step
 msgid "Let's do it"
-msgstr ""
+msgstr "Zróbmy to"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.onboarding_company_step
@@ -19035,7 +19052,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.form_res_users_key_description
 msgid "Name your key"
-msgstr ""
+msgstr "Nazwa Twojego klucza"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.report_irmodeloverview
@@ -21091,7 +21108,7 @@ msgstr "Szansa do oferty"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_renting_crm
 msgid "Opportunity to Rental"
-msgstr ""
+msgstr "Szansa do Wynajmu"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__base_partner_merge_automatic_wizard__state__option
@@ -21852,7 +21869,7 @@ msgstr "Beneficjent płatności: implementacja przelewu"
 #. module: base
 #: model:ir.module.category,name:base.module_category_accounting_payment_acquirers
 msgid "Payment Acquirers"
-msgstr "Beneficijent płatności"
+msgstr "Bramki płatności"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_followup
@@ -21956,7 +21973,7 @@ msgstr "Pivot"
 #. module: base
 #: model:ir.module.module,summary:base.module_project_forecast
 msgid "Plan your resources on project tasks"
-msgstr ""
+msgstr "Zaplanuj zasoby na zadaniach projektu"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_human_resources_planning
@@ -22677,7 +22694,7 @@ msgstr "Zarządzanie ofertami, zamówieniami sprzedaży i fakturami"
 #. module: base
 #: model:ir.model,name:base.model_ir_qweb
 msgid "Qweb"
-msgstr ""
+msgstr "Qweb"
 
 #. module: base
 #: model:ir.model,name:base.model_ir_qweb_field
@@ -22692,7 +22709,7 @@ msgstr "Kod kreskowy pola Qweb"
 #. module: base
 #: model:ir.model,name:base.model_ir_qweb_field_contact
 msgid "Qweb Field Contact"
-msgstr ""
+msgstr "Kontakt pola QWeb"
 
 #. module: base
 #: model:ir.model,name:base.model_ir_qweb_field_date
@@ -23263,7 +23280,7 @@ msgstr "Rozszerzenia restauracji dla Punktu Sprzedaży"
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__reset_view_arch_wizard__reset_mode__soft
 msgid "Restore previous version (soft reset)."
-msgstr ""
+msgstr "Przywróć poprzednią wersję (soft reset)."
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_model_fields__on_delete__restrict
@@ -24155,6 +24172,8 @@ msgid ""
 "Server replied with following exception:\n"
 " %s"
 msgstr ""
+"Serwer odpowiedział następującym wyjątkiem:\n"
+"%s"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_services
@@ -24996,7 +25015,7 @@ msgstr "Syria"
 #. module: base
 #: model:ir.model,name:base.model_ir_config_parameter
 msgid "System Parameter"
-msgstr ""
+msgstr "Parametr systemu"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.ir_config_list_action
@@ -25396,8 +25415,8 @@ msgstr ""
 #. module: base
 #: code:addons/base/models/ir_module.py:0
 #, python-format
-msgid "The `base` module cannot be uninstalled"
-msgstr "Moduł 'base' nie może zostać odinstalowany."
+msgid "Those modules cannot be uninstalled: %s"
+msgstr ""
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_partner_category__active
@@ -25469,7 +25488,7 @@ msgstr "Objekt bazy danych do którego zostanie dołączony załącznik."
 #. module: base
 #: model:ir.model.fields,help:base.field_res_users__company_id
 msgid "The default company for this user."
-msgstr ""
+msgstr "Domyślna firma dla tego użytkownika."
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.demo_failures_dialog
@@ -25922,7 +25941,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_ui_view__arch_db
 msgid "This field stores the view arch."
-msgstr ""
+msgstr "To pole przechowuje architekturę widoku"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_ui_view__arch_prev
@@ -26699,7 +26718,7 @@ msgstr "Wielka Brytania - Księgowość"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_uk_reports
 msgid "UK - Accounting Reports"
-msgstr "Zjednoczone Królestwo - Raport Księgowy"
+msgstr "Wielka Brytania - Raport Księgowy"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_product_unspsc
@@ -26878,7 +26897,7 @@ msgstr "Zjednoczone Emiraty Arabskie"
 #. module: base
 #: model:res.country,name:base.uk
 msgid "United Kingdom"
-msgstr "Zjednoczone Królestwo"
+msgstr "Wielka Brytania"
 
 #. module: base
 #: model:res.country,name:base.us
@@ -27907,7 +27926,7 @@ msgstr "Sahara Zachodnia"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.form_res_users_key_description
 msgid "What's this key for?"
-msgstr ""
+msgstr "Po co ten klucz?"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_actions_server__sequence
@@ -28036,7 +28055,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_work_entry
 msgid "Work Entries"
-msgstr ""
+msgstr "Zapisy pracy"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_work_entry_contract
@@ -28083,7 +28102,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.form_res_users_key_show
 msgid "Write down your key"
-msgstr ""
+msgstr "Zapisz swój klucz"
 
 #. module: base
 #: model:res.country,name:base.ye
@@ -28938,7 +28957,7 @@ msgstr "tydzień"
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "year"
-msgstr ""
+msgstr "rok"
 
 #. module: base
 #: code:addons/base/models/ir_fields.py:0
@@ -28950,3 +28969,9 @@ msgstr "tak"
 #: model:res.country,name:base.ax
 msgid "Åland Islands"
 msgstr "Åland Islands"
+
+#. module: base
+#: code:addons/base/models/res_currency.py:0
+#, python-format
+msgid "This currency is set on a company and therefore must be active."
+msgstr ""

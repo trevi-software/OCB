@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
+import base64
 import socket
 
 from unittest.mock import DEFAULT
@@ -19,6 +20,21 @@ from odoo.tools import email_split_and_format, formataddr, mute_logger
 
 @tagged('mail_gateway')
 class TestEmailParsing(TestMailCommon):
+
+    def test_message_parse_and_replace_binary_octetstream(self):
+        """ Incoming email containing a wrong Content-Type as described in RFC2046/section-3 """
+        received_mail = self.from_string(test_mail_data.MAIL_MULTIPART_BINARY_OCTET_STREAM)
+        with self.assertLogs('odoo.addons.mail.models.mail_thread', level="WARNING") as capture:
+            extracted_mail = self.env['mail.thread']._message_parse_extract_payload(received_mail)
+
+        self.assertEqual(len(extracted_mail['attachments']), 1)
+        attachment = extracted_mail['attachments'][0]
+        self.assertEqual(attachment.fname, 'hello_world.dat')
+        self.assertEqual(attachment.content, b'Hello world\n')
+        self.assertEqual(capture.output, [
+            ("WARNING:odoo.addons.mail.models.mail_thread:Message containing an unexpected "
+             "Content-Type 'binary/octet-stream', assuming 'application/octet-stream'"),
+        ])
 
     def test_message_parse_body(self):
         # test pure plaintext
@@ -83,6 +99,31 @@ class TestEmailParsing(TestMailCommon):
 
         self.assertEqual(res['bounced_msg_id'], [msg_id], "Message-Id is not extracted from Text/RFC822-Headers attachment")
 
+    def test_message_parse_extract_bounce_rfc822_headers_qp(self):
+        # Incoming bounce for unexisting Outlook address
+        # bounce back sometimes with a Content-Type `text/rfc822-headers`
+        # and Content-Type-Encoding `quoted-printable`
+        partner = self.env['res.partner'].create({
+            'name':'Mitchelle Admine',
+            'email':'rdesfrdgtfdrfesd@outlook.com'
+        })
+        message = self.env['mail.message'].create({
+            'message_id' : '<368396033905967.1673346177.695352554321289-openerp-11-sale.order@eupp00>'
+        })
+        incoming_bounce = self.format(
+            test_mail_data.MAIL_BOUNCE_QP_RFC822_HEADERS,
+            email_from='MAILER-DAEMON@mailserver.odoo.com (Mail Delivery System)',
+            email_to='bounce@xxx.odoo.com',
+            delivered_to='bounce@xxx.odoo.com'
+        )
+
+        msg_dict = {}
+        msg = self.env['mail.thread']._message_parse_extract_bounce(self.from_string(incoming_bounce), msg_dict)
+        self.assertEqual(msg['bounced_email'], partner.email, "The sender email should be correctly parsed")
+        self.assertEqual(msg['bounced_partner'], partner, "A partner with this email should exist")
+        self.assertEqual(msg['bounced_msg_id'][0], message.message_id, "The sender message-id should correctly parsed")
+        self.assertEqual(msg['bounced_message'], message, "An existing message with this message_id should exist")
+
     def test_message_parse_plaintext(self):
         """ Incoming email in plaintext should be stored as html """
         mail = self.format(test_mail_data.MAIL_TEMPLATE_PLAINTEXT, email_from='"Sylvie Lelitre" <test.sylvie.lelitre@agrolait.com>', to='generic@test.com')
@@ -92,7 +133,6 @@ class TestEmailParsing(TestMailCommon):
     def test_message_parse_xhtml(self):
         # Test that the parsing of XHTML mails does not fail
         self.env['mail.thread'].message_parse(self.from_string(test_mail_data.MAIL_XHTML))
-
 
 @tagged('mail_gateway')
 class TestMailAlias(TestMailCommon):
@@ -1493,6 +1533,23 @@ class TestMailgateway(TestMailCommon):
         self.assertEqual(len(record), 1)
         self.assertEqual(record.name, 'Spammy')
         self.assertEqual(record._name, 'mail.test.gateway')
+
+    @mute_logger('odoo.addons.mail.models.mail_thread')
+    def test_message_process_file_encoding(self):
+        """ Incoming email with file encoding """
+        file_content = 'Hello World'
+        for encoding in ['', 'UTF-8', 'UTF-16LE', 'UTF-32BE']:
+            file_content_b64 = base64.b64encode(file_content.encode(encoding or 'utf-8')).decode()
+            record = self.format_and_process(test_mail_data.MAIL_FILE_ENCODING,
+                self.email_from, 'groups@test.com',
+                subject='Test Charset %s' % encoding or 'Unset',
+                charset='; charset="%s"' % encoding if encoding else '',
+                content=file_content_b64
+            )
+            attachment = record.message_ids.attachment_ids
+            self.assertEqual(file_content, attachment.raw.decode(encoding or 'utf-8'))
+            if encoding not in ['', 'UTF-8']:
+                self.assertNotEqual(file_content, attachment.raw.decode('utf-8'))
 
 
 class TestMailThreadCC(TestMailCommon):

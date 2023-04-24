@@ -25,16 +25,17 @@
 # Alexandra Jubert, 2021
 # Grégory Schreiner <gregory@mokatourisme.fr>, 2022
 # Cécile Collart <cco@odoo.com>, 2022
-# Jolien De Paepe, 2022
+# Jolien De Paepe, 2023
+# Karoliina Nisula <karoliina.nisula@tawasta.fi>, 2023
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-27 15:41+0000\n"
+"POT-Creation-Date: 2023-01-26 16:27+0000\n"
 "PO-Revision-Date: 2020-09-07 08:20+0000\n"
-"Last-Translator: Jolien De Paepe, 2022\n"
-"Language-Team: French (https://www.transifex.com/odoo/teams/41243/fr/)\n"
+"Last-Translator: Karoliina Nisula <karoliina.nisula@tawasta.fi>, 2023\n"
+"Language-Team: French (https://app.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -54,7 +55,7 @@ msgstr "(uniquement"
 #. module: website_event
 #: model_terms:ir.ui.view,arch_db:website_event.registration_complete
 msgid "(ref:"
-msgstr ""
+msgstr "(réf :"
 
 #. module: website_event
 #: model_terms:ir.ui.view,arch_db:website_event.snippet_options
@@ -262,6 +263,9 @@ msgid ""
 "                            <i class=\"fa fa-check mr-2\"/>Registered\n"
 "                        </span>"
 msgstr ""
+"<span class=\"o_wevent_badge badge badge-success ml-3\">\n"
+"                            <i class=\"fa fa-check mr-2\"/>Inscrit\n"
+"                        </span>"
 
 #. module: website_event
 #: model_terms:ir.ui.view,arch_db:website_event.registration_template
@@ -269,6 +273,8 @@ msgid ""
 "<span class=\"py-2\">Tickets</span>\n"
 "                        <span class=\"close d-none\">×</span>"
 msgstr ""
+"<span class=\"py-2\">Tickets</span>\n"
+"                        <span class=\"close d-none\">×</span>"
 
 #. module: website_event
 #: model_terms:ir.ui.view,arch_db:website_event.registration_template
@@ -474,6 +480,8 @@ msgid ""
 "Creates menus Introduction, Location and Register on the page of the event "
 "on the website."
 msgstr ""
+"Crée les menus Introduction, Lieu et Inscription sur la page de l'événement "
+"sur le site web."
 
 #. module: website_event
 #: model_terms:ir.ui.view,arch_db:website_event.event_description_full
@@ -507,7 +515,8 @@ msgstr "Afficher l'onglet communauté sur le site web"
 #: code:addons/website_event/static/src/js/tours/event_tour.js:0
 #, python-format
 msgid "Don't forget to click <b>save</b> when you're done."
-msgstr "N'oubliez pas de cliquer sur <b>sauver</b> lorsque vous avez terminé."
+msgstr ""
+"N'oubliez pas de cliquer sur <b>sauvegarder</b> lorsque vous avez terminé."
 
 #. module: website_event
 #. openerp-web
@@ -569,7 +578,7 @@ msgstr "Inscriptions à l'événement"
 #: code:addons/website_event/static/src/xml/customize_options.xml:0
 #, python-format
 msgid "Event Specific"
-msgstr ""
+msgstr "Événement spécifique"
 
 #. module: website_event
 #. openerp-web
@@ -791,7 +800,8 @@ msgstr "Aucune inscription liée à ce visiteur"
 #: code:addons/website_event/static/src/js/tours/website_event.js:0
 #, python-format
 msgid "Once you click on save, your event is updated."
-msgstr "Lorsque vous cliquez sur \"Sauver\", votre événement est mis à jour."
+msgstr ""
+"Lorsque vous cliquez sur \"Sauvegarder \", votre événement est mis à jour."
 
 #. module: website_event
 #: model_terms:ir.ui.view,arch_db:website_event.event_description_full
@@ -997,6 +1007,12 @@ msgid "This shortcut will bring you right back to the event form."
 msgstr "Ce raccourci vous ramènera directement au formulaire d'événement."
 
 #. module: website_event
+#: code:addons/website_event/controllers/main.py:0
+#, python-format
+msgid "This ticket is not available for sale for this event"
+msgstr "Ce ticket n'est pas disponible à la vente pour cet événement"
+
+#. module: website_event
 #: model_terms:ir.ui.view,arch_db:website_event.registration_attendee_details
 msgid "Ticket #"
 msgstr "Ticket #"
@@ -1153,7 +1169,7 @@ msgstr "Si l'événement a commencé"
 #. module: website_event
 #: model:ir.model.fields,help:website_event.field_event_event__is_done
 msgid "Whether event is finished"
-msgstr ""
+msgstr "Si l'événement est terminé"
 
 #. module: website_event
 #: model:ir.model.fields,help:website_event.field_event_event__start_today

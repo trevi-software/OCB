@@ -24,8 +24,8 @@
 # Jonathan Spier, 2021
 # Netta Waizer, 2022
 # Lilach Gilliam <lilach.gilliam@gmail.com>, 2022
-# Sagi Ahiel, 2022
 # NoaFarkash, 2022
+# Sagi Ahiel, 2022
 # Roy Sayag, 2022
 # 
 msgid ""
@@ -35,7 +35,7 @@ msgstr ""
 "POT-Creation-Date: 2021-08-16 09:00+0000\n"
 "PO-Revision-Date: 2020-09-07 08:19+0000\n"
 "Last-Translator: Roy Sayag, 2022\n"
-"Language-Team: Hebrew (https://www.transifex.com/odoo/teams/41243/he/)\n"
+"Language-Team: Hebrew (https://app.transifex.com/odoo/teams/41243/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -1567,7 +1567,7 @@ msgstr "נוצר ב-"
 msgid ""
 "Creating a new warehouse will automatically activate the Storage Locations "
 "setting"
-msgstr ""
+msgstr "יצירת מחסן חדש תפעיל אוטומטית את הגדרת מיקומי האחסו"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move__create_date
@@ -3064,6 +3064,13 @@ msgstr "תחום אופרטור לא חוקי %s"
 #: code:addons/stock/models/product.py:0
 #, python-format
 msgid "Invalid domain right operand %s"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"Invalid rule's configuration, the following rule causes an endless loop: %s"
 msgstr ""
 
 #. module: stock
@@ -5064,6 +5071,14 @@ msgstr "מנה"
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
 #, python-format
+msgid ""
+"Quants are auto-deleted when appropriate. If you must manually delete them, "
+"please ask a stock manager to do it."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_quant.py:0
+#, python-format
 msgid "Quant's creation is restricted, you can't do this operation."
 msgstr ""
 
@@ -5344,7 +5359,7 @@ msgstr "רשום אצווה, חבילות, איתור"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_procurement_group__stock_move_ids
 msgid "Related Stock Moves"
-msgstr ""
+msgstr "תנועות מלאי משויכות"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -6547,7 +6562,7 @@ msgstr ""
 msgid ""
 "The expected date of the created transfer will be computed based on this "
 "lead time."
-msgstr ""
+msgstr "התאריך הצפוי של ההעברה שנוצרה יחושב על סמך זמן אספקה ​​זה."
 
 #. module: stock
 #. openerp-web
@@ -6830,6 +6845,14 @@ msgstr ""
 "מוצר זה היה בשימוש לפחות בתנועת מלאי אחת. לא מומלץ לשנות את סוג המוצר מכיוון"
 " שהוא עלול להוביל לחוסר עקביות. פתרון טוב יותר יכול להיות להעביר את המוצר "
 "לארכיון וליצור חדש במקום זאת."
+
+#. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"This product's company cannot be changed as long as there are quantities of "
+"it belonging to another company."
+msgstr ""
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_change_product_qty__new_quantity
@@ -7200,8 +7223,8 @@ msgstr "יחידות מידה "
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_product_replenish__product_uom_id
-msgid "Unity of measure"
-msgstr "יחידת מידה"
+msgid "Unit of measure"
+msgstr ""
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
@@ -7754,6 +7777,12 @@ msgstr ""
 "הסוג, אתה צריך תחילה להסיר את השמירה של התנועה מהמלאי."
 
 #. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid "You can not change the type of a product that was already used."
+msgstr ""
+
+#. module: stock
 #: code:addons/stock/models/stock_move_line.py:0
 #, python-format
 msgid ""
@@ -7826,6 +7855,8 @@ msgid ""
 "You cannot cancel a stock move that has been set to 'Done'. Create a return "
 "in order to reverse the moves which took place."
 msgstr ""
+"לא ניתן לבטל תנועת מלאי שהוגדרה כ'בוצע'. צור החזרה על מנת להפוך את המהלכים "
+"שהתרחשו."
 
 #. module: stock
 #: code:addons/stock/models/stock_picking.py:0
@@ -7931,6 +7962,12 @@ msgid "You cannot unreserve a stock move that has been set to 'Done'."
 msgstr "אתה לא יכול לבטל שמירת תנועת מלאי שמוגדרת כ 'בוצעה'."
 
 #. module: stock
+#: code:addons/stock/models/stock_move.py:0
+#, python-format
+msgid "You cannot change a cancelled stock move, create a new line instead."
+msgstr ""
+
+#. module: stock
 #: code:addons/stock/models/stock_move_line.py:0
 #: code:addons/stock/models/stock_move_line.py:0
 #, python-format
@@ -7946,6 +7983,8 @@ msgid ""
 "You cannot validate a transfer if no quantities are reserved nor done. To "
 "force the transfer, switch in edit mode and encode the done quantities."
 msgstr ""
+"לא ניתן לאמת העברה אם אין כמויות שמורות או כמויות שבוצעו. כדי לאלץ את "
+"ההעברה, עבור למצב עריכה ורשום ידנית את הכמויות שבוצעו."
 
 #. module: stock
 #: code:addons/stock/wizard/stock_picking_return.py:0
@@ -8173,4 +8212,12 @@ msgstr "report_stock_quantity_graph"
 #: code:addons/stock/static/src/xml/stock_orderpoint.xml:0
 #, python-format
 msgid "should be replenished to reach the maximum of"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_move_line.py:0
+#, python-format
+msgid ""
+"It is not allow to import reserved quantity, you have to use the quantity "
+"directly."
 msgstr ""

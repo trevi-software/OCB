@@ -6,6 +6,7 @@ from odoo import fields
 from odoo.exceptions import UserError
 
 from collections import defaultdict
+from freezegun import freeze_time
 from unittest.mock import patch
 from datetime import timedelta
 
@@ -1618,6 +1619,43 @@ class TestAccountMoveOutInvoiceOnchanges(AccountTestInvoicingCommon):
             'amount_tax': 209.96,
             'amount_total': 1409.95,
         })
+
+    def test_cash_rounding_with_rounding_method_set_to_global(self):
+        """
+        Test that cash roundings are computed correctly when
+        tax calculation rounding method is set to `round_globally`.
+        """
+        self.env.company.tax_calculation_rounding_method = 'round_globally'
+
+        cash_rounding = self.env['account.cash.rounding'].create({
+            'name': 'add_invoice_line',
+            'rounding': 0.05,
+            'strategy': 'add_invoice_line',
+            'profit_account_id': self.company_data['default_account_revenue'].copy().id,
+            'loss_account_id': self.company_data['default_account_expense'].copy().id,
+            'rounding_method': 'HALF-UP',
+        })
+
+        tax7_7 = self.env['account.tax'].create({
+            'name': "tax7_7",
+            'amount_type': 'percent',
+            'amount': 7.7,
+        })
+
+        invoice = self.env['account.move'].create({
+            'move_type': 'out_invoice',
+            'invoice_date': '2019-01-01',
+            'partner_id': self.partner_a.id,
+            'invoice_cash_rounding_id': cash_rounding.id,
+            'invoice_line_ids': [
+                (0, 0, {
+                    'name': 'test product',
+                    'price_unit': 295.0,
+                    'tax_ids': [(6, 0, tax7_7.ids)],
+                }),
+            ],
+        })
+        self.assertEqual(invoice.amount_total, 317.70)
 
     def test_out_invoice_line_onchange_currency_1(self):
         move_form = Form(self.invoice.with_context(dudu=True))
@@ -3392,3 +3430,55 @@ class TestAccountMoveOutInvoiceOnchanges(AccountTestInvoicingCommon):
                 'credit': value['debit'],
             })
         self.assertRecordValues(reversed_caba_move.line_ids, expected_values)
+
+    @freeze_time('2019-01-01')
+    def test_out_invoice_duplicate_currency_rate(self):
+        ''' Test the correct update of currency rate on invoice duplication'''
+        move_form = Form(self.invoice)
+        move_form.date = '2016-01-01'
+        move_form.currency_id = self.currency_data['currency']
+        move_form.save()
+
+        self.invoice.action_post()
+
+        # === Duplicate invoice. The currency conversion's rate should change to match today rate ===
+
+        copy = self.invoice.copy()
+        copy.action_post()
+
+        self.assertRecordValues(
+            copy.line_ids.filtered(lambda l: not l.exclude_from_invoice_tab),
+            [
+                {
+                    'currency_id': self.currency_data['currency'].id,
+                    'amount_currency': -1000.0,
+                    'debit': 0.0,
+                    'credit': 500.0,
+                },
+                {
+                    'currency_id': self.currency_data['currency'].id,
+                    'amount_currency': -200.0,
+                    'debit': 0.0,
+                    'credit': 100.0,
+                },
+            ],
+        )
+
+    def test_out_invoice_depreciated_account(self):
+        move = self.env['account.move'].create({
+            'move_type': 'out_invoice',
+            'currency_id': self.currency_data['currency'].id,
+            'partner_id': self.partner_a.id,
+            'journal_id': self.company_data['default_journal_sale'].id,
+            'invoice_line_ids': [
+                (0, 0, {
+                    'name': 'My super product.',
+                    'quantity': 1.0,
+                    'price_unit': 750.0,
+                    'account_id': self.product_a.property_account_income_id.id,
+                })
+            ],
+        })
+        self.product_a.property_account_income_id.deprecated = True
+        with self.assertRaises(UserError), self.cr.savepoint():
+            move.action_post()

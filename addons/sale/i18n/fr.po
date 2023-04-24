@@ -12,6 +12,7 @@
 # Pauline Thiry <pth@odoo.com>, 2020
 # Florian <fll@odoo.com>, 2020
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2020
+# fr trans <e2ffr05@hotmail.com>, 2020
 # Jérôme Tanché <jerome.tanche@ouest-dsi.fr>, 2020
 # f5f0a0dac17dde787a1d812a6989680e, 2020
 # Jonathan Castillo <jcs@odoo.com>, 2020
@@ -34,7 +35,6 @@
 # Vincent Luba <vincent@biz-4-africa.com>, 2020
 # Gilles Mangin <gilles.mangin@phidias.fr>, 2020
 # Fernanda Marques <fem@odoo.com>, 2020
-# fr trans <e2ffr05@hotmail.com>, 2020
 # Florian Hatat, 2020
 # Fabri Yohann <psn@fabri.pw>, 2020
 # Aurélien Pillevesse <aurelienpillevesse@hotmail.fr>, 2020
@@ -63,15 +63,17 @@
 # Thomas Deleval <thd@odoo.com>, 2021
 # Camille Dantinne <cmd@odoo.com>, 2022
 # Cécile Collart <cco@odoo.com>, 2022
+# Jolien De Paepe, 2023
+# Karoliina Nisula <karoliina.nisula@tawasta.fi>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-27 14:12+0000\n"
+"POT-Creation-Date: 2023-03-09 15:44+0000\n"
 "PO-Revision-Date: 2020-09-07 08:17+0000\n"
-"Last-Translator: Cécile Collart <cco@odoo.com>, 2022\n"
-"Language-Team: French (https://www.transifex.com/odoo/teams/41243/fr/)\n"
+"Last-Translator: Karoliina Nisula <karoliina.nisula@tawasta.fi>, 2023\n"
+"Language-Team: French (https://app.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -925,12 +927,12 @@ msgstr "Acceptez &amp; Payez le devis"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
 msgid "Accept &amp; Sign"
-msgstr "Accepter et signer"
+msgstr "Accepter & Signer"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.mail_notification_paynow_online
 msgid "Accept &amp; Sign Quotation"
-msgstr "Acceptez &amp; Signez le devis"
+msgstr "Accepter &amp; Signer le devis"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order__access_warning
@@ -1851,7 +1853,7 @@ msgstr "Connecteur Easypost"
 #: code:addons/sale/static/src/js/product_configurator_widget.js:0
 #, python-format
 msgid "Edit Configuration"
-msgstr "Editer la configuration"
+msgstr "Modifier la configuration"
 
 #. module: sale
 #: model:ir.model.fields.selection,name:sale.selection__sale_payment_acquirer_onboarding_wizard__payment_method__digital_signature
@@ -3860,7 +3862,7 @@ msgstr "Signer &amp; Payer"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.mail_notification_paynow_online
 msgid "Sign &amp; Pay Quotation"
-msgstr "Signer &amp; payer le devis"
+msgstr "Signer &amp; Payer le devis"
 
 #. module: sale
 #: model:ir.model.fields.selection,name:sale.selection__res_company__sale_onboarding_payment_method__digital_signature
@@ -4232,15 +4234,15 @@ msgid ""
 "There is nothing to invoice!\n"
 "\n"
 "Reason(s) of this behavior could be:\n"
-"- You should deliver your products before invoicing them: Click on the \"truck\" icon (top-right of your screen) and follow instructions.\n"
+"- You should deliver your products before invoicing them.\n"
 "- You should modify the invoicing policy of your product: Open the product, go to the \"Sales tab\" and modify invoicing policy from \"delivered quantities\" to \"ordered quantities\".\n"
 "        "
 msgstr ""
-"Rien à facturer !\n"
+"Il n'y a rien à facturer !\n"
 "\n"
-"Quelques raisons possibles :\n"
-"- Vous devez livrer vos articles avant de les facturer : Cliquez sur l'icone représentant un \"camion\" (en haut à droite de votre écran) et suivez les instructions.\n"
-"- Vous devez changer la politique de facturation de votre article : Ouvrir l'article, ouvrez l'onglet \"Ventes\" et changez la politique de facturation de \"Quantités livrées\" à \"Quantités commandées\".\n"
+"Les motifs de ce comportement pourraient être :\n"
+"- Vous devez livrer vos produits avant de les facturer.\n"
+"- Vous devez modifier la politique de facturation de votre produit : Ouvrez le produit, allez à l'onglet \"Ventes\" et changez la politique de facturation de \"quantités livrées\" en \"quantités commandées\".\n"
 "        "
 
 #. module: sale

@@ -43,6 +43,7 @@
 # Keli Brugalli <kbr@odoo.com>, 2020
 # Éder Brito <britoederr@gmail.com>, 2021
 # douglas custodio <douglascstd@yahoo.com>, 2022
+# Kevilyn Rosa, 2023
 # 
 msgid ""
 msgstr ""
@@ -50,8 +51,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 13:50+0000\n"
 "PO-Revision-Date: 2020-09-07 08:09+0000\n"
-"Last-Translator: douglas custodio <douglascstd@yahoo.com>, 2022\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/odoo/teams/41243/pt_BR/)\n"
+"Last-Translator: Kevilyn Rosa, 2023\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/odoo/teams/41243/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -18977,7 +18978,7 @@ msgstr "Invalid model name %r in action definition."
 #: code:addons/base/models/ir_actions.py:611
 #, python-format
 msgid "many2many fields cannot be evaluated by reference"
-msgstr ""
+msgstr "campos many2many não podem ser avaliados pela referência"
 
 #. module: base
 #: code:addons/template_inheritance.py:0
@@ -19359,8 +19360,8 @@ msgstr "LGPL Version 3"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_lt_reports
-msgid "LT - Accounting Reports"
-msgstr "LT - Accounting Reports"
+msgid "Lithuania - Accounting Reports"
+msgstr "Lituânia - Relatórios de Contabilidade"
 
 #. module: base
 #: code:addons/base/models/ir_ui_view.py:0
@@ -28684,8 +28685,8 @@ msgstr ""
 #. module: base
 #: code:addons/base/models/ir_module.py:0
 #, python-format
-msgid "The `base` module cannot be uninstalled"
-msgstr "O módulo \"base\" não pode ser desinstalado"
+msgid "Those modules cannot be uninstalled: %s"
+msgstr "Esses módulos não podem ser desinstalados: %s"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_partner_category__active
@@ -32386,3 +32387,9 @@ msgstr "sim"
 #: model:res.country,name:base.ax
 msgid "Åland Islands"
 msgstr "Ilhas Åland"
+
+#. module: base
+#: code:addons/base/models/res_currency.py:0
+#, python-format
+msgid "This currency is set on a company and therefore must be active."
+msgstr ""

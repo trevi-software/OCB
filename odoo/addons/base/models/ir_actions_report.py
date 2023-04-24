@@ -3,7 +3,7 @@
 from odoo import api, fields, models, tools, SUPERUSER_ID, _
 from odoo.exceptions import UserError, AccessError
 from odoo.tools.safe_eval import safe_eval, time
-from odoo.tools.misc import find_in_path
+from odoo.tools.misc import find_in_path, ustr
 from odoo.tools import config
 from odoo.sql_db import TestCursor
 from odoo.http import request
@@ -22,11 +22,18 @@ import json
 from lxml import etree
 from contextlib import closing
 from distutils.version import LooseVersion
-from reportlab.graphics.barcode import createBarcodeDrawing
 from PyPDF2 import PdfFileWriter, PdfFileReader, utils
 from collections import OrderedDict
 from collections.abc import Iterable
 from PIL import Image, ImageFile
+
+# Ignore a deprecation warning `load_module` usage in importlib from python 3.10 (Jammy)
+# Catched here in order to not miss the same warning from elsewhere
+import warnings
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    from reportlab.graphics.barcode import createBarcodeDrawing
+
 # Allow truncated images
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
@@ -324,6 +331,9 @@ class IrActionsReport(models.Model):
             if paperformat_id.header_line:
                 command_args.extend(['--header-line'])
 
+        # Add extra time to allow the page to render
+        command_args.extend(['--javascript-delay', '1000'])
+
         if landscape:
             command_args.extend(['--orientation', 'landscape'])
 
@@ -467,6 +477,7 @@ class IrActionsReport(models.Model):
             wkhtmltopdf = [_get_wkhtmltopdf_bin()] + command_args + files_command_args + paths + [pdf_report_path]
             process = subprocess.Popen(wkhtmltopdf, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             out, err = process.communicate()
+            err = ustr(err)
 
             if process.returncode not in [0, 1]:
                 if process.returncode == -11:
@@ -869,7 +880,8 @@ class IrActionsReport(models.Model):
         # - The report is not fully present in attachments.
         if save_in_attachment and not res_ids:
             _logger.info('The PDF report has been generated from attachments.')
-            self._raise_on_unreadable_pdfs(save_in_attachment.values(), stream_record)
+            if len(save_in_attachment) > 1:
+                self._raise_on_unreadable_pdfs(save_in_attachment.values(), stream_record)
             return self_sudo._post_pdf(save_in_attachment), 'pdf'
 
         if self.get_wkhtmltopdf_state() == 'install':

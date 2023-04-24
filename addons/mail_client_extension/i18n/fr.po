@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2020-09-29 13:45+0000\n"
 "PO-Revision-Date: 2020-09-07 08:14+0000\n"
 "Last-Translator: Jolien De Paepe, 2022\n"
-"Language-Team: French (https://www.transifex.com/odoo/teams/41243/fr/)\n"
+"Language-Team: French (https://app.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -81,7 +81,7 @@ msgstr "Piste/opportunité"
 #. module: mail_client_extension
 #: model_terms:ir.ui.view,arch_db:mail_client_extension.app_auth
 msgid "Let"
-msgstr ""
+msgstr "Laissez"
 
 #. module: mail_client_extension
 #: model:ir.actions.server,name:mail_client_extension.lead_creation_prefilled_action
@@ -94,7 +94,7 @@ msgstr ""
 #: model:ir.model.fields,help:mail_client_extension.field_res_partner__iap_enrich_info
 #: model:ir.model.fields,help:mail_client_extension.field_res_users__iap_enrich_info
 msgid "Stores additional info retrieved from IAP in JSON"
-msgstr ""
+msgstr "Stocke les informations supplémentaires récupérées de l'IAP en JSON"
 
 #. module: mail_client_extension
 #: model_terms:ir.ui.view,arch_db:mail_client_extension.app_auth

@@ -2692,7 +2692,8 @@ class BaseModel(MetaModel('DummyModel', (object,), {'_register': False})):
                 # following specific properties:
                 #  - reading inherited fields should not bypass access rights
                 #  - copy inherited fields iff their original field is copied
-                self._add_field(name, field.new(
+                Field = type(field)
+                self._add_field(name, Field(
                     inherited=True,
                     inherited_field=field,
                     related=(parent_fname, name),
@@ -2778,7 +2779,7 @@ class BaseModel(MetaModel('DummyModel', (object,), {'_register': False})):
                     if not field.related:
                         self._add_field(name, field)
                     else:
-                        self._add_field(name, field.new(**field.args))
+                        self._add_field(name, type(field)(**field.args))
                 cls._model_fields = list(cls._fields)
 
         else:
@@ -2790,7 +2791,7 @@ class BaseModel(MetaModel('DummyModel', (object,), {'_register': False})):
             for name, field in sorted(getmembers(cls, Field.__instancecheck__), key=lambda f: f[1]._sequence):
                 # do not retrieve magic, custom and inherited fields
                 if not any(field.args.get(k) for k in ('automatic', 'manual', 'inherited')):
-                    self._add_field(name, field.new())
+                    self._add_field(name, type(field)())
             self._add_magic_fields()
             cls._model_fields = list(cls._fields)
 
@@ -3138,7 +3139,16 @@ Fields:
                 cr.execute(query_str, params + [sub_ids])
                 result += cr.fetchall()
         else:
-            self.check_access_rule('read')
+            try:
+                self.check_access_rule('read')
+            except MissingError:
+                # Method _read() should never raise a MissingError, but method
+                # check_access_rule() can, because it must read fields on self.
+                # So we restrict 'self' to existing records (to avoid an extra
+                # exists() at the end of the method).
+                self = self.exists()
+                self.check_access_rule('read')
+
             result = [(id_,) for id_ in self.ids]
 
         fetched = self.browse()
@@ -4063,12 +4073,7 @@ Fields:
         return records
 
     def _compute_field_value(self, field):
-        # This is for base automation, to have something to override to catch
-        # the changes of values for stored compute fields.
-        if isinstance(field.compute, str):
-            getattr(self, field.compute)()
-        else:
-            field.compute(self)
+        odoo.fields.determine(field.compute, self)
 
         if field.store and any(self._ids):
             # check constraints of the fields that have been computed
@@ -4682,7 +4687,7 @@ Fields:
         self.ensure_one()
         vals = self.with_context(active_test=False).copy_data(default)[0]
         # To avoid to create a translation in the lang of the user, copy_translation will do it
-        new = self.with_context(lang=None).create(vals)
+        new = self.with_context(lang=None).create(vals).with_env(self.env)
         self.with_context(from_copy_translation=True).copy_translations(new, excluded=default or ())
         return new
 
@@ -5669,7 +5674,7 @@ Fields:
         return self.id or 0
 
     def __repr__(self):
-        return "%s%s" % (self._name, getattr(self, '_ids', ""))
+        return "%s%r" % (self._name, getattr(self, '_ids', ""))
 
     def __hash__(self):
         if hasattr(self, '_ids'):

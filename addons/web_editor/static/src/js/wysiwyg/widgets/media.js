@@ -421,7 +421,7 @@ var FileWidget = SearchableMediaWidget.extend({
         if (img.image_src) {
             var src = img.image_src;
             if (!img.public && img.access_token) {
-                src += _.str.sprintf('?access_token=%s', img.access_token);
+                src += _.str.sprintf('?access_token=%s', encodeURIComponent(img.access_token));
             }
             if (!this.$media.is('img')) {
 
@@ -1343,19 +1343,22 @@ var VideoWidget = MediaWidget.extend({
             this.$('input#o_video_hide_fullscreen, input#o_video_hide_yt_logo').closest('div').toggleClass('d-none', this.$('input#o_video_hide_controls').is(':checked'));
         }
 
+        this.error = false;
         var $content = query.$video;
         if (!$content) {
             switch (query.errorCode) {
                 case 0:
+                    this.error = _t("The provided url is not valid");
                     $content = $('<div/>', {
                         class: 'alert alert-danger o_video_dialog_iframe mb-2 mt-2',
-                        text: _t("The provided url is not valid"),
+                        text: this.error,
                     });
                     break;
                 case 1:
+                    this.error = _t("The provided url does not reference any supported video");
                     $content = $('<div/>', {
                         class: 'alert alert-warning o_video_dialog_iframe mb-2 mt-2',
-                        text: _t("The provided url does not reference any supported video"),
+                        text: this.error,
                     });
                     break;
             }
@@ -1423,7 +1426,7 @@ var VideoWidget = MediaWidget.extend({
         let type;
         if (matches.youtube && matches.youtube[2].length === 11) {
             const fullscreen = options.hide_fullscreen ? '&fs=0' : '';
-            const ytLoop = loop ? loop + `&playlist=${matches.youtube[2]}` : '';
+            const ytLoop = loop ? loop + `&playlist=${encodeURIComponent(matches.youtube[2])}` : '';
             const logo = options.hide_yt_logo ? '&modestbranding=1' : '';
             // The youtube js api is needed for autoplay on mobile. Note: this
             // was added as a fix, old customers may have autoplay videos
@@ -1440,7 +1443,8 @@ var VideoWidget = MediaWidget.extend({
             embedURL = `${matches.vine[0]}/embed/simple`;
             type = 'vine';
         } else if (matches.vimeo && matches.vimeo[3].length) {
-            const vimeoAutoplay = autoplay.replace('mute', 'muted');
+            const vimeoAutoplay = autoplay.replace('mute', 'muted')
+                .replace('autoplay=1', 'autoplay=1&autopause=0');
             embedURL = `//player.vimeo.com/video/${matches.vimeo[3]}${vimeoAutoplay}${loop}${controls}`;
             type = 'vimeo';
         } else if (matches.dailymotion && matches.dailymotion[2].length) {

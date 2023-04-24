@@ -127,7 +127,7 @@ class StockMove(models.Model):
              "this second option should be chosen.")
     scrapped = fields.Boolean('Scrapped', related='location_dest_id.scrap_location', readonly=True, store=True)
     scrap_ids = fields.One2many('stock.scrap', 'move_id')
-    group_id = fields.Many2one('procurement.group', 'Procurement Group', default=_default_group_id)
+    group_id = fields.Many2one('procurement.group', 'Procurement Group', default=_default_group_id, index=True)
     rule_id = fields.Many2one(
         'stock.rule', 'Stock Rule', ondelete='restrict', help='The stock rule that created this stock move',
         check_company=True)
@@ -559,6 +559,8 @@ class StockMove(models.Model):
         # messages according to the state of the stock.move records.
         receipt_moves_to_reassign = self.env['stock.move']
         move_to_recompute_state = self.env['stock.move']
+        if 'quantity_done' in vals and any(move.state == 'cancel' for move in self):
+            raise UserError(_('You cannot change a cancelled stock move, create a new line instead.'))
         if 'product_uom' in vals and any(move.state == 'done' for move in self):
             raise UserError(_('You cannot change the UoM for a stock move that has been set to \'Done\'.'))
         if 'product_uom_qty' in vals:
@@ -937,7 +939,7 @@ class StockMove(models.Model):
             if breaking_char in (move_line.lot_name or ''):
                 split_lines = move_line.lot_name.split(breaking_char)
                 split_lines = list(filter(None, split_lines))
-                move_line.lot_name = split_lines[0]
+                move_line.lot_name = split_lines[0] if split_lines else ''
                 move_lines_commands = self._generate_serial_move_line_commands(
                     split_lines[1:],
                     origin_move_line=move_line,
@@ -977,8 +979,7 @@ class StockMove(models.Model):
             keys += (self.partner_id, )
         return keys
 
-    def _search_picking_for_assignation(self):
-        self.ensure_one()
+    def _search_picking_for_assignation_domain(self):
         domain = [
             ('group_id', '=', self.group_id.id),
             ('location_id', '=', self.location_id.id),
@@ -989,6 +990,11 @@ class StockMove(models.Model):
             ('state', 'in', ['draft', 'confirmed', 'waiting', 'partially_available', 'assigned'])]
         if self.partner_id and (self.location_id.usage == 'transit' or self.location_dest_id.usage == 'transit'):
             domain += [('partner_id', '=', self.partner_id.id)]
+        return domain
+
+    def _search_picking_for_assignation(self):
+        self.ensure_one()
+        domain = self._search_picking_for_assignation_domain()
         picking = self.env['stock.picking'].search(domain, limit=1)
         return picking
 
@@ -1148,7 +1154,7 @@ class StockMove(models.Model):
         procurement_requests = []
         for move in move_create_proc:
             values = move._prepare_procurement_values()
-            origin = (move.group_id and move.group_id.name or (move.origin or move.picking_id.name or "/"))
+            origin = move._prepare_procurement_origin()
             procurement_requests.append(self.env['procurement.group'].Procurement(
                 move.product_id, move.product_uom_qty, move.product_uom,
                 move.location_id, move.rule_id and move.rule_id.name or "/",
@@ -1170,6 +1176,10 @@ class StockMove(models.Model):
         # call `_action_assign` on every confirmed move which location_id bypasses the reservation
         moves.filtered(lambda move: not move.picking_id.immediate_transfer and move._should_bypass_reservation() and move.state == 'confirmed')._action_assign()
         return moves
+
+    def _prepare_procurement_origin(self):
+        self.ensure_one()
+        return self.group_id and self.group_id.name or (self.origin or self.picking_id.name or "/")
 
     def _prepare_procurement_values(self):
         """ Prepare specific key for moves or other componenets that will be created from a stock rule
@@ -1515,8 +1525,8 @@ class StockMove(models.Model):
         return extra_move | self
 
     def _action_done(self, cancel_backorder=False):
-        self.filtered(lambda move: move.state == 'draft')._action_confirm()  # MRP allows scrapping draft moves
-        moves = self.exists().filtered(lambda x: x.state not in ('done', 'cancel'))
+        moves = self.filtered(lambda move: move.state == 'draft')._action_confirm()  # MRP allows scrapping draft moves
+        moves = (self | moves).exists().filtered(lambda x: x.state not in ('done', 'cancel'))
         moves_todo = self.env['stock.move']
 
         # Cancel moves where necessary ; we should do it before creating the extra moves because
@@ -1799,6 +1809,7 @@ class StockMove(models.Model):
             return
 
         orderpoints_by_company = defaultdict(lambda: self.env['stock.warehouse.orderpoint'])
+        orderpoints_context_by_company = defaultdict(dict)
         for move in self:
             orderpoint = self.env['stock.warehouse.orderpoint'].search([
                 ('product_id', '=', move.product_id.id),
@@ -1808,8 +1819,12 @@ class StockMove(models.Model):
             ], limit=1)
             if orderpoint:
                 orderpoints_by_company[orderpoint.company_id] |= orderpoint
+            if orderpoint and move.product_qty > orderpoint.product_min_qty and move.origin:
+                orderpoints_context_by_company[orderpoint.company_id].setdefault(orderpoint.id, [])
+                orderpoints_context_by_company[orderpoint.company_id][orderpoint.id].append(move.origin)
         for company, orderpoints in orderpoints_by_company.items():
-            orderpoints._procure_orderpoint_confirm(company_id=company, raise_user_error=False)
+            orderpoints.with_context(origins=orderpoints_context_by_company[company])._procure_orderpoint_confirm(
+                company_id=company, raise_user_error=False)
 
     def _trigger_assign(self):
         """ Check for and trigger action_assign for confirmed/partially_available moves related to done moves.
@@ -1825,3 +1840,15 @@ class StockMove(models.Model):
         moves_to_reserve = self.env['stock.move'].search(expression.AND([static_domain, expression.OR(domains)]),
                                                          order='priority desc, date asc, id asc')
         moves_to_reserve._action_assign()
+
+    def _get_orig_reserved_availability(self, done_ids=False):
+        self.ensure_one()
+        if not done_ids:
+            done_ids = set()
+        if self.id in done_ids:
+            return 0
+        done_ids.add(self.id)
+        reserved = self.reserved_availability if self.show_reserved_availability else 0.0
+        if self.move_orig_ids:
+            reserved += sum([m._get_orig_reserved_availability(done_ids) for m in self.move_orig_ids])
+        return reserved

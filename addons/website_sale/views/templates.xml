@@ -1529,6 +1529,10 @@
                                     <t t-set="back_button_link" t-value="'/shop/cart'"/>
                                 </t>
                             </div>
+                            <div t-if="not (acquirers or tokens)" class="alert alert-warning">
+                                <strong>No suitable payment option could be found.</strong><br/>
+                                If you believe that it is an error, please contact the website administrator.
+                            </div>
 
                             <div t-if="not acquirers" class="mt-2">
                                 <a role="button" class="btn-link"
@@ -1668,13 +1672,14 @@
                                     <tbody>
                                         <tr>
                                             <td colspan="2">
-                                                <t t-esc="order.get_portal_last_transaction().acquirer_id.name" />
+                                                <t t-set="last_transaction" t-value="order.get_portal_last_transaction()"/>
+                                                <t t-esc="last_transaction.acquirer_id.display_as or last_transaction.acquirer_id.name" />
                                             </td>
                                             <td class="text-right" width="100">
                                                 <strong>Total:</strong>
                                             </td>
                                             <td class="text-right" width="100">
-                                                <strong t-field="order.amount_total" t-options="{'widget': 'monetary', 'display_currency': order.pricelist_id.currency_id}" />
+                                                <strong t-field="last_transaction.amount" t-options="{'widget': 'monetary', 'display_currency': last_transaction.currency_id}" />
                                             </td>
                                         </tr>
                                     </tbody>

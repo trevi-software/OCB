@@ -55,7 +55,9 @@ from .tools import ustr, consteq, frozendict, pycompat, unique, date_utils
 from .tools.mimetypes import guess_mimetype
 from .tools.misc import str2bool
 from .tools._vendor import sessions
+from .tools._vendor.useragents import UserAgent
 from .modules.module import module_manifest
+
 
 _logger = logging.getLogger(__name__)
 rpc_request = logging.getLogger(__name__ + '.rpc.request')
@@ -537,7 +539,7 @@ def route(route=None, **kw):
 
             if isinstance(response, werkzeug.exceptions.HTTPException):
                 response = response.get_response(request.httprequest.environ)
-            if isinstance(response, werkzeug.wrappers.BaseResponse):
+            if isinstance(response, werkzeug.wrappers.Response):
                 response = Response.force_type(response)
                 response.set_default()
                 return response
@@ -743,14 +745,8 @@ class HttpRequest(WebRequest):
         try:
             return super(HttpRequest, self)._handle_exception(exception)
         except SessionExpiredException:
-            redirect = None
-            req = request.httprequest
-            if req.method == 'POST':
-                request.session.save_request_data()
-                redirect = '/web/proxy/post{r.full_path}'.format(r=req)
-            elif not request.params.get('noredirect'):
-                redirect = req.url
-            if redirect:
+            if not request.params.get('noredirect'):
+                redirect = request.httprequest.url
                 query = werkzeug.urls.url_encode({
                     'redirect': redirect,
                 })
@@ -1143,46 +1139,6 @@ class OpenERPSession(sessions.Session):
         saved_actions = self.get('saved_actions', {})
         return saved_actions.get("actions", {}).get(key)
 
-    def save_request_data(self):
-        import uuid
-        req = request.httprequest
-        files = werkzeug.datastructures.MultiDict()
-        # NOTE we do not store files in the session itself to avoid loading them in memory.
-        #      By storing them in the session store, we ensure every worker (even ones on other
-        #      servers) can access them. It also allow stale files to be deleted by `session_gc`.
-        for f in req.files.values():
-            storename = 'werkzeug_%s_%s.file' % (self.sid, uuid.uuid4().hex)
-            path = os.path.join(root.session_store.path, storename)
-            with open(path, 'w') as fp:
-                f.save(fp)
-            files.add(f.name, (storename, f.filename, f.content_type))
-        self['serialized_request_data'] = {
-            'form': req.form,
-            'files': files,
-        }
-
-    @contextlib.contextmanager
-    def load_request_data(self):
-        data = self.pop('serialized_request_data', None)
-        files = werkzeug.datastructures.MultiDict()
-        try:
-            if data:
-                # regenerate files filenames with the current session store
-                for name, (storename, filename, content_type) in data['files'].items():
-                    path = os.path.join(root.session_store.path, storename)
-                    files.add(name, (path, filename, content_type))
-                yield werkzeug.datastructures.CombinedMultiDict([data['form'], files])
-            else:
-                yield None
-        finally:
-            # cleanup files
-            for f, _, _ in files.values():
-                try:
-                    os.unlink(f)
-                except IOError:
-                    pass
-
-
 def session_gc(session_store):
     if random.random() < 0.001:
         # we keep session one week
@@ -1451,7 +1407,7 @@ class Root(object):
 
     def set_csp(self, response):
         # ignore HTTP errors
-        if not isinstance(response, werkzeug.wrappers.BaseResponse):
+        if not isinstance(response, werkzeug.wrappers.Response):
             return
 
         headers = response.headers
@@ -1471,6 +1427,7 @@ class Root(object):
         """
         try:
             httprequest = werkzeug.wrappers.Request(environ)
+            httprequest.user_agent_class = UserAgent  # use vendored userAgent since it will be removed in 2.1
             httprequest.parameter_storage_class = werkzeug.datastructures.ImmutableOrderedMultiDict
 
             current_thread = threading.current_thread()
