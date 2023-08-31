@@ -287,7 +287,7 @@ msgstr "Activité"
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_employee__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Activité d'exception de décoration"
+msgstr "Activité exception décoration"
 
 #. module: hr
 #: model:ir.ui.menu,name:hr.menu_config_plan
@@ -871,7 +871,7 @@ msgstr "Canal de discussion"
 #: model:ir.model.fields,field_description:hr.field_res_users__display_name
 #: model:ir.model.fields,field_description:hr.field_resource_resource__display_name
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr "Nom d'affichage"
 
 #. module: hr
 #: model:ir.model.fields.selection,name:hr.selection__hr_employee__marital__divorced

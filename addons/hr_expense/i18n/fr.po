@@ -187,7 +187,7 @@ msgstr "Activités"
 #: model:ir.model.fields,field_description:hr_expense.field_hr_expense__activity_exception_decoration
 #: model:ir.model.fields,field_description:hr_expense.field_hr_expense_sheet__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Activité d'exception de décoration"
+msgstr "Activité exception décoration"
 
 #. module: hr_expense
 #: model:ir.model.fields,field_description:hr_expense.field_hr_expense__activity_state
@@ -517,7 +517,7 @@ msgstr "Digitalisez vos reçus avec l'OCR et l'Intelligence Artificielle"
 #: model:ir.model.fields,field_description:hr_expense.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:hr_expense.field_res_users__display_name
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr "Nom d'affichage"
 
 #. module: hr_expense
 #: model_terms:digest.tip,tip_description:hr_expense.digest_tip_hr_expense_0

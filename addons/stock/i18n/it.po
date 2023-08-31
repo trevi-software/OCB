@@ -355,12 +355,14 @@ msgstr ""
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.stock_scrap_view_kanban
 msgid "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Date\" title=\"Date\"/>"
-msgstr "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Date\" title=\"Data\"/>"
+msgstr "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Data\" title=\"Data\"/>"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.stock_picking_type_kanban
 msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
-msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Gestisci\"/>"
+msgstr ""
+"<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gestisci\" "
+"title=\"Gestisci\"/>"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.report_picking
@@ -432,8 +434,8 @@ msgid ""
 "fa-rotate-270\"/></span>"
 msgstr ""
 "<span role=\"img\" class=\"o_stock_reports_stream\" title=\"Documento di "
-"tracciabilità\" aria-label=\"Traceability Report\"><i class=\"fa fa-fw fa-"
-"level-up fa-rotate-270\"/></span>"
+"tracciabilità\" aria-label=\"Documento di tracciabilità\"><i class=\"fa fa-"
+"fw fa-level-up fa-rotate-270\"/></span>"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.report_picking
@@ -2310,6 +2312,12 @@ msgid ""
 " inventory adjustments, batch picking, moving lots or pallets, low inventory"
 " checks, etc. Go to the \"Apps\" menu to activate the barcode interface."
 msgstr ""
+"Goditi un'esperienza dal ritmo veloce con l'applicazione Odoo Barcode "
+"Scanner. È incredibilmente rapida e funziona anche senza una connessione "
+"internet stabile. Inoltre, supporta tutti i tipi di operazioni: rettifiche "
+"inventariali, prelievi di gruppo, trasferimento di lotti o palette, "
+"verifiche di inventario, ecc. Vai sul menu delle App per attivare "
+"l'interfaccia di Barcode Scanner."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_product_product__tracking
@@ -3358,6 +3366,16 @@ msgid "Is quantity done editable"
 msgstr "Quantità completata modificabile"
 
 #. module: stock
+#: code:addons/stock/models/stock_move_line.py:0
+#, python-format
+msgid ""
+"It is not allowed to import reserved quantity, you have to use the quantity "
+"directly."
+msgstr ""
+"L'importazione delle quantità prenotate non è consentita, deve essere "
+"utilizzata direttamente la quantità."
+
+#. module: stock
 #: code:addons/stock/models/stock_quant.py:0
 #, python-format
 msgid ""
@@ -3994,7 +4012,7 @@ msgstr "Quantità multipla"
 #: model:ir.model.fields,field_description:stock.field_stock_picking__my_activity_date_deadline
 #: model:ir.model.fields,field_description:stock.field_stock_production_lot__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr "Scadenza attività"
+msgstr "Scadenza mia attività"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -5217,6 +5235,9 @@ msgid ""
 "Quants are auto-deleted when appropriate. If you must manually delete them, "
 "please ask a stock manager to do it."
 msgstr ""
+"I quantitativi vengono eliminati automaticamente al momento opportuno. Se "
+"devono essere eliminati in modo manuale, chiedere a un supervisore "
+"magazzino."
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
@@ -7070,6 +7091,16 @@ msgstr ""
 "quantità dello stesso che appartengono a un'altra."
 
 #. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"This product's company cannot be changed as long as there are stock moves of"
+" it belonging to another company."
+msgstr ""
+"Non è possibile cambiare l'azienda del prodotto finché sono presenti "
+"movimenti di magazzino dello stesso che appartengono a un'altra."
+
+#. module: stock
 #: model:ir.model.fields,help:stock.field_stock_change_product_qty__new_quantity
 msgid ""
 "This quantity is expressed in the Default Unit of Measure of the product."
@@ -7446,7 +7477,7 @@ msgstr "Unità di misure"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_product_replenish__product_uom_id
 msgid "Unit of measure"
-msgstr ""
+msgstr "Unità di misura"
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
@@ -8202,9 +8233,8 @@ msgstr ""
 #. module: stock
 #: code:addons/stock/models/stock_move.py:0
 #, python-format
-msgid "You cannot split a stock move that has been set to 'Done'."
+msgid "You cannot split a stock move that has been set to 'Done' or 'Cancel'."
 msgstr ""
-"Impossibile suddividere un movimento di magazzino con stato \"Completato\"."
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
@@ -8496,11 +8526,3 @@ msgstr "report_stock_quantity_graph"
 #, python-format
 msgid "should be replenished to reach the maximum of"
 msgstr "da rifornire per raggiungere il limite superiore di"
-
-#. module: stock
-#: code:addons/stock/models/stock_move_line.py:0
-#, python-format
-msgid ""
-"It is not allow to import reserved quantity, you have to use the quantity "
-"directly."
-msgstr ""

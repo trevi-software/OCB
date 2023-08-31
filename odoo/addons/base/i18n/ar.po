@@ -9158,7 +9158,7 @@ msgstr "3. %y, %Y         ==&gt; 08, 2008"
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_appraisal_survey
 msgid "360 Feedback"
-msgstr "360 ملاحظة "
+msgstr "ملاحظات شاملة "
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.res_lang_form
@@ -13127,6 +13127,12 @@ msgid "Compute"
 msgstr "احتسب"
 
 #. module: base
+#: code:addons/base/models/ir_model.py:0
+#, python-format
+msgid "Compute method cannot depend on field 'id'"
+msgstr "لا يمكن أن تعتمد طريقة الاحتساب على حقل 'المعرف' "
+
+#. module: base
 #: model:ir.module.module,summary:base.module_website_crm_score
 msgid "Compute scores and assign leads automatically"
 msgstr ""
@@ -15525,6 +15531,18 @@ msgid "Error message returned when the constraint is violated."
 msgstr "رسالة خطأ تظهر عندما يتم اختراق القيود. "
 
 #. module: base
+#: code:addons/translate.py:0
+#, python-format
+msgid ""
+"Error while parsing view:\n"
+"\n"
+"%s"
+msgstr ""
+"حدث خطأ أثناء تحليل نافذة العرض:\n"
+"\n"
+"%s "
+
+#. module: base
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -16281,7 +16299,7 @@ msgid ""
 "Technical Details:\n"
 "%s"
 msgstr ""
-"تعذر استيراد الملف %r لعدم تطابق الصيغة أو لأنه لم يتم تكوين الملف بشكل صحيح. (الصيغ الصالحة هي are .csv, .po, .pot)\n"
+"تعذر استيراد الملف %r لعدم تطابق الصيغة أو لأنه لم يتم تكوين الملف بشكل صحيح. (الصيغ الصالحة هي .csv, .po, .pot)\n"
 "\n"
 "التفاصيل التقنية:\n"
 "%s"
@@ -18564,6 +18582,12 @@ msgid "Invalid 'group by' parameter"
 msgstr "معامل 'تجميع حسب' غير صالح"
 
 #. module: base
+#: code:addons/base/models/ir_default.py:0
+#, python-format
+msgid "Invalid JSON format in Default Value field."
+msgstr "تنسيق JSON غير صالح في حقل القيمة الافتراضية. "
+
+#. module: base
 #: code:addons/models.py:0
 #, python-format
 msgid "Invalid aggregation function %r."
@@ -20438,7 +20462,7 @@ msgstr "مستخدمي Microsoft "
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_attachment__mimetype
 msgid "Mime Type"
-msgstr "نوع التنسيق الملف"
+msgstr "نوع تنسيق الملف"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_line__min_id
@@ -23860,7 +23884,7 @@ msgstr "رقم الهاتف"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_phone_validation
 msgid "Phone Numbers Validation"
-msgstr "اعتماد أرقام الهواتف"
+msgstr "التحقق من أرقام الهواتف "
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_partner_form
@@ -25446,7 +25470,7 @@ msgstr "أداة تهيئة الرواتب - كشوف المرتبات "
 #. module: base
 #: model:ir.module.module,summary:base.module_l10n_be_hr_contract_salary
 msgid "Salary Package Configurator"
-msgstr "مُعد حزم الرواتب"
+msgstr "أداة تهيئة باقة الراتب "
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_accounting_localizations_sale
@@ -29451,7 +29475,7 @@ msgstr "المورد"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_3way_match
 msgid "Vendor Bill: Release to Pay"
-msgstr "فاتورة المورد: الموافقة على السداد"
+msgstr "فاتورة المورد: الموافقة على الدفع "
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_partner_supplier_form
@@ -30238,6 +30262,12 @@ msgid "You cannot deactivate the user you're currently logged in as."
 msgstr "لا يمكنك تعطيل المستخدم المُسجل منه دخولك حاليًا."
 
 #. module: base
+#: code:addons/base/models/ir_config_parameter.py:0
+#, python-format
+msgid "You cannot delete the %s record."
+msgstr "لا يمكنك حذف سجل %s. "
+
+#. module: base
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
@@ -30258,6 +30288,12 @@ msgstr "لا يمكنك حذف لغة المستخدم المفضلة."
 #, python-format
 msgid "You cannot merge a contact with one of his parent."
 msgstr "لا يمكنك دمج جهة اتصال مع إحدى عناصره الأصلية."
+
+#. module: base
+#: code:addons/base/models/ir_config_parameter.py:0
+#, python-format
+msgid "You cannot rename config parameters with keys %s"
+msgstr "لا يمكنك إعادة تسمية معايير التهيئة مع المفاتيح %s "
 
 #. module: base
 #: code:addons/models.py:0

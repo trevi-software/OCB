@@ -15,7 +15,7 @@
 # Febrasari Almania <febrasari.almania@gmail.com>, 2020
 # Martin Trigaux, 2020
 # Wahyu Setiawan <wahyusetiaaa@gmail.com>, 2020
-# oon arfiandwi <oon.arfiandwi@gmail.com>, 2020
+# oon arfiandwi (OonID) <oon.arfiandwi@gmail.com>, 2020
 # Bonny Useful <bonny.useful@gmail.com>, 2020
 # Ryanto The <ry.the77@gmail.com>, 2020
 # William Surya Permana <zarambie_game@yahoo.com>, 2020
@@ -2891,7 +2891,7 @@ msgstr "Undang"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_partner__completed
 msgid "Is Completed"
-msgstr ""
+msgstr "Apakah Selesai"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel__message_is_follower
@@ -3164,7 +3164,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide__likes
 #: model_terms:ir.ui.view,arch_db:website_slides.slide_content_detailed
 msgid "Likes"
-msgstr ""
+msgstr "Likes"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_link__link
@@ -4811,7 +4811,7 @@ msgstr ""
 #. module: website_slides
 #: model:slide.channel,name:website_slides.slide_channel_demo_2_gard2
 msgid "Trees, Wood and Gardens"
-msgstr ""
+msgstr "Pohon, Kayu dan Kebun"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide__slide_type
@@ -4856,7 +4856,7 @@ msgstr ""
 #: code:addons/website_slides/static/src/js/slides_slide_like.js:0
 #, python-format
 msgid "Unknown error"
-msgstr ""
+msgstr "Error tidak diketahui"
 
 #. module: website_slides
 #. openerp-web
@@ -5217,6 +5217,14 @@ msgid "Yes"
 msgstr "Ya"
 
 #. module: website_slides
+#: code:addons/website_slides/wizard/slide_channel_invite.py:0
+#, python-format
+msgid ""
+"You are not allowed to add members to this course. Please contact the course"
+" responsible or an administrator."
+msgstr ""
+
+#. module: website_slides
 #. openerp-web
 #: code:addons/website_slides/static/src/js/tours/slides_tour.js:0
 #, python-format
@@ -5436,7 +5444,7 @@ msgstr ""
 #. module: website_slides
 #: model_terms:ir.ui.view,arch_db:website_slides.view_slide_slide_form
 msgid "e.g. https://www.odoo.com"
-msgstr ""
+msgstr "contoh https://www.odoo.com"
 
 #. module: website_slides
 #: model:ir.ui.menu,name:website_slides.website_slides_menu_root

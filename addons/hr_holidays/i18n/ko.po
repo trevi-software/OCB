@@ -8,6 +8,7 @@
 # Link Up링크업 <linkup.way@gmail.com>, 2020
 # Linkup <link-up@naver.com>, 2021
 # JH CHOI <hwangtog@gmail.com>, 2021
+# Daye Jeong, 2023
 # 
 msgid ""
 msgstr ""
@@ -15,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 15:27+0000\n"
 "PO-Revision-Date: 2020-09-07 08:13+0000\n"
-"Last-Translator: JH CHOI <hwangtog@gmail.com>, 2021\n"
+"Last-Translator: Daye Jeong, 2023\n"
 "Language-Team: Korean (https://app.transifex.com/odoo/teams/41243/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,20 +92,20 @@ msgstr ""
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "%(leave_type)s: %(duration).2f days (%(start)s)"
-msgstr ""
+msgstr "%(leave_type)s: %(duration).2f 일 (%(start)s)"
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "%(person)s on %(leave_type)s: %(duration).2f days (%(start)s)"
-msgstr ""
+msgstr "%(person)s의 %(leave_type)s: %(duration).2f일 (%(start)s)"
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "%(person)s on %(leave_type)s: %(duration).2f hours on %(date)s"
-msgstr ""
+msgstr "%(person)s의 %(leave_type)s: %(duration).2f 시간, %(date)s"
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave_type.py:0
@@ -236,13 +237,13 @@ msgstr "12:00 PM"
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave__request_hour_from__0_5
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave__request_hour_to__0_5
 msgid "12:30 AM"
-msgstr ""
+msgstr "12:30 AM"
 
 #. module: hr_holidays
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave__request_hour_from__12_5
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave__request_hour_to__12_5
 msgid "12:30 PM"
-msgstr ""
+msgstr "12:30 PM"
 
 #. module: hr_holidays
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave__request_hour_from__1
@@ -502,6 +503,8 @@ msgid ""
 "<span class=\"fa fa-plane text-success\" role=\"img\" aria-label=\"Present but on leave\" title=\"Present but on leave\" name=\"presence_absent_active\">\n"
 "                    </span>"
 msgstr ""
+"<span class=\"fa fa-plane text-success\" role=\"img\" aria-label=\"Present but on leave\" title=\"Present but on leave\" name=\"presence_absent_active\">\n"
+"                    </span>"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_kanban_view_employees_kanban
@@ -608,7 +611,7 @@ msgstr "<span>추가</span>"
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_view_form
 msgid "<span>Days</span>"
-msgstr ""
+msgstr "<span>일</span>"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
@@ -620,7 +623,7 @@ msgstr "<strong>부서 및 직원</strong>"
 msgid ""
 "A great way to keep track on employee’s PTOs, sick days, and approval "
 "status."
-msgstr ""
+msgstr "직원의 연차, 병가, 승인 상태를 추적할 수 있는 좋은 방법입니다."
 
 #. module: hr_holidays
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_action_my
@@ -628,13 +631,13 @@ msgstr ""
 msgid ""
 "A great way to keep track on your time off requests, sick days, and approval"
 " status."
-msgstr ""
+msgstr "직원의 휴가 요청, 병가 및 승인 상태를 추적할 수 있는 좋은 방법입니다."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "A time off cannot be duplicated."
-msgstr ""
+msgstr "휴가는 중복해서 사용할 수 없습니다."
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_employee__show_leaves
@@ -659,7 +662,7 @@ msgstr "오늘까지 부재"
 msgid ""
 "Absent Employee(s), Whose time off requests are either confirmed or "
 "validated on today"
-msgstr ""
+msgstr "휴가 요청이 오늘 확인되었거나 승인 처리된 부재중 직원 "
 
 #. module: hr_holidays
 #: model:ir.actions.act_window,name:hr_holidays.hr_employee_action_from_department
@@ -807,7 +810,7 @@ msgstr "할당 승인"
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_allocation__private_name
 msgid "Allocation Description"
-msgstr ""
+msgstr "할당 설명"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_employee__allocation_display
@@ -909,7 +912,7 @@ msgstr "할당 요청을 확인하려면 (\"제출 대기\") 단계로 초안 �
 msgid ""
 "Allocation request state must be \"Refused\" or \"To Approve\" in order to "
 "be reset to Draft."
-msgstr ""
+msgstr "할당 요청 상태가 '반려됨' 또는 '승인 대기' 상태일 때만 초안으로 재설정할 수 있습니다."
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_department__allocation_to_approve_count
@@ -1093,7 +1096,7 @@ msgstr "직원별 : 개별 직원에 대한 할당/요청. 직원 태그별 : �
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_type__allocation_validation_type__hr
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_type__leave_validation_type__hr
 msgid "By Time Off Officer"
-msgstr ""
+msgstr "휴가 담당자"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.edit_holiday_status_form
@@ -1170,7 +1173,7 @@ msgstr "회사"
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__mode_company_id
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_allocation__mode_company_id
 msgid "Company Mode"
-msgstr ""
+msgstr "회사 모드"
 
 #. module: hr_holidays
 #: model:hr.leave.type,name:hr_holidays.holiday_status_comp
@@ -1637,7 +1640,7 @@ msgstr "시간"
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_employee_public__hr_icon_display
 #: model:ir.model.fields,field_description:hr_holidays.field_res_users__hr_icon_display
 msgid "Hr Icon Display"
-msgstr ""
+msgstr "인사 아이콘 표시"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_department__id
@@ -1743,7 +1746,7 @@ msgstr "상아색"
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_action_my
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_action_new_request
 msgid "Keep track of your PTOs."
-msgstr ""
+msgstr "휴가를 관리해보세요."
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_type__time_type
@@ -1893,7 +1896,7 @@ msgstr "관리자"
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_form_manager
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_view_form
 msgid "Mark as Draft"
-msgstr ""
+msgstr "미결로 표시"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_allocation__max_leaves
@@ -2033,7 +2036,7 @@ msgstr "2차 승인 필요"
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee_base__current_leave_state__draft
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee_public__current_leave_state__draft
 msgid "New"
-msgstr "새로운"
+msgstr "신규"
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
@@ -2047,7 +2050,7 @@ msgstr ""
 #: code:addons/hr_holidays/static/src/js/time_off_calendar.js:0
 #, python-format
 msgid "New Allocation"
-msgstr ""
+msgstr "신규 할당"
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
@@ -2055,14 +2058,14 @@ msgstr ""
 msgid ""
 "New Allocation Request created by %(user)s: %(count)s Days of "
 "%(allocation_type)s"
-msgstr ""
+msgstr "%(user)s가 생성한 새 할당 요청 : %(count)s일,  %(allocation_type)s"
 
 #. module: hr_holidays
 #. openerp-web
 #: code:addons/hr_holidays/static/src/js/time_off_calendar.js:0
 #, python-format
 msgid "New Time Off"
-msgstr ""
+msgstr "새 휴가"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__activity_date_deadline
@@ -2085,7 +2088,7 @@ msgstr "다음 활동 유형"
 #. module: hr_holidays
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_type__allocation_type__no
 msgid "No Limit"
-msgstr ""
+msgstr "제한 없음"
 
 #. module: hr_holidays
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_type__leave_validation_type__no_validation
@@ -2114,7 +2117,7 @@ msgstr "알림"
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__number_of_hours_text
 msgid "Number Of Hours Text"
-msgstr ""
+msgstr "시간 수 (텍스트)"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__message_needaction_counter
@@ -2203,7 +2206,7 @@ msgstr "끝날 때까지"
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee_base__hr_icon_display__presence_holiday_absent
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee_public__hr_icon_display__presence_holiday_absent
 msgid "On leave"
-msgstr ""
+msgstr "휴가 중"
 
 #. module: hr_holidays
 #. openerp-web
@@ -2217,25 +2220,25 @@ msgstr "온라인"
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "Only a Time Off Manager can approve/refuse its own requests."
-msgstr ""
+msgstr "휴가 담당자만이 자신의 요청을 승인/반려할 수 있습니다."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "Only a Time Off Manager can reset a refused leave."
-msgstr ""
+msgstr "휴가 담당자만이 반려된 휴가를 재설정할 수 있습니다."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "Only a Time Off Manager can reset a started leave."
-msgstr ""
+msgstr "휴가 관리자만 이미 시작된 휴가를 재설정할 수 있습니다."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "Only a Time Off Manager can reset other people leaves."
-msgstr ""
+msgstr "휴가 관리자만 다른 사람의 휴가를 재설정할 수 있습니다."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
@@ -2322,7 +2325,7 @@ msgstr "관리하는 직원"
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee_base__hr_icon_display__presence_holiday_present
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee_public__hr_icon_display__presence_holiday_present
 msgid "Present but on leave"
-msgstr ""
+msgstr "재직 중이나 휴가 중임"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.view_hr_holidays_summary_employee
@@ -2516,6 +2519,8 @@ msgid ""
 "Select the user responsible for approving \"Time Off\" of this employee.\n"
 "If empty, the approval is done by an Administrator or Approver (determined in settings/users)."
 msgstr ""
+"해당 직원의 \"휴가\" 승인을 담당할 관리자를 선택하십시오.\n"
+"비어 있는 경우 일반 관리자 또는 결재권자 (설정/사용자에서 설정 가능)가 결재를 수행합니다."
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_type__sequence
@@ -2592,7 +2597,7 @@ msgstr "합계"
 #. module: hr_holidays
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_type__virtual_leaves_taken
 msgid "Sum of validated and non validated time off requests."
-msgstr ""
+msgstr "승인된 휴가 요청과 승인되지 않은 휴가 요청을 합산합니다."
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__leave_type_request_unit
@@ -2616,6 +2621,8 @@ msgid ""
 "The following employees are not supposed to work during that period:\n"
 " %s"
 msgstr ""
+"다음 직원은 해당 기간 동안 근무할 수 없습니다:\n"
+" %s"
 
 #. module: hr_holidays
 #: model:ir.model.constraint,message:hr_holidays.constraint_hr_leave_allocation_interval_number_check
@@ -2702,7 +2709,7 @@ msgstr "이 영역은 2단계 휴가 승인을 하는 사용자에 의해 자동
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_allocation__first_approver_id
 msgid ""
 "This area is automatically filled by the user who validates the allocation"
-msgstr ""
+msgstr "이 영역은 할당을 승인하는 사용자에 의해 자동으로 채워집니다."
 
 #. module: hr_holidays
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_allocation__second_approver_id
@@ -2796,7 +2803,7 @@ msgstr "휴가 승인"
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.view_employee_tree_inherit_leave
 msgid "Time Off Approver"
-msgstr ""
+msgstr "휴가 승인권자"
 
 #. module: hr_holidays
 #: model:ir.model,name:hr_holidays.model_hr_leave_report_calendar
@@ -2806,7 +2813,7 @@ msgstr "휴가 일정표"
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__private_name
 msgid "Time Off Description"
-msgstr ""
+msgstr "휴가 설명"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_type__leave_notif_subtype_id
@@ -3061,12 +3068,12 @@ msgstr "레코드에 있는 예외 활동의 유형입니다."
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__tz
 msgid "Tz"
-msgstr ""
+msgstr "Tz"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__tz_mismatch
 msgid "Tz Mismatch"
-msgstr ""
+msgstr "Tz  불일치"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_allocation__unit_per_interval
@@ -3145,7 +3152,7 @@ msgstr "유효성 검사"
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__validation_type
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_allocation__validation_type
 msgid "Validation Type"
-msgstr ""
+msgstr "승인 유형"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.edit_holiday_status_form
@@ -3165,7 +3172,7 @@ msgstr "임시 잔여 휴가일수"
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_type__virtual_leaves_taken
 msgid "Virtual Time Off Already Taken"
-msgstr ""
+msgstr "예상 사용 휴가일수"
 
 #. module: hr_holidays
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_employee__current_leave_state__confirm
@@ -3212,7 +3219,7 @@ msgstr ""
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "You can not have 2 time off that overlaps on the same day."
-msgstr ""
+msgstr "동일한 날짜에 중복되는 휴가를 2회 사용할 수 없습니다."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
@@ -3240,21 +3247,21 @@ msgstr "%s 상태에 있는 할당 요청은 삭제할 수 없습니다."
 msgid ""
 "You cannot first approve a time off for %s, because you are not his time off"
 " manager"
-msgstr ""
+msgstr "%s의 휴가 담당자가 아니므로, 해당 휴가를 승인할 수 없습니다. "
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid ""
 "You don't have the rights to apply second approval on a time off request"
-msgstr ""
+msgstr "휴가 요청에 대한 재승인을 받을 수 있는 권한이 없습니다."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid ""
 "You must be either %s's manager or Time off Manager to approve this leave"
-msgstr ""
+msgstr "이 휴가를 승인하려면 %s의 관리자이거나 휴가 담당자 권한이 있어야 합니다"
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
@@ -3277,13 +3284,13 @@ msgstr "이미 시작된 휴가를 수정/검증하려면 관리자 권한이 �
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "Your %(leave_type)s planned on %(date)s has been accepted"
-msgstr ""
+msgstr "%(leave_type)s 계획 (날짜: %(date)s)이 승인되었습니다."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "Your %(leave_type)s planned on %(date)s has been refused"
-msgstr ""
+msgstr "%(leave_type)s 계획 (날짜: %(date)s)이 반려되었습니다."
 
 #. module: hr_holidays
 #: model:ir.ui.menu,name:hr_holidays.menu_hr_available_holidays_report_tree
@@ -3349,14 +3356,14 @@ msgstr "of the"
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_kanban
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_view_kanban
 msgid "refused"
-msgstr ""
+msgstr "반려됨"
 
 #. module: hr_holidays
 #. openerp-web
 #: code:addons/hr_holidays/static/src/xml/time_off_calendar.xml:0
 #, python-format
 msgid "taken"
-msgstr ""
+msgstr "사용됨"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.report_holidayssummary

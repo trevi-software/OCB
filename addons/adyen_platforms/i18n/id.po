@@ -5,7 +5,7 @@
 # Translators:
 # Martin Trigaux, 2020
 # Wahyu Setiawan <wahyusetiaaa@gmail.com>, 2020
-# oon arfiandwi <oon.arfiandwi@gmail.com>, 2020
+# oon arfiandwi (OonID) <oon.arfiandwi@gmail.com>, 2020
 # Andhitia Rama <andhitia.r@gmail.com>, 2020
 # Bonny Useful <bonny.useful@gmail.com>, 2020
 # Edy Kend <edy@azmall.co.id>, 2020
@@ -58,7 +58,7 @@ msgstr ""
 #. module: adyen_platforms
 #: model:ir.model.fields,field_description:adyen_platforms.field_adyen_payout__code
 msgid "Account Code"
-msgstr ""
+msgstr "Kode Akun"
 
 #. module: adyen_platforms
 #: model:ir.model.fields,field_description:adyen_platforms.field_adyen_account__account_holder_code
@@ -505,7 +505,7 @@ msgstr "Nama Tampilan"
 #. module: adyen_platforms
 #: model:ir.model.fields,field_description:adyen_platforms.field_adyen_account__document_type
 msgid "Document Type"
-msgstr ""
+msgstr "Tipe Dokumen"
 
 #. module: adyen_platforms
 #. openerp-web
@@ -665,7 +665,7 @@ msgstr "Jika dicentang, beberapa pesan mempunyai kesalahan dalam pengiriman."
 #: model_terms:ir.ui.view,arch_db:adyen_platforms.adyen_account_view_form
 #, python-format
 msgid "Individual"
-msgstr ""
+msgstr "Individu"
 
 #. module: adyen_platforms
 #: model:ir.model.fields,field_description:adyen_platforms.field_adyen_account__message_is_follower

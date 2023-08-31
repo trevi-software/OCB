@@ -785,7 +785,7 @@ msgstr "الموقع المسموح به "
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint__allowed_route_ids
 msgid "Allowed Route"
-msgstr ""
+msgstr "المسار المسموح به "
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_inventory__prefill_counted_quantity
@@ -3243,7 +3243,7 @@ msgstr "تنفيذ الجرد بتاريخ"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_inventory_line__is_editable
 msgid "Is Editable"
-msgstr ""
+msgstr "قابل للتحرير "
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_inventory__message_is_follower
@@ -3295,6 +3295,14 @@ msgstr "متأخر أو سوف يتأخر بناءً على الموعد الن�
 #: model:ir.model.fields,field_description:stock.field_stock_move__is_quantity_done_editable
 msgid "Is quantity done editable"
 msgstr "هل الكميات قابلة للتعديل"
+
+#. module: stock
+#: code:addons/stock/models/stock_move_line.py:0
+#, python-format
+msgid ""
+"It is not allowed to import reserved quantity, you have to use the quantity "
+"directly."
+msgstr "لا يُسمح باستيراد الكميات المحجوزة. عليك استخدام الكمية بشكل مباشر. "
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
@@ -6941,6 +6949,15 @@ msgstr ""
 "لا يمكن تغيير شركة المنتج طالما أنه توجد كميات منه منتمية إلى شركة أخرى. "
 
 #. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"This product's company cannot be changed as long as there are stock moves of"
+" it belonging to another company."
+msgstr ""
+"لا يمكن تغيير شركة المنتج طالما أنه توجد حركات مخزون منتمية إلى شركة أخرى. "
+
+#. module: stock
 #: model:ir.model.fields,help:stock.field_stock_change_product_qty__new_quantity
 msgid ""
 "This quantity is expressed in the Default Unit of Measure of the product."
@@ -8041,8 +8058,8 @@ msgstr "لا يمكنك تقسيم حركه مسودة. تحتاج للتأكي�
 #. module: stock
 #: code:addons/stock/models/stock_move.py:0
 #, python-format
-msgid "You cannot split a stock move that has been set to 'Done'."
-msgstr "لا يمنكك تقسيم حركة مخزون فى الحالة 'منتهية'."
+msgid "You cannot split a stock move that has been set to 'Done' or 'Cancel'."
+msgstr ""
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
@@ -8314,12 +8331,4 @@ msgstr "report_stock_quantity_graph"
 #: code:addons/stock/static/src/xml/stock_orderpoint.xml:0
 #, python-format
 msgid "should be replenished to reach the maximum of"
-msgstr ""
-
-#. module: stock
-#: code:addons/stock/models/stock_move_line.py:0
-#, python-format
-msgid ""
-"It is not allow to import reserved quantity, you have to use the quantity "
-"directly."
 msgstr ""

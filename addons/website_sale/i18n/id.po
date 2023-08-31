@@ -4,7 +4,7 @@
 # 
 # Translators:
 # William Surya Permana <zarambie_game@yahoo.com>, 2020
-# oon arfiandwi <oon.arfiandwi@gmail.com>, 2020
+# oon arfiandwi (OonID) <oon.arfiandwi@gmail.com>, 2020
 # pnyet <david@zeromail.us>, 2020
 # Adam Damara <lorenzrenz@gmail.com>, 2020
 # Andhitia Rama <andhitia.r@gmail.com>, 2020
@@ -39,7 +39,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_sale_payment_acquirer_onboarding_wizard___data_fetched
 msgid " Data Fetched"
-msgstr ""
+msgstr "Tanggal Diambil"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.products
@@ -644,6 +644,9 @@ msgid ""
 "Apply manual discounts on sales order lines or display discounts computed "
 "from pricelists (option to activate in the pricelist configuration)."
 msgstr ""
+"Terapkan diskon manual pada baris sale order atau tampilkan diskon yang "
+"dihitung dari daftar harga (opsi untuk mengaktifkan konfigurasi daftar "
+"harga)."
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
@@ -846,7 +849,7 @@ msgstr "Kategori Anak"
 #. module: website_sale
 #: model:ir.actions.act_window,name:website_sale.action_open_website_sale_onboarding_payment_acquirer_wizard
 msgid "Choose a payment method"
-msgstr ""
+msgstr "Pilih metode pembayaran"
 
 #. module: website_sale
 #: model:product.pricelist,name:website_sale.list_christmas
@@ -1350,7 +1353,7 @@ msgstr "Menggunakan urutan ketika menampilkan daftar kategori produk."
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
 msgid "Grant discounts on sales order lines"
-msgstr ""
+msgstr "Berikan diskon pada baris sale order"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.add_grid_or_list_option
@@ -1469,6 +1472,15 @@ msgstr "Nama Gambar"
 #. module: website_sale
 #: model:ir.model.fields,help:website_sale.field_res_config_settings__module_website_sale_stock
 msgid "Installs the \"Website Delivery Information\" application"
+msgstr ""
+
+#. module: website_sale
+#: code:addons/website_sale/controllers/main.py:0
+#, python-format
+msgid ""
+"If you are ordering for an external person, please place your order via the "
+"backend. If you wish to change your name or email address, please do so in "
+"the account settings or contact your administrator."
 msgstr ""
 
 #. module: website_sale
@@ -1645,7 +1657,7 @@ msgstr "Daftar"
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.address
 msgid "Log In"
-msgstr ""
+msgstr "Log In"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
@@ -1801,7 +1813,7 @@ msgstr "Jumlah Keranjang Belanja yang Ditinggalkan"
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.snippet_options
 msgid "Number of Columns"
-msgstr ""
+msgstr "Jumlah Kolom"
 
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website__shop_ppr
@@ -1974,7 +1986,7 @@ msgstr "Pesanan/Hari"
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_sale_payment_acquirer_onboarding_wizard__paypal_pdt_token
 msgid "PDT Identity Token"
-msgstr ""
+msgstr "Token Identitas PDT"
 
 #. module: website_sale
 #: model:ir.model,name:website_sale.model_website_page
@@ -2024,7 +2036,7 @@ msgstr "Ikon Pembayaran"
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_sale_payment_acquirer_onboarding_wizard__manual_post_msg
 msgid "Payment Instructions"
-msgstr ""
+msgstr "Instruksi Pembayaran"
 
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_sale_payment_acquirer_onboarding_wizard__payment_method
@@ -2570,7 +2582,7 @@ msgstr ""
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
 msgid "Sell variants of a product using attributes (size, color, etc.)"
-msgstr ""
+msgstr "Jual varian produk menggunakan atribut (ukuran, warna, dsb.)"
 
 #. module: website_sale
 #: model:ir.actions.server,name:website_sale.ir_actions_server_sale_cart_recovery_email
@@ -3428,7 +3440,7 @@ msgstr ""
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.searchbar_input_snippet_options
 msgid "products"
-msgstr ""
+msgstr "produk"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.payment_sale_note

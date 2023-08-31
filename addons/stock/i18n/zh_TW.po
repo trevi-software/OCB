@@ -8,6 +8,7 @@
 # Mandy Choy <mnc@odoo.com>, 2021
 # 敬雲 林 <chingyun@yuanchih-consult.com>, 2021
 # Benson <Benson.Dr@Gmail.com>, 2023
+# Wil Odoo, 2023
 # Tony Ng, 2023
 # 
 msgid ""
@@ -331,8 +332,8 @@ msgid ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
 "specific.\" groups=\"base.group_multi_company\"/>"
 msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" groups=\"base.group_multi_company\"/>"
+"<span class=\"fa fa-lg fa-building-o\" title=\"此處設定的值是特定於每間公司的。\" "
+"groups=\"base.group_multi_company\"/>"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.product_form_view_procurement_button
@@ -2515,7 +2516,7 @@ msgstr "可使用數量"
 #: model_terms:ir.ui.view,arch_db:stock.view_move_tree
 #: model_terms:ir.ui.view,arch_db:stock.vpicktree
 msgid "From"
-msgstr "來自"
+msgstr "由"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move_line__owner_id
@@ -3209,6 +3210,14 @@ msgid "Is quantity done editable"
 msgstr "完成數量是否可以編輯"
 
 #. module: stock
+#: code:addons/stock/models/stock_move_line.py:0
+#, python-format
+msgid ""
+"It is not allowed to import reserved quantity, you have to use the quantity "
+"directly."
+msgstr ""
+
+#. module: stock
 #: code:addons/stock/models/stock_quant.py:0
 #, python-format
 msgid ""
@@ -3864,7 +3873,7 @@ msgstr "負數庫存"
 #: model:ir.model.fields.selection,name:stock.selection__stock_package_level__state__new
 #, python-format
 msgid "New"
-msgstr "新的"
+msgstr "新增"
 
 #. module: stock
 #: code:addons/stock/models/stock_move_line.py:0
@@ -6212,7 +6221,7 @@ msgstr "庫存作業"
 #. module: stock
 #: model:ir.model,name:stock.model_stock_package_destination
 msgid "Stock Package Destination"
-msgstr "包裹目的地"
+msgstr "庫存包裝目的地"
 
 #. module: stock
 #: model:ir.model,name:stock.model_stock_package_level
@@ -6774,6 +6783,14 @@ msgstr "該產品已用於至少一次庫存移動。不建議更改產品類型
 msgid ""
 "This product's company cannot be changed as long as there are quantities of "
 "it belonging to another company."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"This product's company cannot be changed as long as there are stock moves of"
+" it belonging to another company."
 msgstr ""
 
 #. module: stock
@@ -7826,8 +7843,8 @@ msgstr "不能拆分一個移動草稿。您需要先確認它。"
 #. module: stock
 #: code:addons/stock/models/stock_move.py:0
 #, python-format
-msgid "You cannot split a stock move that has been set to 'Done'."
-msgstr "您無法拆分狀態已標記為「完成」的庫存移動。"
+msgid "You cannot split a stock move that has been set to 'Done' or 'Cancel'."
+msgstr ""
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
@@ -8088,12 +8105,4 @@ msgstr "report_stock_quantity_graph"
 #: code:addons/stock/static/src/xml/stock_orderpoint.xml:0
 #, python-format
 msgid "should be replenished to reach the maximum of"
-msgstr ""
-
-#. module: stock
-#: code:addons/stock/models/stock_move_line.py:0
-#, python-format
-msgid ""
-"It is not allow to import reserved quantity, you have to use the quantity "
-"directly."
 msgstr ""

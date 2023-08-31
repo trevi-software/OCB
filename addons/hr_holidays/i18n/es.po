@@ -636,8 +636,8 @@ msgid ""
 "A great way to keep track on employee’s PTOs, sick days, and approval "
 "status."
 msgstr ""
-"Una excelente manera de realizar un seguimiento del tiempo personal pagado "
-"de los empleados, los permisos por enfermedad y el estado de aprobación."
+"Una excelente manera de realizar un seguimiento de las ausencias pagadas de "
+"los empleados, los permisos por enfermedad y su estado de aprobación."
 
 #. module: hr_holidays
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_action_my
@@ -3399,8 +3399,8 @@ msgid ""
 "You must have manager rights to modify/validate a time off that already "
 "begun"
 msgstr ""
-"Debes tener derechos de gerente para modificar / validar una ausencia que ya"
-" comenzó"
+"Debe tener permisos de responsable para modificar / validar una ausencia que"
+" ya comenzó."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_leave.py:0

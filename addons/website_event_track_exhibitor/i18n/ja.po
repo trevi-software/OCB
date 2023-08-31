@@ -9,9 +9,10 @@
 # Norimichi Sugimoto <norimichi.sugimoto@tls-ltd.co.jp>, 2020
 # Tim Siu Lai <tl@roomsfor.hk>, 2020
 # Noma Yuki, 2020
-# Ryoko Tsuda <ryoko@quartile.co>, 2022
 # 江口和志 <sandwhale1010@gmail.com>, 2022
 # Andy Yiu, 2023
+# Ryoko Tsuda <ryoko@quartile.co>, 2023
+# Junko Augias, 2023
 # 
 msgid ""
 msgstr ""
@@ -19,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-16 13:33+0000\n"
 "PO-Revision-Date: 2020-09-07 08:21+0000\n"
-"Last-Translator: Andy Yiu, 2023\n"
+"Last-Translator: Junko Augias, 2023\n"
 "Language-Team: Japanese (https://app.transifex.com/odoo/teams/41243/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,13 +75,15 @@ msgid ""
 "<span>Oops! This room is currently closed</span><br/>\n"
 "                    Come back between"
 msgstr ""
+"<span>！！このルームは現在閉まっています。</span><br/>\n"
+"                    以下の時間にお越し下さい："
 
 #. module: website_event_track_exhibitor
 #: model_terms:ir.ui.view,arch_db:website_event_track_exhibitor.exhibitor_main
 msgid ""
 "<span>Oops! This room is full</span><br/>Come back later to have a chat with"
 " us!"
-msgstr ""
+msgstr "<span>！！このルームは満員です</span><br/>後ほどチャットしに戻ってきて下さい！"
 
 #. module: website_event_track_exhibitor
 #: model_terms:ir.ui.view,arch_db:website_event_track_exhibitor.exhibitor_main
@@ -263,7 +266,7 @@ msgstr "最終更新日"
 #. module: website_event_track_exhibitor
 #: model:ir.model.fields,field_description:website_event_track_exhibitor.field_event_sponsor__room_last_activity
 msgid "Last activity"
-msgstr ""
+msgstr "最後のアクティビティ"
 
 #. module: website_event_track_exhibitor
 #: model_terms:ir.ui.view,arch_db:website_event_track_exhibitor.exhibitor_card
@@ -308,7 +311,7 @@ msgstr "参加者数"
 #. module: website_event_track_exhibitor
 #: model:ir.model.fields,field_description:website_event_track_exhibitor.field_event_sponsor__room_max_participant_reached
 msgid "Peak participants"
-msgstr ""
+msgstr "ピーク参加者"
 
 #. module: website_event_track_exhibitor
 #: model_terms:ir.ui.view,arch_db:website_event_track_exhibitor.exhibitor_card
@@ -318,7 +321,7 @@ msgstr "登録"
 #. module: website_event_track_exhibitor
 #: model:ir.model.fields,field_description:website_event_track_exhibitor.field_event_sponsor__room_is_full
 msgid "Room Is Full"
-msgstr ""
+msgstr "ルームは満室です"
 
 #. module: website_event_track_exhibitor
 #: model:ir.model.fields,field_description:website_event_track_exhibitor.field_event_sponsor__room_name
@@ -329,7 +332,7 @@ msgstr "ルーム名"
 #: model:ir.model.fields,field_description:website_event_track_exhibitor.field_event_event__exhibitor_menu
 #: model:ir.model.fields,field_description:website_event_track_exhibitor.field_event_type__exhibitor_menu
 msgid "Showcase Exhibitors"
-msgstr ""
+msgstr "ショーケース出展者"
 
 #. module: website_event_track_exhibitor
 #: model:ir.model.fields,field_description:website_event_track_exhibitor.field_event_sponsor__subtitle

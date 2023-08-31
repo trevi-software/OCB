@@ -888,10 +888,11 @@ class MailThread(models.AbstractModel):
         if not isinstance(message, EmailMessage):
             raise TypeError('message must be an email.message.EmailMessage at this point')
         catchall_alias = self.env['ir.config_parameter'].sudo().get_param("mail.catchall.alias")
+        catchall_domain_lowered = self.env["ir.config_parameter"].sudo().get_param("mail.catchall.domain", "").strip().lower()
+        catchall_domains_allowed = self.env["ir.config_parameter"].sudo().get_param("mail.catchall.domain.allowed")
+        if catchall_domain_lowered and catchall_domains_allowed:
+            catchall_domains_allowed = catchall_domains_allowed.split(',') + [catchall_domain_lowered]
         bounce_alias = self.env['ir.config_parameter'].sudo().get_param("mail.bounce.alias")
-        alias_domain = self.env['ir.config_parameter'].sudo().get_param("mail.catchall.domain")
-        # activate strict alias domain check for stable, will be falsy by default to be backward compatible
-        alias_domain_check = tools.str2bool(self.env['ir.config_parameter'].sudo().get_param("mail.catchall.domain.strict", "False"))
         bounce_alias_static = tools.str2bool(self.env['ir.config_parameter'].sudo().get_param("mail.bounce.alias.static", "False"))
         fallback_model = model
 
@@ -917,15 +918,14 @@ class MailThread(models.AbstractModel):
         email_to_localparts = [
             e.split('@', 1)[0].lower()
             for e in (tools.email_split(email_to) or [''])
-            if not alias_domain_check or (not alias_domain or e.endswith('@%s' % alias_domain))
         ]
         # Delivered-To is a safe bet in most modern MTAs, but we have to fallback on To + Cc values
         # for all the odd MTAs out there, as there is no standard header for the envelope's `rcpt_to` value.
-        rcpt_tos_localparts = [
-            e.split('@')[0].lower()
-            for e in tools.email_split(message_dict['recipients'])
-            if not alias_domain_check or (not alias_domain or e.endswith('@%s' % alias_domain))
-        ]
+        rcpt_tos_localparts = []
+        for recipient in tools.email_split(message_dict['recipients']):
+            to_local, to_domain = recipient.split('@', maxsplit=1)
+            if not catchall_domains_allowed or to_domain.lower() in catchall_domains_allowed:
+                rcpt_tos_localparts.append(to_local.lower())
         rcpt_tos_valid_localparts = [to for to in rcpt_tos_localparts]
 
         # 0. Handle bounce: verify whether this is a bounced email and use it to collect bounce data and update notifications for customers
@@ -1275,6 +1275,9 @@ class MailThread(models.AbstractModel):
             if message.get_content_type() == 'text/plain':
                 # text/plain -> <pre/>
                 body = tools.append_content_to_html(u'', body, preserve=True)
+            elif message.get_content_type() == 'text/html':
+                # we only strip_classes here everything else will be done in by html field of mail.message
+                body = tools.html_sanitize(body, sanitize_tags=False, strip_classes=True)
         else:
             alternative = False
             mixed = False
@@ -1291,6 +1294,10 @@ class MailThread(models.AbstractModel):
                     continue  # skip container
 
                 filename = part.get_filename()  # I may not properly handle all charsets
+                if part.get_content_type() == 'text/xml' and not part.get_param('charset'):
+                    # for text/xml with omitted charset, the charset is assumed to be ASCII by the `email` module
+                    # although the payload might be in UTF8
+                    part.set_charset('utf-8')
                 encoding = part.get_content_charset()  # None if attachment
 
                 content = part.get_content()
@@ -1750,7 +1757,10 @@ class MailThread(models.AbstractModel):
                     continue
                 if isinstance(content, str):
                     encoding = info and info.get('encoding')
-                    content = content.encode(encoding or 'utf-8')
+                    try:
+                        content = content.encode(encoding or "utf-8")
+                    except UnicodeEncodeError:
+                        content = content.encode("utf-8")
                 elif isinstance(content, EmailMessage):
                     content = content.as_bytes()
                 elif content is None:

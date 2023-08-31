@@ -3,10 +3,10 @@
 # 	* website_sale
 # 
 # Translators:
-# Mandy Choy <mnc@odoo.com>, 2021
 # dott.dev <dottdot.dev@gmail.com>, 2021
 # 敬雲 林 <chingyun@yuanchih-consult.com>, 2021
 # Benson <Benson.Dr@Gmail.com>, 2023
+# Tony Ng, 2023
 # Martin Trigaux, 2023
 # 
 msgid ""
@@ -240,7 +240,7 @@ msgid ""
 "                                                        <span>Add an address</span>"
 msgstr ""
 "<i class=\"fa fa-plus-square\"/>\n"
-"                                                        <span>添加地址</span>"
+"                                                        <span>新增地址</span>"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.confirmation
@@ -1234,7 +1234,7 @@ msgstr "編輯地址"
 #: model:ir.model.fields,field_description:website_sale.field_website_sale_payment_acquirer_onboarding_wizard__paypal_email_account
 #: model_terms:ir.ui.view,arch_db:website_sale.address
 msgid "Email"
-msgstr "Email"
+msgstr "電郵"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
@@ -1465,6 +1465,15 @@ msgstr "圖像名稱"
 #: model:ir.model.fields,help:website_sale.field_res_config_settings__module_website_sale_stock
 msgid "Installs the \"Website Delivery Information\" application"
 msgstr "安裝“網站傳遞資訊”應用程序"
+
+#. module: website_sale
+#: code:addons/website_sale/controllers/main.py:0
+#, python-format
+msgid ""
+"If you are ordering for an external person, please place your order via the "
+"backend. If you wish to change your name or email address, please do so in "
+"the account settings or contact your administrator."
+msgstr ""
 
 #. module: website_sale
 #: code:addons/website_sale/controllers/main.py:0
@@ -1852,7 +1861,7 @@ msgstr ""
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.brand_promotion
 msgid "Open Source eCommerce"
-msgstr "開源電商"
+msgstr "開源電商平台"
 
 #. module: website_sale
 #. openerp-web
@@ -2581,7 +2590,7 @@ msgstr "放棄購物車時發送恢復電子郵件"
 #: model:ir.model.fields,field_description:website_sale.field_product_public_category__seo_name
 #: model:ir.model.fields,field_description:website_sale.field_product_template__seo_name
 msgid "Seo name"
-msgstr "Seo 名稱"
+msgstr "SEO 名稱"
 
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_product_image__sequence
@@ -2833,7 +2842,7 @@ msgstr "感謝您的訂購。"
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.brand_promotion
 msgid "The #1"
-msgstr "The #1"
+msgstr "最強的"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.terms
@@ -3152,7 +3161,7 @@ msgstr "網站片段過濾器"
 #: model:ir.model.fields,field_description:website_sale.field_product_product__website_url
 #: model:ir.model.fields,field_description:website_sale.field_product_template__website_url
 msgid "Website URL"
-msgstr "網站URL"
+msgstr "網站網址"
 
 #. module: website_sale
 #: model:ir.model,name:website_sale.model_website_visitor

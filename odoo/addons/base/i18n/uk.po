@@ -13514,6 +13514,12 @@ msgid "Compute"
 msgstr "Розрахувати"
 
 #. module: base
+#: code:addons/base/models/ir_model.py:0
+#, python-format
+msgid "Compute method cannot depend on field 'id'"
+msgstr "Метод-обчислення не може залежати від поля 'id'"
+
+#. module: base
 #: model:ir.module.module,summary:base.module_website_crm_score
 msgid "Compute scores and assign leads automatically"
 msgstr "Обчислюйте бали і призначайте автоматично"
@@ -15924,6 +15930,18 @@ msgstr "Помилка"
 #: model:ir.model.fields,help:base.field_ir_model_constraint__message
 msgid "Error message returned when the constraint is violated."
 msgstr "Повідомлення про помилку повертається, коли порушується обмеження."
+
+#. module: base
+#: code:addons/translate.py:0
+#, python-format
+msgid ""
+"Error while parsing view:\n"
+"\n"
+"%s"
+msgstr ""
+"Помилка під час аналізу перегляду:\n"
+"\n"
+"%s"
 
 #. module: base
 #: code:addons/base/models/ir_ui_view.py:0
@@ -18995,6 +19013,12 @@ msgstr ""
 #, python-format
 msgid "Invalid 'group by' parameter"
 msgstr "Недійсний параметр \"групувати за\""
+
+#. module: base
+#: code:addons/base/models/ir_default.py:0
+#, python-format
+msgid "Invalid JSON format in Default Value field."
+msgstr "Недійсний формат JSON в полі типового значення."
 
 #. module: base
 #: code:addons/models.py:0
@@ -31876,6 +31900,12 @@ msgid "You cannot deactivate the user you're currently logged in as."
 msgstr "Ви не можете вимкнути користувача, через якого ви увійшли в систему."
 
 #. module: base
+#: code:addons/base/models/ir_config_parameter.py:0
+#, python-format
+msgid "You cannot delete the %s record."
+msgstr "Ви не можете видалити запис %s."
+
+#. module: base
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
@@ -31897,6 +31927,13 @@ msgstr "Ви не можете видалити мову, якою корист�
 msgid "You cannot merge a contact with one of his parent."
 msgstr ""
 "Ви не можете об'єднати контакт з одним із його батьківським контактом."
+
+#. module: base
+#: code:addons/base/models/ir_config_parameter.py:0
+#, python-format
+msgid "You cannot rename config parameters with keys %s"
+msgstr ""
+"Ви не можете перейменувати параметри конфігурації за допомогою ключів %s"
 
 #. module: base
 #: code:addons/models.py:0

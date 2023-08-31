@@ -55,6 +55,12 @@ msgstr "\" تنبيه مع"
 #. module: website
 #: code:addons/website/models/website_rewrite.py:0
 #, python-format
+msgid "\"URL from\" can not be empty."
+msgstr "لا يمكن ترك \"رابط URL من\" فارغاً. "
+
+#. module: website
+#: code:addons/website/models/website_rewrite.py:0
+#, python-format
 msgid "\"URL to\" can not be empty."
 msgstr "لا يمكن ترك \"رابط URL إلى\" فارغاً. "
 
@@ -5338,22 +5344,22 @@ msgstr "أكثر المواضيع بحثًا المرتبطة بكلمتك ال�
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_image_gallery_options
 msgid "Move to first"
-msgstr "النقل للأول"
+msgstr "الانتقال إلى الأول "
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_image_gallery_options
 msgid "Move to last"
-msgstr "النقل للأخير"
+msgstr "الانتقال إلى الأخير "
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_image_gallery_options
 msgid "Move to next"
-msgstr "النقل للتالي"
+msgstr "الانتقال إلى التالي "
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_image_gallery_options
 msgid "Move to previous"
-msgstr "النقل للسابق"
+msgstr "الانتقال إلى السابق "
 
 #. module: website
 #: model:ir.model,name:website.model_website_multi_mixin
@@ -6413,8 +6419,8 @@ msgid ""
 "Robots.txt: This file tells to search engine crawlers which pages or files "
 "they can or can't request from your site.<br/>"
 msgstr ""
-"Robots.txt: يقوم هذا الحقل بإخبار زاحف الشبكة أي الصفحات أو الملفات لا يسعه "
-"طلبها من موقعك الإلكتروني.<br/> "
+"Robots.txt: يقوم هذا الملف بإخبار زاحف محرك البحث أي الصفحات أو الملفات لا "
+"يسعه طلبها من موقعك الإلكتروني.<br/> "
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options_border_widgets
@@ -7505,6 +7511,17 @@ msgstr ""
 
 #. module: website
 #. openerp-web
+#: code:addons/website/static/src/js/editor/snippets.options.js:0
+#, python-format
+msgid ""
+"This font already exists, you can only add it as a local font to replace the"
+" server version."
+msgstr ""
+"هذا الخط موجود بالفعل. يمكنك فقط إضافته كخط محلي لاستبدال نسخة الخادم. "
+
+#. module: website
+#. openerp-web
+#: code:addons/website/static/src/js/editor/snippets.options.js:0
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "This font is hosted and served to your visitors by Google servers"
@@ -7778,6 +7795,13 @@ msgstr "انتقال"
 #, python-format
 msgid "Translate Attribute"
 msgstr "ترجمة الخاصية"
+
+#. module: website
+#. openerp-web
+#: code:addons/website/static/src/js/editor/wysiwyg_multizone_translate.js:0
+#, python-format
+msgid "Translate Selection Option"
+msgstr "ترجمة الخيار "
 
 #. module: website
 #. openerp-web

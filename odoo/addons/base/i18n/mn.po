@@ -6849,6 +6849,8 @@ msgid ""
 "- %(record)r belongs to company %(company)r and %(field)r (%(fname)s: "
 "%(values)s) belongs to another company."
 msgstr ""
+"- %(record)r бүртгэл нь %(company)r дээр байгаа бол %(field)r (%(fname)s: "
+"%(values)s) талбар нь өөр компани дээр байна."
 
 #. module: base
 #: code:addons/model.py:0
@@ -6865,6 +6867,8 @@ msgid ""
 "- Record is company %(company)r and %(field)r (%(fname)s: %(values)s) "
 "belongs to another company."
 msgstr ""
+"- Бүртгэлийн компани %(company)r байгаа бол %(field)r (%(fname)s: "
+"%(values)s) талбар нь өөр компани дээр байна."
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.report_irmodeloverview
@@ -7098,7 +7102,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.onboarding_container
 msgid "<span aria-label=\"Close\">×</span>"
-msgstr ""
+msgstr "<span aria-label=\"Хаах\">×</span>"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.reset_view_arch_wizard_view
@@ -10678,6 +10682,12 @@ msgstr "Бүтэн нэр"
 #: model:ir.model.fields,field_description:base.field_ir_model_fields__compute
 msgid "Compute"
 msgstr "Тооцоолох"
+
+#. module: base
+#: code:addons/base/models/ir_model.py:0
+#, python-format
+msgid "Compute method cannot depend on field 'id'"
+msgstr ""
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_crm_score
@@ -15606,7 +15616,7 @@ msgstr "Идэвхигүй Хэрэглэгчид"
 #: code:addons/models.py:0
 #, python-format
 msgid "Incompatible companies on records:"
-msgstr ""
+msgstr "Бүртгэлийн компаниуд үл тохирч байна:"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_fields__index

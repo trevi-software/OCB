@@ -3304,7 +3304,7 @@ msgstr ""
 #. module: website_slides
 #: model_terms:ir.ui.view,arch_db:website_slides.course_slides_list_slide
 msgid "New"
-msgstr "Nieuw"
+msgstr "Нов"
 
 #. module: website_slides
 #: model:mail.template,subject:website_slides.slide_template_published
@@ -5176,6 +5176,14 @@ msgstr ""
 #, python-format
 msgid "Yes"
 msgstr "Да"
+
+#. module: website_slides
+#: code:addons/website_slides/wizard/slide_channel_invite.py:0
+#, python-format
+msgid ""
+"You are not allowed to add members to this course. Please contact the course"
+" responsible or an administrator."
+msgstr ""
 
 #. module: website_slides
 #. openerp-web

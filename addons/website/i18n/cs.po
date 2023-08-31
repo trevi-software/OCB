@@ -11,7 +11,7 @@
 # Damian Brencic <brencicdamian12313@gmail.com>, 2021
 # Martin Trigaux, 2021
 # Rastislav Brencic <rastislav.brencic@azet.sk>, 2021
-# Jiří Podhorecký, 2022
+# Jiří Podhorecký, 2023
 # Aleš Fiala <f.ales1@seznam.cz>, 2023
 # 
 msgid ""
@@ -40,6 +40,12 @@ msgstr "Přidat obrázky"
 #: model_terms:website.page,arch_db:website.bs_debug_page
 msgid "\" alert with a"
 msgstr "\" výstraha s"
+
+#. module: website
+#: code:addons/website/models/website_rewrite.py:0
+#, python-format
+msgid "\"URL from\" can not be empty."
+msgstr "\"URL from\" nemůže být prázdná."
 
 #. module: website
 #: code:addons/website/models/website_rewrite.py:0
@@ -5243,7 +5249,7 @@ msgstr "Mobilní"
 #: code:addons/website/static/src/js/editor/snippets.options.js:0
 #, python-format
 msgid "Mobile Alignment"
-msgstr ""
+msgstr "Mobilní zarovnání"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_visitor__mobile
@@ -7490,6 +7496,18 @@ msgstr ""
 
 #. module: website
 #. openerp-web
+#: code:addons/website/static/src/js/editor/snippets.options.js:0
+#, python-format
+msgid ""
+"This font already exists, you can only add it as a local font to replace the"
+" server version."
+msgstr ""
+"Toto písmo již existuje, můžete jej přidat pouze jako místní písmo a "
+"nahradit tak serverovou verzi."
+
+#. module: website
+#. openerp-web
+#: code:addons/website/static/src/js/editor/snippets.options.js:0
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "This font is hosted and served to your visitors by Google servers"
@@ -7766,6 +7784,13 @@ msgstr "Přechod"
 #, python-format
 msgid "Translate Attribute"
 msgstr "Přeložit atribut"
+
+#. module: website
+#. openerp-web
+#: code:addons/website/static/src/js/editor/wysiwyg_multizone_translate.js:0
+#, python-format
+msgid "Translate Selection Option"
+msgstr "Možnost výběru překladu"
 
 #. module: website
 #. openerp-web

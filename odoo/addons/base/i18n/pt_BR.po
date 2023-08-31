@@ -8,7 +8,6 @@
 # mariana rodrigues <mariana12v@gmail.com>, 2020
 # Luiz Carareto Alonso <Luiz.cararetoalonso@gmail.com>, 2020
 # Yannick Belot <yannickbh@gmail.com>, 2020
-# Fábio Novais <fabionovais@aptu.com.br>, 2020
 # Vanderlei P. Romera <vanderleiromera@gmail.com>, 2020
 # Hildeberto Abreu Magalhães <hildeberto@gmail.com>, 2020
 # Raphael Rodrigues <raphael0608@gmail.com>, 2020
@@ -17,6 +16,7 @@
 # Thiago Alves Cavalcante <thiagoalcav@gmail.com>, 2020
 # Cécile Collart <cco@odoo.com>, 2020
 # guisantos23 <guisantos23@yahoo.com.br>, 2020
+# Keli Brugalli <kbr@odoo.com>, 2020
 # Luiz Fernando <lfpsgs@outlook.com>, 2020
 # Marcelo Costa <marcelo@comdesk.com.br>, 2020
 # Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatica@protonmail.com>, 2020
@@ -38,12 +38,12 @@
 # Rafael H L Moretti <rafael.moretti@gmail.com>, 2020
 # Marcel Savegnago <marcel.savegnago@gmail.com>, 2020
 # Mateus Lopes <mateus1@gmail.com>, 2020
-# grazziano <gra.negocia@gmail.com>, 2020
+# grazziano <grazziano.do+transifex@gmail.com>, 2020
 # PopSolutions Cooperativa Digital <popsolutions.co@gmail.com>, 2020
-# Keli Brugalli <kbr@odoo.com>, 2020
 # Éder Brito <britoederr@gmail.com>, 2021
 # douglas custodio <douglascstd@yahoo.com>, 2022
 # Kevilyn Rosa, 2023
+# Layna Nascimento, 2023
 # 
 msgid ""
 msgstr ""
@@ -51,7 +51,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 13:50+0000\n"
 "PO-Revision-Date: 2020-09-07 08:09+0000\n"
-"Last-Translator: Kevilyn Rosa, 2023\n"
+"Last-Translator: Layna Nascimento, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/odoo/teams/41243/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2100,7 +2100,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"Relatórios Contábeis\n"
+"Exercícios contábeis\n"
 "==================\n"
 "    "
 
@@ -10434,7 +10434,7 @@ msgstr ""
 #: model:ir.module.module,shortdesc:base.module_account_accountant
 #: model_terms:ir.ui.view,arch_db:base.user_groups_view
 msgid "Accounting"
-msgstr "Contabilidade"
+msgstr "Financeiro"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mrp_account
@@ -10450,7 +10450,7 @@ msgstr "Testes de consistência de contabilidade"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_reports
 msgid "Accounting Reports"
-msgstr "Relatórios Contábeis"
+msgstr "Relatórios financeiros"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_nl
@@ -11317,7 +11317,7 @@ msgstr "Permite enviar sms ao visitante do site que possui lead"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_amazon
 msgid "Amazon Connector"
-msgstr "Amazon Connector"
+msgstr "Conector Amazon"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_amazon_delivery
@@ -11501,7 +11501,7 @@ msgstr "Aplicar para Gravação"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_calendar
 msgid "Appointments"
-msgstr "Reuniões"
+msgstr "Compromissos"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_appraisal
@@ -11721,7 +11721,7 @@ msgstr "Lista de Anexos e Indexação de Documentos"
 #: model:ir.module.category,name:base.module_category_human_resources_attendances
 #: model:ir.module.module,shortdesc:base.module_hr_attendance
 msgid "Attendances"
-msgstr "Presenças"
+msgstr "Controle de Presença"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_attendance_mobile
@@ -12057,7 +12057,7 @@ msgstr "Barbados"
 #: model:ir.module.module,shortdesc:base.module_barcodes
 #: model:ir.module.module,shortdesc:base.module_stock_barcode
 msgid "Barcode"
-msgstr "Código de barras"
+msgstr "Código de Barras"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_stock_barcode_quality_control
@@ -12386,7 +12386,7 @@ msgstr "Tipo de Visualização de Ligação"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_blog
 msgid "Blogs"
-msgstr "Blogs"
+msgstr "Blog"
 
 #. module: base
 #: model:res.country,name:base.bo
@@ -12596,7 +12596,7 @@ msgstr "Por padrão o widget utiliza a informação do campo"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_C
 msgid "C MANUFACTURING"
-msgstr "C PRODUÇÃO"
+msgstr "C FABRICAÇÃO"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__report_paperformat__format__c5e
@@ -13319,12 +13319,12 @@ msgstr "Dados da Companhia"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company__favicon
 msgid "Company Favicon"
-msgstr "Ícone da Empresa"
+msgstr "Ícone da empresa"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company__logo
 msgid "Company Logo"
-msgstr "Logo da Empresa"
+msgstr "Logo da empresa"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company__name
@@ -13358,7 +13358,7 @@ msgstr "Registro da Empresa"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company__report_header
 msgid "Company Tagline"
-msgstr "Slogan da Empresa"
+msgstr "Slogan da empresa"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner__company_type
@@ -13416,6 +13416,12 @@ msgstr "Nome Completo"
 #: model:ir.model.fields,field_description:base.field_ir_model_fields__compute
 msgid "Compute"
 msgstr "Calcular"
+
+#. module: base
+#: code:addons/base/models/ir_model.py:0
+#, python-format
+msgid "Compute method cannot depend on field 'id'"
+msgstr ""
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_crm_score
@@ -13656,7 +13662,7 @@ msgstr "Etiqueta de Contato"
 #: model:ir.actions.act_window,name:base.action_partner_category_form
 #: model_terms:ir.ui.view,arch_db:base.view_partner_category_list
 msgid "Contact Tags"
-msgstr "Tags do Contato"
+msgstr "Marcadores do contato"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_partner_title_contact
@@ -15288,7 +15294,7 @@ msgstr "Documentos - Folga"
 #: model:ir.module.module,shortdesc:base.module_documents_spreadsheet
 #: model:ir.module.module,summary:base.module_documents_spreadsheet
 msgid "Documents Spreadsheet"
-msgstr "Spreadsheet Documentos"
+msgstr "Planilha do Documento"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_filters__domain
@@ -15656,7 +15662,7 @@ msgstr "Servidor E-mail"
 #: model:ir.module.category,name:base.module_category_marketing_email_marketing
 #: model:ir.module.module,shortdesc:base.module_mass_mailing
 msgid "Email Marketing"
-msgstr "Email Marketing"
+msgstr "Marketing de E-mail"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users__signature
@@ -15787,7 +15793,7 @@ msgstr "Recursos em contatos Enterprise"
 #. module: base
 #: model:ir.module.module,summary:base.module_website
 msgid "Enterprise website builder"
-msgstr "Enterprise website builder"
+msgstr "Criador de Sites Enterprise"
 
 #. module: base
 #: model:res.partner.industry,name:base.res_partner_industry_R
@@ -15828,6 +15834,15 @@ msgstr "Erro"
 #: model:ir.model.fields,help:base.field_ir_model_constraint__message
 msgid "Error message returned when the constraint is violated."
 msgstr "Mensagem de erro retornada quando a restrição é violada."
+
+#. module: base
+#: code:addons/translate.py:0
+#, python-format
+msgid ""
+"Error while parsing view:\n"
+"\n"
+"%s"
+msgstr ""
 
 #. module: base
 #: code:addons/base/models/ir_ui_view.py:0
@@ -16639,7 +16654,7 @@ msgid ""
 "                                                          Useful to (hard) reset broken views or to read arch from file in dev-xml mode."
 msgstr ""
 "Arquivo de onde a visualização se origina.\n"
-"                                                          Útil para redefinir visões quebradas (difícil) ou para ler o arco do arquivo no modo dev-xml."
+"                                                          Útil para fazer uma reinicialização (forçada) de visualizações quebradas ou para ler o arch do arquivo no modo dev-xml."
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_actions_act_window__filter
@@ -17155,7 +17170,7 @@ msgstr "Geral"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_company_form
 msgid "General Information"
-msgstr "Informações Gerais"
+msgstr "Informações gerais"
 
 #. module: base
 #: model:ir.ui.menu,name:base.menu_config
@@ -17443,7 +17458,7 @@ msgstr "Grupo"
 #: model_terms:ir.ui.view,arch_db:base.view_server_action_search
 #: model_terms:ir.ui.view,arch_db:base.view_view_search
 msgid "Group By"
-msgstr "Agrupar Por"
+msgstr "Agrupar por"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_groups__full_name
@@ -17648,7 +17663,7 @@ msgstr "Help with Python expressions"
 #: model:ir.module.category,name:base.module_category_services_helpdesk
 #: model:ir.module.module,shortdesc:base.module_helpdesk
 msgid "Helpdesk"
-msgstr "Suporte Técnico"
+msgstr "Central de Ajuda"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_helpdesk_account
@@ -18620,7 +18635,7 @@ msgstr "Indonesian - Accounting"
 #. module: base
 #: model:ir.actions.act_window,name:base.res_partner_industry_action
 msgid "Industries"
-msgstr "Indústrias"
+msgstr "Segmentos"
 
 #. module: base
 #: model:ir.model,name:base.model_res_partner_industry
@@ -18901,6 +18916,12 @@ msgid "Invalid 'group by' parameter"
 msgstr "Invalid 'group by' parameter"
 
 #. module: base
+#: code:addons/base/models/ir_default.py:0
+#, python-format
+msgid "Invalid JSON format in Default Value field."
+msgstr ""
+
+#. module: base
 #: code:addons/models.py:0
 #, python-format
 msgid "Invalid aggregation function %r."
@@ -19080,7 +19101,7 @@ msgstr "Endereço de Cobrança"
 #. module: base
 #: model:ir.module.module,summary:base.module_account
 msgid "Invoices & Payments"
-msgstr "Fatyras & Pagamentos"
+msgstr "Faturas & Pagamentos"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_documents_account
@@ -19863,7 +19884,7 @@ msgstr "Vamos lá"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.onboarding_company_step
 msgid "Let's start!"
-msgstr "Vamos Começar!"
+msgstr "Vamos começar!"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__report_paperformat__format__letter
@@ -19944,7 +19965,7 @@ msgstr "Campo de Vínculo"
 #: model:ir.module.module,shortdesc:base.module_link_tracker
 #: model:ir.module.module,shortdesc:base.module_website_links
 msgid "Link Tracker"
-msgstr "Rastrear Link"
+msgstr "Rastreio de Links"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_voip_crm
@@ -19996,7 +20017,7 @@ msgstr "Lithuania - Accounting"
 #: model:ir.module.category,name:base.module_category_website_live_chat
 #: model:ir.module.module,shortdesc:base.module_im_livechat
 msgid "Live Chat"
-msgstr "Live Chat"
+msgstr "Chat ao Vivo"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_currency_rate_live
@@ -20555,13 +20576,13 @@ msgstr "Manage your stock and logistics activities"
 #: model:res.partner.industry,name:base.res_partner_industry_C
 #: model_terms:ir.ui.view,arch_db:base.user_groups_view
 msgid "Manufacturing"
-msgstr "Produção"
+msgstr "Fabricação"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mrp_product_expiry
 #: model:ir.module.module,summary:base.module_mrp_product_expiry
 msgid "Manufacturing Expiry"
-msgstr "Expiração de Fabricação"
+msgstr "Expiração da fabricação"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_mrp
@@ -20612,7 +20633,7 @@ msgstr "Marketing"
 #: model:ir.module.category,name:base.module_category_marketing_marketing_automation
 #: model:ir.module.module,shortdesc:base.module_marketing_automation
 msgid "Marketing Automation"
-msgstr "Automação de Marketing"
+msgstr "MKT: Automação"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_marketing_automation
@@ -20769,7 +20790,7 @@ msgstr "Merge Partner Line"
 #. module: base
 #: model:ir.model,name:base.model_base_partner_merge_automatic_wizard
 msgid "Merge Partner Wizard"
-msgstr "Merge Partner Wizard"
+msgstr "Assistente de mesclagem de usuário"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
@@ -24831,13 +24852,13 @@ msgstr "Categoria superior(pai)"
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_parent_id
 #: model:ir.model.fields,field_description:base.field_res_company__parent_id
 msgid "Parent Company"
-msgstr "Empresa Superior(Pai)"
+msgstr "Empresa matriz"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_menu__parent_id
 #: model:ir.model.fields,field_description:base.field_wizard_ir_model_menu_create__menu_id
 msgid "Parent Menu"
-msgstr "Menu Superior(pai)"
+msgstr "Menu primário"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_menu__parent_path
@@ -25429,7 +25450,7 @@ msgstr "Modelo de E-mail do Produto"
 #: model:ir.module.category,name:base.module_category_manufacturing_product_lifecycle_management_(plm)
 #: model:ir.module.module,shortdesc:base.module_mrp_plm
 msgid "Product Lifecycle Management (PLM)"
-msgstr "Gestão do Ciclo de Vida do Produto (PLM)"
+msgstr "Ciclo de Vida do Produto (PLM)"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_product_matrix
@@ -26224,7 +26245,7 @@ msgstr "Data de referência"
 #. module: base
 #: model:ir.module.category,name:base.module_category_human_resources_referrals
 msgid "Referrals"
-msgstr "Referências"
+msgstr "Indicações"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner__parent_id
@@ -26333,7 +26354,7 @@ msgstr "Remover a ação contextual relacionada a este relatório"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_renting
 msgid "Rental"
-msgstr "Aluguel"
+msgstr "Locação"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_stock_renting
@@ -26669,7 +26690,7 @@ msgstr "SEPA Payments for Payroll"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mass_mailing_sms
 msgid "SMS Marketing"
-msgstr "Marketing SMS"
+msgstr "Marketing por SMS"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_marketing_automation_sms
@@ -26885,7 +26906,7 @@ msgstr "Despesas de Vendas"
 #: model:ir.module.module,shortdesc:base.module_sales_team
 #: model:ir.module.module,summary:base.module_sales_team
 msgid "Sales Teams"
-msgstr "Equipes de Vendas"
+msgstr "Equipes de vendas"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_timesheet
@@ -27573,7 +27594,7 @@ msgstr "Serra Leoa"
 #: model:ir.module.category,name:base.module_category_sales_sign
 #: model:ir.module.module,shortdesc:base.module_sign
 msgid "Sign"
-msgstr "Assinatura Eletrônica"
+msgstr "Assinatura de Documentos"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_contract_salary
@@ -27700,7 +27721,7 @@ msgstr "Social LinkedIn"
 #: model:ir.module.category,name:base.module_category_marketing_social_marketing
 #: model:ir.module.module,shortdesc:base.module_social
 msgid "Social Marketing"
-msgstr "Mídias Sociais"
+msgstr "Redes Sociais"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_social_media
@@ -28095,7 +28116,7 @@ msgstr "Structured Model Field"
 #: model:ir.module.category,name:base.module_category_customizations_studio
 #: model:ir.module.module,shortdesc:base.module_web_studio
 msgid "Studio"
-msgstr "Studio"
+msgstr "Estúdio"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_mrp_subcontracting
@@ -28126,7 +28147,7 @@ msgstr "Envie, valide e fature novamente as despesas do funcionário"
 #. module: base
 #: model:ir.module.category,name:base.module_category_sales_subscription
 msgid "Subscription"
-msgstr "Inscrição"
+msgstr "Assinaturas"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_subscription_sepa_direct_debit
@@ -28413,7 +28434,7 @@ msgstr "Logs de Tarefas"
 #: model:ir.model.fields,field_description:base.field_res_partner__vat
 #: model:ir.model.fields,field_description:base.field_res_users__vat
 msgid "Tax ID"
-msgstr "ID do Imposto"
+msgstr "CPF/CNPJ"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_taxcloud_delivery
@@ -29654,7 +29675,7 @@ msgstr "Para"
 #: model:ir.model.fields.selection,name:base.selection__ir_actions_todo__state__open
 #: model_terms:ir.ui.view,arch_db:base.config_wizard_step_view_search
 msgid "To Do"
-msgstr "A Fazer"
+msgstr "Lista de Tarefas"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_translation__state__to_translate
@@ -31263,7 +31284,7 @@ msgstr "Website Slides Helpdesk"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_studio
 msgid "Website Studio"
-msgstr "Website Studio"
+msgstr "Estúdio do Site"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_website
@@ -31675,6 +31696,12 @@ msgid "You cannot deactivate the user you're currently logged in as."
 msgstr "You cannot deactivate the user you're currently logged in as."
 
 #. module: base
+#: code:addons/base/models/ir_config_parameter.py:0
+#, python-format
+msgid "You cannot delete the %s record."
+msgstr ""
+
+#. module: base
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
@@ -31696,6 +31723,12 @@ msgstr ""
 #, python-format
 msgid "You cannot merge a contact with one of his parent."
 msgstr "Não é possível mesclar um contato com um de seus pais."
+
+#. module: base
+#: code:addons/base/models/ir_config_parameter.py:0
+#, python-format
+msgid "You cannot rename config parameters with keys %s"
+msgstr ""
 
 #. module: base
 #: code:addons/models.py:0
@@ -31984,7 +32017,7 @@ msgstr "conector Ebay"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale
 msgid "eCommerce"
-msgstr "Comércio Eletrônico"
+msgstr "e-Commerce"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_delivery
@@ -31995,7 +32028,7 @@ msgstr "Entrega de Comércio Eletrônico"
 #: model:ir.module.category,name:base.module_category_website_elearning
 #: model:ir.module.module,shortdesc:base.module_website_slides
 msgid "eLearning"
-msgstr "Cursos Online"
+msgstr "e-Learning"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_users_simple_form
@@ -32026,7 +32059,7 @@ msgid ""
 "for record in self:\n"
 "        record['size'] = len(record.name)"
 msgstr ""
-"para gravar no próprio:\n"
+"para gravar no self:\n"
 "record['size'] = len(record.name)"
 
 #. module: base

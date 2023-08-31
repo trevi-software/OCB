@@ -21,7 +21,7 @@
 # William Surya Permana <zarambie_game@yahoo.com>, 2020
 # Martin Trigaux, 2020
 # Wahyu Setiawan <wahyusetiaaa@gmail.com>, 2020
-# oon arfiandwi <oon.arfiandwi@gmail.com>, 2020
+# oon arfiandwi (OonID) <oon.arfiandwi@gmail.com>, 2020
 # Bonny Useful <bonny.useful@gmail.com>, 2020
 # whenwesober, 2021
 # Altela Eleviansyah Pramardhika <altela_pramardhika@yahoo.com>, 2021
@@ -609,7 +609,7 @@ msgstr "Jenis Aktivitas"
 #: model:ir.model.fields,field_description:mail.field_ir_actions_server__activity_user_type
 #: model:ir.model.fields,field_description:mail.field_ir_cron__activity_user_type
 msgid "Activity User Type"
-msgstr ""
+msgstr "Tipe User untuk Aktivitas "
 
 #. module: mail
 #. openerp-web
@@ -1066,7 +1066,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_res_users__is_blacklisted
 #: model_terms:ir.ui.view,arch_db:mail.mail_blacklist_view_form
 msgid "Blacklist"
-msgstr ""
+msgstr "Blacklist"
 
 #. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.mail_blacklist_view_tree
@@ -1749,12 +1749,12 @@ msgstr ""
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_activity_type__delay_from
 msgid "Delay Type"
-msgstr ""
+msgstr "Tipe Jeda"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_activity_type__delay_unit
 msgid "Delay units"
-msgstr ""
+msgstr "Satuan jeda"
 
 #. module: mail
 #. openerp-web
@@ -1853,6 +1853,7 @@ msgstr ""
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/widgets/discuss/discuss.js:0
+#: code:addons/mail/static/src/models/discuss/discuss.js:0
 #: model:ir.actions.client,name:mail.action_discuss
 #: model:ir.ui.menu,name:mail.mail_menu_technical
 #: model:ir.ui.menu,name:mail.menu_root_discuss
@@ -2049,7 +2050,7 @@ msgstr "Batas Waktu"
 #: model:ir.model.fields,field_description:mail.field_ir_actions_server__activity_date_deadline_range
 #: model:ir.model.fields,field_description:mail.field_ir_cron__activity_date_deadline_range
 msgid "Due Date In"
-msgstr ""
+msgstr "Jatuh Tempo Pada"
 
 #. module: mail
 #. openerp-web
@@ -2076,7 +2077,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_ir_actions_server__activity_date_deadline_range_type
 #: model:ir.model.fields,field_description:mail.field_ir_cron__activity_date_deadline_range_type
 msgid "Due type"
-msgstr ""
+msgstr "Tipe jatuh tempo"
 
 #. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.email_template_form
@@ -2944,6 +2945,8 @@ msgid ""
 "If the email address is on the blacklist, the contact won't receive mass "
 "mailing anymore, from any list"
 msgstr ""
+"Bila alamat email dalam blacklist, kontak tidak akan menerima email massal "
+"lagi, dari daftar apapun"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_followers__is_active
@@ -2986,7 +2989,7 @@ msgstr "Gambar"
 #. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.view_document_file_kanban
 msgid "Image is a link"
-msgstr ""
+msgstr "Gambar adalah link"
 
 #. module: mail
 #: code:addons/mail/models/mail_alias.py:0
@@ -4281,7 +4284,7 @@ msgstr "Tidak Ada"
 #: model:ir.model.fields,field_description:mail.field_res_partner__email_normalized
 #: model:ir.model.fields,field_description:mail.field_res_users__email_normalized
 msgid "Normalized Email"
-msgstr ""
+msgstr "Normalized Email"
 
 #. module: mail
 #. openerp-web
@@ -5406,7 +5409,7 @@ msgstr "Jadwal"
 #: code:addons/mail/static/src/models/activity/activity.js:0
 #, python-format
 msgid "Schedule Activity"
-msgstr ""
+msgstr "Jadwalkan Aktivitas"
 
 #. module: mail
 #. openerp-web
@@ -5671,14 +5674,14 @@ msgstr ""
 #: code:addons/mail/static/src/components/chat_window_header/chat_window_header.xml:0
 #, python-format
 msgid "Shift left"
-msgstr ""
+msgstr "Geser ke kiri"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/components/chat_window_header/chat_window_header.xml:0
 #, python-format
 msgid "Shift right"
-msgstr ""
+msgstr "Geser ke kanan"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_mail__description
@@ -6118,6 +6121,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mail.res_partner_view_form_inherit_mail
 msgid "This email is blacklisted for mass mailings. Click to unblacklist."
 msgstr ""
+"Email ini diblacklist untuk mass mailing. Klik untuk tidak memblacklist."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_blacklist__email
@@ -6132,6 +6136,8 @@ msgid ""
 "This field is used to search on email address as the primary email field can"
 " contain more than strictly an email address."
 msgstr ""
+"Field ini digunakan untuk mencari pada alamat email sebagai field email "
+"utama yang dapat memiliki lebih dari hanya alamat email."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_channel__public
@@ -6151,6 +6157,9 @@ msgid ""
 "including from the Technical menu in the Settings, in order to preserve "
 "storage space of your Odoo database."
 msgstr ""
+"Opsi ini secara permanen menghapus semua jejak email setelah dikirim, "
+"termasuk menu Teknis di Pengaturan, agar dapat memiliki lebih banyak storage"
+" space di database Odoo Anda."
 
 #. module: mail
 #. openerp-web
@@ -6390,7 +6399,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:mail.selection__mail_notification__failure_type__unknown
 #, python-format
 msgid "Unknown error"
-msgstr ""
+msgstr "Error tidak diketahui"
 
 #. module: mail
 #. openerp-web
@@ -6511,6 +6520,9 @@ msgid ""
 " 'Generic User From Record' to specify the field name of the user to choose "
 "on the record."
 msgstr ""
+"Gunakan \"User Spesifik' untuk selalu menetapkan user yang sama pada "
+"kegiatan berikutnya. Gunakan 'User Umum dari Record' untuk menentukan nama "
+"field user untuk dipilih pada record."
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message__use_active_domain
@@ -6543,7 +6555,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_ir_actions_server__activity_user_field_name
 #: model:ir.model.fields,field_description:mail.field_ir_cron__activity_user_field_name
 msgid "User field name"
-msgstr ""
+msgstr "Nama field user"
 
 #. module: mail
 #. openerp-web
@@ -6605,6 +6617,14 @@ msgstr ""
 "Menggunakan server email Anda sendiri diperlukan untuk mengirim/menerima "
 "email pada versi Komunitas dan Enterprise. Pengguna daring sudah disediakan "
 "server email yang siap dipakai (@mycompany.odoo.com)."
+
+#. module: mail
+#: code:addons/mail/models/ir_config_parameter.py:0
+#, python-format
+msgid ""
+"Value for `mail.catchall.domain.allowed` cannot be validated.\n"
+"It should be a comma separated list of domains e.g. example.com,example.org."
+msgstr ""
 
 #. module: mail
 #. openerp-web
@@ -6905,7 +6925,7 @@ msgstr ""
 #: code:addons/mail/models/mail_thread.py:0
 #, python-format
 msgid "You have been assigned to %s"
-msgstr ""
+msgstr "Anda telah ditugaskan ke %s"
 
 #. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.message_user_assigned

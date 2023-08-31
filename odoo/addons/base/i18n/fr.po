@@ -87,9 +87,9 @@
 # Thomas Charpentier, 2022
 # laje_odoo, 2022
 # Cécile Collart <cco@odoo.com>, 2022
-# Jolien De Paepe, 2023
 # Martin Trigaux, 2023
 # Karoliina Nisula <karoliina.nisula@tawasta.fi>, 2023
+# Jolien De Paepe, 2023
 # 
 msgid ""
 msgstr ""
@@ -97,7 +97,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 13:50+0000\n"
 "PO-Revision-Date: 2020-09-07 08:09+0000\n"
-"Last-Translator: Karoliina Nisula <karoliina.nisula@tawasta.fi>, 2023\n"
+"Last-Translator: Jolien De Paepe, 2023\n"
 "Language-Team: French (https://app.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -862,7 +862,7 @@ msgid ""
 msgstr ""
 "\n"
 "        Module passerelle entre point_of_sale et account_reports,\n"
-"        pour les déclarations fiscales."
+"        pour les déclarations de TVA."
 
 #. module: base
 #: model:ir.module.module,description:base.module_purchase_intrastat
@@ -1125,8 +1125,8 @@ msgstr ""
 "\n"
 " Rapports comptables électroniques\n"
 " – Plan comptable\n"
-" – Balance des comptes\n"
-" Rapport DIOT\n"
+" – Balance comptable\n"
+" Rapport DIOT"
 
 #. module: base
 #: model:ir.module.module,description:base.module_digest_enterprise
@@ -13418,6 +13418,12 @@ msgid "Compute"
 msgstr "Calculer"
 
 #. module: base
+#: code:addons/base/models/ir_model.py:0
+#, python-format
+msgid "Compute method cannot depend on field 'id'"
+msgstr "La méthode de calcul ne peut pas dépendre du champ 'id'"
+
+#. module: base
 #: model:ir.module.module,summary:base.module_website_crm_score
 msgid "Compute scores and assign leads automatically"
 msgstr "Calculez les scores et assignez les leads automatiquement"
@@ -14365,7 +14371,7 @@ msgstr "Portail client"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_rating
 msgid "Customer Rating"
-msgstr "Évaluation de la clientèle"
+msgstr "Évaluation des clients"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_customer
@@ -15075,7 +15081,7 @@ msgstr "Affichage"
 #: model:ir.model.fields,field_description:base.field_reset_view_arch_wizard__display_name
 #: model:ir.model.fields,field_description:base.field_wizard_ir_model_menu_create__display_name
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr "Nom d'affichage"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_studio
@@ -15840,6 +15846,18 @@ msgstr "Erreur"
 #: model:ir.model.fields,help:base.field_ir_model_constraint__message
 msgid "Error message returned when the constraint is violated."
 msgstr "Message d'erreur renvoyé quand la contrainte n'est pas respectée. "
+
+#. module: base
+#: code:addons/translate.py:0
+#, python-format
+msgid ""
+"Error while parsing view:\n"
+"\n"
+"%s"
+msgstr ""
+"Erreur lors de l'analyse de la vue :\n"
+"\n"
+"%s"
 
 #. module: base
 #: code:addons/base/models/ir_ui_view.py:0
@@ -18928,6 +18946,12 @@ msgstr ""
 #, python-format
 msgid "Invalid 'group by' parameter"
 msgstr "Paramètre invalide pour 'group by'"
+
+#. module: base
+#: code:addons/base/models/ir_default.py:0
+#, python-format
+msgid "Invalid JSON format in Default Value field."
+msgstr "Format JSON invalide dans le champ Valeur par défaut."
 
 #. module: base
 #: code:addons/models.py:0
@@ -31868,6 +31892,12 @@ msgstr ""
 "Vous ne pouvez pas désactiver l'utilisateur avec lequel vous êtes connecté."
 
 #. module: base
+#: code:addons/base/models/ir_config_parameter.py:0
+#, python-format
+msgid "You cannot delete the %s record."
+msgstr "Vous ne pouvez pas supprimer l'enregistrement %s."
+
+#. module: base
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
@@ -31890,6 +31920,13 @@ msgstr ""
 #, python-format
 msgid "You cannot merge a contact with one of his parent."
 msgstr "Vous ne pouvez pas fusionner un contact avec l'un de ses parents."
+
+#. module: base
+#: code:addons/base/models/ir_config_parameter.py:0
+#, python-format
+msgid "You cannot rename config parameters with keys %s"
+msgstr ""
+"Vous ne pouvez pas renommer des paramètres de configuration avec les clés %s"
 
 #. module: base
 #: code:addons/models.py:0

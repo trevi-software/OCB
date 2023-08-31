@@ -42,6 +42,12 @@ class TestEmailParsing(TestMailCommon):
         res = self.env['mail.thread'].message_parse(self.from_string(plaintext))
         self.assertIn('Please call me as soon as possible this afternoon!', res['body'])
 
+        # test pure html
+        html = self.format(test_mail_data.MAIL_TEMPLATE_HTML, email_from='"Sylvie Lelitre" <test.sylvie.lelitre@agrolait.com>')
+        res = self.env['mail.thread'].message_parse(self.from_string(html))
+        self.assertIn('<p>Please call me as soon as possible this afternoon!</p>', res['body'])
+        self.assertNotIn('<!DOCTYPE', res['body'])
+
         # test multipart / text and html -> html has priority
         multipart = self.format(MAIL_TEMPLATE, email_from='"Sylvie Lelitre" <test.sylvie.lelitre@agrolait.com>')
         res = self.env['mail.thread'].message_parse(self.from_string(multipart))
@@ -170,6 +176,23 @@ class TestMailAlias(TestMailCommon):
 
         with self.assertRaises(exceptions.ValidationError):
             record.write({'alias_defaults': "{'custom_field': brokendict"})
+
+    def test_alias_domain_allowed_validation(self):
+        """ Check the validation of `mail.catchall.domain.allowed` system parameter"""
+        for value in [',', ',,', ', ,']:
+            with self.assertRaises(exceptions.ValidationError,
+                 msg="The value '%s' should not be allowed" % value):
+                self.env['ir.config_parameter'].set_param('mail.catchall.domain.allowed', value)
+
+        for value, expected in [
+            ('', False),
+            ('hello.com', 'hello.com'),
+            ('hello.com,,', 'hello.com'),
+            ('hello.com,bonjour.com', 'hello.com,bonjour.com'),
+            ('hello.COM, BONJOUR.com', 'hello.com,bonjour.com'),
+        ]:
+            self.env['ir.config_parameter'].set_param('mail.catchall.domain.allowed', value)
+            self.assertEqual(self.env['ir.config_parameter'].get_param('mail.catchall.domain.allowed'), expected)
 
     def test_alias_setup(self):
         alias = self.env['mail.alias'].create({
@@ -541,58 +564,6 @@ class TestMailgateway(TestMailCommon):
         self.assertEqual(len(record), 1)
         self.assertEqual(len(record.message_ids), 1)
 
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.models')
-    def test_message_process_received_bounce(self):
-        """Incoming bounce is properly processed."""
-        self.env['ir.config_parameter'].set_param('mail.bounce.alias', 'oops')
-        self.env['ir.config_parameter'].set_param('mail.catchall.domain', 'example.com')
-        self.env['ir.config_parameter'].set_param('mail.catchall.domain.strict', True)
-
-        # Test: No group created, incoming bounce is counted
-        self.assertEqual(self.test_record.message_bounce, 0, 'The bounced thread should have no bounced messages by default')
-        with self.mock_mail_gateway():
-            new_groups = self.format_and_process(
-                test_mail_data.MAIL_BOUNCE,
-                email_from='Valid Lelitre <valid.lelitre@agrolait.com>',
-                to='valid.other@gmail.com, oops+{msg_id}-{model}-{res_id}@example.com'.format(
-                    msg_id=self.fake_email.id,
-                    model=self.fake_email.model,
-                    res_id=self.fake_email.res_id,
-                ),
-                subject='Your email bounced, be more careful next time plea se',
-                extra=self.fake_email.message_id,
-            )
-        self.assertFalse(new_groups)
-        self.assertNotSentEmail()  # message_process: incoming bounce produces no mails
-        self.assertEqual(self.partner_1.message_bounce, 1, 'The bounced partner should have 1 bounced message')
-        self.assertEqual(self.test_record.message_bounce, 1, 'The bounced thread should have 1 bounced message')
-
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.models')
-    def test_message_process_received_bounce_no_domain_confusion(self):
-        """Incoming bounce-like mails are not confused when in alien domains."""
-        self.env['ir.config_parameter'].set_param('mail.bounce.alias', 'oops')
-        self.env['ir.config_parameter'].set_param('mail.catchall.domain', 'example.com')
-        self.env['ir.config_parameter'].set_param('mail.catchall.domain.strict', True)
-        # A partner with an address that seems like our bounce address
-        alien_bounce_partner = self.env["res.partner"].create({
-            "name": "Alien bounce address",
-            "email": 'oops+{msg_id}-{model}-{res_id}@alien.com'.format(
-                msg_id=self.fake_email.id,
-                model=self.fake_email.model,
-                res_id=self.fake_email.res_id,
-            ),
-        })
-        # Test: group created, bounce-similar email is treated as a normal address
-        with self.mock_mail_gateway():
-            new_groups = self.format_and_process(
-                MAIL_TEMPLATE,
-                email_from='Valid Lelitre <valid.lelitre@agrolait.com>',
-                to=alien_bounce_partner.email + ', groups@example.com',
-            )
-        self.assertEqual(new_groups.message_ids[0].author_id, self.partner_1, 'message_process: recognized email -> author_id')
-        self.assertIn('"Valid Lelitre" <valid.lelitre@agrolait.com>', new_groups.message_ids[0].email_from, 'message_process: recognized email -> email_from')
-        self.assertEqual(new_groups.message_ids.partner_ids, alien_bounce_partner, 'message_process: alien bounce-like address should be subscribed as a normal partner')
-
     @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_message_process_alias_partners_bounce(self):
         """ Incoming email from an unknown partner on a Partners only alias -> bounce + test bounce email """
@@ -852,6 +823,66 @@ class TestMailgateway(TestMailCommon):
         self.assertEqual(new_rec._name, new_alias_2.alias_model_id.model)
         new_simple = self.env['mail.test.gateway'].search([('name', '=', 'Test Subject')])
         self.assertEqual(len(new_simple), 1, 'message_process: a new mail.test should have been created')
+
+    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.models')
+    def test_message_route_alias_with_allowed_domains(self):
+        """ Incoming email: check that if domains are set in the
+        optional system parameter `mail.catchall.domain.allowed`,
+        only incoming emails from these domains will generate records."""
+
+        MailTestGatewayModel = self.env['mail.test.gateway']
+        MailTestContainerModel = self.env['mail.test.container']
+
+        allowed_domain = 'hello.com'
+        not_allowed_domain = 'bonjour.com'
+
+        # test@.. will cause the creation of new mail.test
+        new_alias_2 = self.env['mail.alias'].create({
+            'alias_name': 'test',
+            'alias_user_id': False,
+            'alias_model_id': self.env['ir.model']._get('mail.test.container').id,
+            'alias_contact': 'everyone',
+        })
+
+        for subject, gateway_created, container_created, alias2_domain, sys_param in [
+            # Test with 'mail.catchall.domain.allowed' not set in system parameters
+            # and with a domain not allowed
+            ('Test Subject 1', True, True, not_allowed_domain, ""),
+            # Test with 'mail.catchall.domain.allowed' set in system parameters
+            # and with a domain not allowed
+            ('Test Subject 2', True, False, not_allowed_domain, allowed_domain),
+            # Test with 'mail.catchall.domain.allowed' set in system parameters
+            # and with a domain allowed
+            ('Test Subject 3', True, True, allowed_domain, allowed_domain),
+        ]:
+            with self.subTest(subject=subject, gateway_created=gateway_created,
+                              container_created=container_created, alias2_domain=alias2_domain,
+                              sys_param=sys_param):
+                self.env['ir.config_parameter'].set_param('mail.catchall.domain.allowed', sys_param)
+
+                email_to = '%s@%s, %s@%s' % (
+                    self.alias.alias_name, self.alias_domain,
+                    new_alias_2.alias_name, alias2_domain,
+                )
+
+                self.format_and_process(
+                    MAIL_TEMPLATE, self.partner_1.email_formatted, email_to,
+                    subject=subject,
+                    target_model=self.alias.alias_model_id.model
+                )
+
+                res_alias_1 = MailTestGatewayModel.search([('name', '=', subject)])
+                res_alias_2 = MailTestContainerModel.search([('name', '=', subject)])
+                self.assertEqual(
+                    bool(res_alias_1), gateway_created,
+                    'message_process (%s): a new mail.test.gateway %s have been created' %
+                        (subject, 'should' if gateway_created else "should not")
+                )
+                self.assertEqual(
+                    bool(res_alias_2), container_created,
+                    'message_process (%s): a new mail.test.container %s have been created' %
+                        (subject, 'should' if container_created else "should not")
+                )
 
     # --------------------------------------------------
     # Email Management
@@ -1512,19 +1543,6 @@ class TestMailgateway(TestMailCommon):
                           subject='spam', extra='')
 
     @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.models')
-    def test_message_process_crash_alien_domain_same_alias(self):
-        """Incoming email to the same address in an alien domain must raise."""
-        self.env['ir.config_parameter'].set_param('mail.catchall.domain', 'example.com')
-        self.env['ir.config_parameter'].set_param('mail.catchall.domain.strict', True)
-        with self.assertRaises(ValueError):
-            with self.mock_mail_gateway():
-                self.format_and_process(
-                    MAIL_TEMPLATE,
-                    email_from='Valid Lelitre <valid.lelitre@agrolait.com>',
-                    to='groups@alien.com, other@gmail.com',
-                )
-
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.models')
     def test_message_process_fallback(self):
         """ Incoming email with model that accepting incoming emails as fallback """
         record = self.format_and_process(
@@ -1551,6 +1569,34 @@ class TestMailgateway(TestMailCommon):
             if encoding not in ['', 'UTF-8']:
                 self.assertNotEqual(file_content, attachment.raw.decode('utf-8'))
 
+    # --------------------------------------------------
+    # Corner cases / Bugs during message process
+    # --------------------------------------------------
+
+    def test_message_process_file_encoding_ascii(self):
+        """ Incoming email containing an xml attachment with unknown characters (�) but an ASCII charset should not
+        raise an Exception. UTF-8 is used as a safe fallback.
+        """
+        record = self.format_and_process(test_mail_data.MAIL_MULTIPART_INVALID_ENCODING, self.email_from, 'groups@test.com')
+
+        self.assertEqual(record.message_main_attachment_id.name, 'bis3_with_error_encoding_address.xml')
+        # NB: the xml received by email contains b"Chauss\xef\xbf\xbd\xef\xbf\xbde" with "\xef\xbf\xbd" being the
+        # replacement character � in UTF-8.
+        # When calling `_message_parse_extract_payload`, `part.get_content()` will be called on the attachment part of
+        # the email, triggering the decoding of the base64 attachment, so b"Chauss\xef\xbf\xbd\xef\xbf\xbde" is
+        # first retrieved. Then, `get_text_content` in `email` tries to decode this using the charset of the email
+        # part, i.e: `content.decode('us-ascii', errors='replace')`. So the errors are replaced using the Unicode
+        # replacement marker and the string "Chauss������e" is used to create the attachment.
+        # This explains the multiple "�" in the attachment.
+        self.assertIn("Chauss������e de Bruxelles", record.message_main_attachment_id.raw.decode())
+
+    def test_message_process_file_omitted_charset(self):
+        """ For incoming email containing an xml attachment with omitted charset and containing an UTF8 payload we
+        should parse the attachment using UTF-8.
+        """
+        record = self.format_and_process(test_mail_data.MAIL_MULTIPART_OMITTED_CHARSET, self.email_from, 'groups@test.com')
+        self.assertEqual(record.message_main_attachment_id.name, 'bis3.xml')
+        self.assertEqual("<Invoice>Chaussée de Bruxelles</Invoice>", record.message_main_attachment_id.raw.decode())
 
 class TestMailThreadCC(TestMailCommon):
 
