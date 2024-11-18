@@ -17,7 +17,7 @@
 # Friederike Fasterling-Nesselbosch, 2022
 # Martin Trigaux, 2022
 # Léonie Bouchat <lbo@odoo.com>, 2022
-# Sergio Zanchetta <primes2h@gmail.com>, 2023
+# Sergio Zanchetta <primes2h@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 11:23+0000\n"
 "PO-Revision-Date: 2020-09-07 08:14+0000\n"
-"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>, 2023\n"
+"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/odoo/teams/41243/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -444,8 +444,8 @@ msgstr ""
 #, python-format
 msgid "A next activity can only be planned on models that use the chatter"
 msgstr ""
-"Una prossima attività può essere pianificata solo su modelli che usano la "
-"chat"
+"Una prossima attività può essere pianificata solo su modelli che usano il "
+"registro comunicazioni"
 
 #. module: mail
 #: model_terms:ir.actions.act_window,help:mail.mail_shortcode_action
@@ -2230,8 +2230,8 @@ msgid ""
 "found and replaces the author_id field in the chatter."
 msgstr ""
 "Indirizzo e-mail del mittente. Questo campo è impostato quando non vengono "
-"trovati partner corrispondenti, sostituisce il campo author_id nella "
-"conversazione."
+"trovati partner corrispondenti, nel registro comunicazioni sostituisce il "
+"campo author_id."
 
 #. module: mail
 #: model:ir.model.fields.selection,name:mail.selection__mail_notification__failure_type__bounce
@@ -2241,7 +2241,7 @@ msgstr "Indirizzo e-mail respinto dalla destinazione"
 #. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.email_compose_message_wizard_form
 msgid "Email address to redirect replies..."
-msgstr "Indirizzo email per reindirizzare le risposte..."
+msgstr "Indirizzo e-mail per reindirizzare le risposte..."
 
 #. module: mail
 #: model_terms:ir.actions.act_window,help:mail.mail_blacklist_action
@@ -2857,7 +2857,7 @@ msgid ""
 "ID of the parent record holding the alias (example: project holding the task"
 " creation alias)"
 msgstr ""
-"ID del record primario contenente l’alias (esempio: progetto che contiene "
+"ID del record principale contenente l’alias (esempio: progetto che contiene "
 "l’alias di creazione del lavoro)"
 
 #. module: mail
@@ -2934,8 +2934,9 @@ msgid ""
 "If set every modification done to this field is tracked in the chatter. "
 "Value is used to order tracking values."
 msgstr ""
-"Se impostato, ogni modifica fatta a questo campo è tracciata nella chat. Il "
-"valore è usato per organizzare i valori di tracciamento."
+"Se impostato, ogni modifica effettuata a questo campo viene monitorata nel "
+"registro comunicazioni. Il valore è utilizzato per l'ordinamento dei valori "
+"di monitoraggio."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_mail__scheduled_date
@@ -4752,14 +4753,14 @@ msgstr "Messaggio principale"
 #: model:ir.model.fields,field_description:mail.field_mail_alias_mixin__alias_parent_model_id
 #: model:ir.model.fields,field_description:mail.field_mail_channel__alias_parent_model_id
 msgid "Parent Model"
-msgstr "Modello primario"
+msgstr "Modello principale"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_alias__alias_parent_thread_id
 #: model:ir.model.fields,field_description:mail.field_mail_alias_mixin__alias_parent_thread_id
 #: model:ir.model.fields,field_description:mail.field_mail_channel__alias_parent_thread_id
 msgid "Parent Record Thread ID"
-msgstr "ID discussione record primario"
+msgstr "ID discussione record principale"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_alias__alias_parent_model_id
@@ -4770,9 +4771,9 @@ msgid ""
 " necessarily the model given by alias_model_id (example: project "
 "(parent_model) and task (model))"
 msgstr ""
-"Modello primario contenente l'alias. Il modello che contiene il riferimento "
-"alias non è necessariamente quello fornito da alias_model_id (esempio: "
-"progetto (parent_model) e lavoro (model))"
+"Modello principale contenente l'alias. Il modello che contiene il "
+"riferimento alias non è necessariamente quello fornito da alias_model_id "
+"(esempio: progetto (parent_model) e lavoro (model))"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_message_subtype__parent_id
@@ -4927,7 +4928,7 @@ msgid ""
 "- Handle by Emails: notifications are sent to your email address\n"
 "- Handle in Odoo: notifications appear in your Odoo Inbox"
 msgstr ""
-"Politica su come gestire le notifiche della chat:\n"
+"Politica su come gestire le notifiche del registro comunicazioni:\n"
 "- E-mail: le notifiche vengono inviate all'indirizzo e-mail\n"
 "- Odoo: le notifiche compaiono nella posta in arrivo Odoo"
 
@@ -6107,7 +6108,7 @@ msgid ""
 "The name of the email alias, e.g. 'jobs' if you want to catch emails for "
 "<jobs@example.odoo.com>"
 msgstr ""
-"Il nome dell’alias e-mail, es. “lavori” per intercettare le e-mail a "
+"Nome dell’alias e-mail, es. “lavori”, per intercettare le e-mail a "
 "<lavori@example.odoo.com>"
 
 #. module: mail
@@ -6128,7 +6129,7 @@ msgstr ""
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_template_preview__scheduled_date
 msgid "The queue manager will send the email after the date"
-msgstr "Il gestore della coda invia l'email dopo tale data"
+msgstr "Il gestore della coda invia l'e-mail dopo tale data"
 
 #. module: mail
 #: code:addons/mail/models/mail_message.py:0
@@ -6398,7 +6399,7 @@ msgid ""
 "- 'Create Next Activity': create an activity (Discuss)"
 msgstr ""
 "Tipologia azione server. Sono disponibili i seguenti valori:\n"
-"- \"Esegui codice python\": esegue un blocco di codice python\n"
+"- \"Esegui codice Python\": esegue un blocco di codice Python\n"
 "- \"Crea\": crea un nuovo record con nuovi valori\n"
 "- \"Aggiorna record\": aggiorna i valori di un record\n"
 "- \"Esegui alcune azioni\": definisce un'azione che attiva altre azioni server\n"

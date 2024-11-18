@@ -1112,7 +1112,7 @@ msgstr "書ける"
 #: code:addons/mail/models/mail_notification.py:0
 #, python-format
 msgid "Can not update the message or recipient of a notification."
-msgstr ""
+msgstr "通知のメッセージまたは受信者を更新できません。"
 
 #. module: mail
 #. openerp-web
@@ -1764,7 +1764,7 @@ msgstr "配信失敗"
 #: code:addons/mail/static/src/components/message/message.xml:0
 #, python-format
 msgid "Delivery failure"
-msgstr ""
+msgstr "配送失敗"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel__description
@@ -2251,7 +2251,7 @@ msgstr "Eメール"
 #: code:addons/mail/static/src/components/composer/composer.xml:0
 #, python-format
 msgid "Emojis"
-msgstr ""
+msgstr "絵文字"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_mail__is_internal
@@ -4436,7 +4436,7 @@ msgstr "オンライン"
 #: code:addons/mail/models/mail_message.py:0
 #, python-format
 msgid "Only administrators are allowed to export mail message"
-msgstr ""
+msgstr "管理者のみがメールメッセージをエクスポートできます。"
 
 #. module: mail
 #: code:addons/mail/models/mail_message.py:0
@@ -5990,7 +5990,7 @@ msgstr "チャットメッセージで置換が必要なショートカット"
 #: code:addons/mail/static/src/models/follower/follower.js:0
 #, python-format
 msgid "The subscription preferences were successfully applied."
-msgstr ""
+msgstr "サブスクリプション設定が正常に適用されました。"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_template__model_id
@@ -6066,7 +6066,7 @@ msgstr "このレコードには例外アクティビティがあります。"
 #: code:addons/mail/models/mail_channel.py:0
 #, python-format
 msgid "This user can not be added in this channel"
-msgstr ""
+msgstr "このユーザはこのチャンネルに追加することができません。"
 
 #. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.view_mail_search
@@ -6522,6 +6522,8 @@ msgid ""
 "Value for `mail.catchall.domain.allowed` cannot be validated.\n"
 "It should be a comma separated list of domains e.g. example.com,example.org."
 msgstr ""
+"mail.catchall.domain.allowed`の値が検証できません。\n"
+"コンマで区切られたドメインのリストでなければなりません。例えば、example.com,example.orgなどです。"
 
 #. module: mail
 #. openerp-web
@@ -6568,7 +6570,7 @@ msgstr "ビュータイプ"
 #: code:addons/mail/static/src/components/attachment/attachment.xml:0
 #, python-format
 msgid "View image"
-msgstr ""
+msgstr "画像を見る"
 
 #. module: mail
 #. openerp-web
@@ -6803,7 +6805,7 @@ msgstr "エイリアスアドレスには、アクセントのないラテン文
 msgid ""
 "You do not have the access right to unblacklist emails. Please contact your "
 "administrator."
-msgstr ""
+msgstr "あなたには、Eメールのブラックリストを解除するアクセス権がありません。管理者にお問い合わせ下さい。"
 
 #. module: mail
 #: code:addons/mail/models/mail_channel.py:0
@@ -7196,7 +7198,7 @@ msgstr "を閉じる"
 #: code:addons/mail/models/mail_thread.py:0
 #, python-format
 msgid "unknown error"
-msgstr ""
+msgstr "不明なエラー"
 
 #. module: mail
 #: code:addons/mail/models/mail_thread.py:0

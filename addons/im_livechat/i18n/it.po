@@ -10,9 +10,7 @@
 # Paolo Valier, 2020
 # Léonie Bouchat <lbo@odoo.com>, 2020
 # Luigia Cimmino Caserta <lcc@odoo.com>, 2020
-# Friederike Fasterling-Nesselbosch, 2022
 # Sergio Zanchetta <primes2h@gmail.com>, 2023
-# Marianna Ciofani, 2023
 # 
 msgid ""
 msgstr ""
@@ -20,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 15:41+0000\n"
 "PO-Revision-Date: 2020-09-07 08:13+0000\n"
-"Last-Translator: Marianna Ciofani, 2023\n"
+"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/odoo/teams/41243/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -506,7 +504,7 @@ msgstr "Colore predefinito del titolo del canale una volta aperto"
 #. module: im_livechat
 #: model_terms:ir.actions.act_window,help:im_livechat.im_livechat_channel_action
 msgid "Define a new website live chat channel"
-msgstr "Definisci un nuovo canale di chat dal vivo del sito web"
+msgstr "Definisci un nuovo canale di chat dal vivo nel sito web"
 
 #. module: im_livechat
 #: model:ir.model.fields,help:im_livechat.field_im_livechat_channel_rule__auto_popup_timer
@@ -749,17 +747,17 @@ msgstr "Entra nel canale"
 #. module: im_livechat
 #: model:ir.model.fields,field_description:im_livechat.field_digest_digest__kpi_livechat_conversations_value
 msgid "Kpi Livechat Conversations Value"
-msgstr "Valore delle conversazioni Kpi Livechat"
+msgstr "ICP chat dal vivo - Valore conversazioni"
 
 #. module: im_livechat
 #: model:ir.model.fields,field_description:im_livechat.field_digest_digest__kpi_livechat_rating_value
 msgid "Kpi Livechat Rating Value"
-msgstr "Kpi Livechat Valore di valutazione"
+msgstr "ICP chat dal vivo - Valore valutazione"
 
 #. module: im_livechat
 #: model:ir.model.fields,field_description:im_livechat.field_digest_digest__kpi_livechat_response_value
 msgid "Kpi Livechat Response Value"
-msgstr "Valore KPI risposta livechat"
+msgstr "ICP chat dal vivo - Valore risposta"
 
 #. module: im_livechat
 #: model_terms:ir.ui.view,arch_db:im_livechat.im_livechat_report_channel_view_search
@@ -1391,6 +1389,13 @@ msgstr "Visto da:"
 #. module: im_livechat
 #. openerp-web
 #: code:addons/im_livechat/static/src/legacy/public_livechat.xml:0
+#, python-format
+msgid "Send"
+msgstr "Invia"
+
+#. module: im_livechat
+#. openerp-web
+#: code:addons/im_livechat/static/src/legacy/public_livechat.xml:0
 #: code:addons/im_livechat/static/src/legacy/public_livechat.xml:0
 #, python-format
 msgid "Sent"
@@ -1506,7 +1511,7 @@ msgstr ""
 "La regola verrà applicata solo per queste nazioni. Esempio: selezionando "
 "\"Belgio\" e \"Stati Uniti\" e impostando l'azione a \"Nascondi pulsante\", "
 "il pulsante della chat verrà nascosto, usando l'URL specificata, per i "
-"visitatori situati in questi due paesi. Questa funzionalità richiede GeoIP "
+"visitatori situati in questi due Paesi. Questa funzionalità richiede GeoIP "
 "installato nel server."
 
 #. module: im_livechat

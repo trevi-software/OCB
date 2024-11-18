@@ -9,7 +9,7 @@
 # Lucia Pacheco, 2021
 # Braulio D. López Vázquez <bdl@odoo.com>, 2023
 # Patricia Gutiérrez Capetillo <pagc@odoo.com>, 2023
-# Fernanda Alvarez, 2023
+# Fernanda Alvarez, 2024
 # 
 msgid ""
 msgstr ""
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-25 10:30+0000\n"
 "PO-Revision-Date: 2020-09-07 08:19+0000\n"
-"Last-Translator: Fernanda Alvarez, 2023\n"
+"Last-Translator: Fernanda Alvarez, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/odoo/teams/41243/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1687,7 +1687,7 @@ msgstr "Descargar xlsx"
 #: code:addons/web/static/src/xml/name_and_signature.xml:0
 #, python-format
 msgid "Draw"
-msgstr "Dibujar"
+msgstr "Trazar"
 
 #. module: web
 #. openerp-web
@@ -2495,21 +2495,21 @@ msgstr "Coincidir"
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Match records with"
-msgstr "Coincidir registros con"
+msgstr "Buscar casos con"
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Match records with the following rule:"
-msgstr "Coincidir registros con la siguiente regla:"
+msgstr "Buscar casos con la siguiente regla:"
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/core/misc.js:0
 #, python-format
 msgid "Maybe you should consider reloading the application by pressing F5..."
-msgstr "Tal vez debería refrescar la aplicación presionando F5..."
+msgstr "Tal vez debería actualizar la aplicación, presione F5..."
 
 #. module: web
 #. openerp-web
@@ -3842,14 +3842,14 @@ msgstr "Tamaño:"
 #: code:addons/web/controllers/main.py:0
 #, python-format
 msgid "Something horrible happened"
-msgstr "Algo horrible pasó"
+msgstr "Ocurrió un grave error"
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
 msgid "Something went wrong !"
-msgstr "¡Algo salió mal!"
+msgstr "Ocurrió un error."
 
 #. module: web
 #. openerp-web

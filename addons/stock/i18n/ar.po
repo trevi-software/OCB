@@ -37,7 +37,7 @@
 # Paul Andrawes, 2021
 # Farid Fox, 2022
 # Mohamed Sallam, 2022
-# Samer Ali, 2022
+# Alarees, 2022
 # islam abdelmaaboud <islamabdelmaaboud@gmail.com>, 2023
 # Malaz Abuidris <msea@odoo.com>, 2023
 # 
@@ -3107,16 +3107,17 @@ msgid "Invalid domain left operand %s"
 msgstr "Invalid domain left operand %s"
 
 #. module: stock
-#: code:addons/stock/models/product.py:0
+#: code:addons/stock/models/product.py:0 code:addons/stock/models/product.py:0
 #, python-format
 msgid "Invalid domain operator %s"
 msgstr "مشغّل النطاق غير صالح %s "
 
 #. module: stock
-#: code:addons/stock/models/product.py:0
+#: code:addons/stock/models/product.py:0 code:addons/stock/models/product.py:0
 #, python-format
-msgid "Invalid domain right operand %s"
-msgstr "Invalid domain right operand %s"
+msgid "Invalid domain right operand '%s'. It must be of type Integer/Float"
+msgstr ""
+"العنصر العائد للمجال غير صحيح '%s'. يجب أن يكون من نوع عدد صحيح/فاصلة "
 
 #. module: stock
 #: code:addons/stock/models/product.py:0
@@ -8060,6 +8061,8 @@ msgstr "لا يمكنك تقسيم حركه مسودة. تحتاج للتأكي�
 #, python-format
 msgid "You cannot split a stock move that has been set to 'Done' or 'Cancel'."
 msgstr ""
+"لا يمنكك تقسيم حركة مخزون تم تعيين حالتها إلى \"تم الانتهاء\" أو \"تم "
+"الإلغاء\".  "
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0

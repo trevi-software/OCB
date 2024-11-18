@@ -719,7 +719,7 @@ class MailThread(models.AbstractModel):
                 bounced_record_done = bounced_record_done or (bounced_record and model.model == bounced_model and bounced_record in rec_bounce_w_email)
 
             # set record as bounced unless already done due to blacklist mixin
-            if bounced_record and not bounced_record_done and issubclass(type(bounced_record), self.pool['mail.thread']):
+            if bounced_record and not bounced_record_done and isinstance(bounced_record, self.pool['mail.thread']):
                 bounced_record._message_receive_bounce(bounced_email, bounced_partner)
 
             if bounced_partner and bounced_message:
@@ -1513,6 +1513,7 @@ class MailThread(models.AbstractModel):
             recipient in the result dictionary. The form is :
                 partner_id, partner_name<partner_email> or partner_name, reason """
         self.ensure_one()
+        partner_info = {}
         if email and not partner:
             # get partner info from email
             partner_info = self._message_partner_info_from_emails([email])[0]
@@ -1527,9 +1528,9 @@ class MailThread(models.AbstractModel):
         if partner and partner.email:  # complete profile: id, name <email>
             result[self.ids[0]].append((partner.id, partner.email_formatted, reason))
         elif partner:  # incomplete profile: id, name
-            result[self.ids[0]].append((partner.id, '%s' % (partner.name), reason))
+            result[self.ids[0]].append((partner.id, partner.name or '', reason))
         else:  # unknown partner, we are probably managing an email address
-            result[self.ids[0]].append((False, email, reason))
+            result[self.ids[0]].append((False, partner_info.get('full_name') or email, reason))
         return result
 
     def _message_get_suggested_recipients(self):
@@ -1550,7 +1551,7 @@ class MailThread(models.AbstractModel):
         domain = [('email_normalized', 'in', normalized_emails)]
         if extra_domain:
             domain = expression.AND([domain, extra_domain])
-        partners = self.env['res.users'].sudo().search(domain, order='name ASC').mapped('partner_id')
+        partners = self.env['res.users'].sudo().search(domain).mapped('partner_id')
         # return a search on partner to filter results current user should not see (multi company for example)
         return self.env['res.partner'].search([('id', 'in', partners.ids)])
 
@@ -1608,7 +1609,7 @@ class MailThread(models.AbstractModel):
             return matching_user
 
         if not matching_user:
-            std_users = self.env['res.users'].sudo().search([('email_normalized', '=', normalized_email)], limit=1, order='name ASC')
+            std_users = self.env['res.users'].sudo().search([('email_normalized', '=', normalized_email)], limit=1)
             matching_user = std_users[0] if std_users else self.env['res.users']
         if matching_user:
             return matching_user
@@ -1625,6 +1626,9 @@ class MailThread(models.AbstractModel):
         """ Utility method to find partners from email addresses. If no partner is
         found, create new partners if force_create is enabled. Search heuristics
 
+          * 0: clean incoming email list to use only normalized emails. Exclude
+               those used in aliases to avoid setting partner emails to emails
+               used as aliases;
           * 1: check in records (record set) followers if records is mail.thread
                enabled and if check_followers parameter is enabled;
           * 2: search for partners with user;
@@ -1638,14 +1642,19 @@ class MailThread(models.AbstractModel):
           If no partner has been found and/or created for a given emails its
           matching partner is an empty record.
         """
-        if records and issubclass(type(records), self.pool['mail.thread']):
+        if records and isinstance(records, self.pool['mail.thread']):
             followers = records.mapped('message_partner_ids')
         else:
             followers = self.env['res.partner']
         catchall_domain = self.env['ir.config_parameter'].sudo().get_param("mail.catchall.domain")
 
-        # first, build a normalized email list and remove those linked to aliases to avoid adding aliases as partners
-        normalized_emails = [tools.email_normalize(contact) for contact in emails if tools.email_normalize(contact)]
+        # first, build a normalized email list and remove those linked to aliases
+        # to avoid adding aliases as partners. In case of multi-email input, use
+        # the first found valid one to be tolerant against multi emails encoding
+        normalized_emails = [email_normalized
+                             for email_normalized in (tools.email_normalize(contact, force_single=False) for contact in emails)
+                             if email_normalized
+                            ]
         if catchall_domain:
             domain_left_parts = [email.split('@')[0] for email in normalized_emails if email and email.split('@')[1] == catchall_domain.lower()]
             if domain_left_parts:
@@ -1666,7 +1675,7 @@ class MailThread(models.AbstractModel):
         # iterate and keep ordering
         partners = []
         for contact in emails:
-            normalized_email = tools.email_normalize(contact)
+            normalized_email = tools.email_normalize(contact, force_single=False)
             partner = next((partner for partner in done_partners if partner.email_normalized == normalized_email), self.env['res.partner'])
             if not partner and force_create and normalized_email in normalized_emails:
                 partner = self.env['res.partner'].browse(self.env['res.partner'].name_create(contact)[0])
@@ -1805,7 +1814,7 @@ class MailThread(models.AbstractModel):
                         node.set('src', '/web/image/%s?access_token=%s' % attachment_data)
                         postprocessed = True
                 if postprocessed:
-                    return_values['body'] = lxml.html.tostring(root, pretty_print=False, encoding='UTF-8')
+                    return_values['body'] = lxml.html.tostring(root, pretty_print=False, encoding='unicode')
         return_values['attachment_ids'] = m2m_attachment_ids
         return return_values
 

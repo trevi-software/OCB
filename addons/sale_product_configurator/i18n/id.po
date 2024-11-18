@@ -33,6 +33,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:sale_product_configurator.optional_product_items
 msgid "<i class=\"fa fa-shopping-cart add-optionnal-item\"/> Add to cart"
 msgstr ""
+"<i class=\"fa fa-shopping-cart add-optionnal-item\"/> Tambahkan ke keranjang"
 
 #. module: sale_product_configurator
 #: model_terms:ir.ui.view,arch_db:sale_product_configurator.configure_optional_products
@@ -235,7 +236,7 @@ msgstr "Hapus satu"
 #. module: sale_product_configurator
 #: model:ir.model,name:sale_product_configurator.model_sale_product_configurator
 msgid "Sale Product Configurator"
-msgstr ""
+msgstr "Konfigurator Produk Sales"
 
 #. module: sale_product_configurator
 #: model:ir.model,name:sale_product_configurator.model_sale_order_line

@@ -262,7 +262,7 @@ class WebsiteSale(http.Controller):
             url = "/shop/category/%s" % slug(category)
 
         product_count = len(search_product)
-        pager = request.website.pager(url=url, total=product_count, page=page, step=ppg, scope=7, url_args=post)
+        pager = request.website.pager(url=url, total=product_count, page=page, step=ppg, scope=5, url_args=post)
         offset = pager['offset']
         products = search_product[offset: offset + ppg]
 
@@ -581,11 +581,11 @@ class WebsiteSale(http.Controller):
             name_change = partner_su and 'name' in data and data['name'] != partner_su.name
             email_change = partner_su and 'email' in data and data['email'] != partner_su.email
 
-            # Prevent changing the partner name if invoices have been issued.
-            if name_change and not partner_su.can_edit_vat():
+            # Prevent changing the billing partner name if invoices have been issued.
+            if mode[1] == 'billing' and name_change and not partner_su.can_edit_vat():
                 error['name'] = 'error'
                 error_message.append(_(
-                    "Changing your name is not allowed once invoices have been issued for your"
+                    "Changing your name is not allowed once documents have been issued for your"
                     " account. Please contact us directly for this operation."
                 ))
 

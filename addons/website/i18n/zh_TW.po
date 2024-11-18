@@ -9,9 +9,9 @@
 # Mandy Choy <mnc@odoo.com>, 2021
 # dott.dev <dottdot.dev@gmail.com>, 2021
 # 敬雲 林 <chingyun@yuanchih-consult.com>, 2022
-# Wil Odoo, 2023
-# Martin Trigaux, 2023
-# Tony Ng, 2023
+# Martin Trigaux, 2024
+# Wil Odoo, 2024
+# Tony Ng, 2024
 # 
 msgid ""
 msgstr ""
@@ -19,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-07 14:40+0000\n"
 "PO-Revision-Date: 2020-09-07 08:20+0000\n"
-"Last-Translator: Tony Ng, 2023\n"
+"Last-Translator: Tony Ng, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/odoo/teams/41243/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -508,8 +508,7 @@ msgstr ""
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_cover
 msgid "<font style=\"font-size: 62px; font-weight: bold;\">Catchy Headline</font>"
-msgstr ""
-"<font style=\"font-size: 62px; font-weight: bold;\">Catchy Headline</font>"
+msgstr "<font style=\"font-size: 62px; font-weight: bold;\">吸引人的標題</font>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_picture
@@ -803,8 +802,8 @@ msgid ""
 "<span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-"
 "specific.\" groups=\"website.group_multi_website\"/>"
 msgstr ""
-"<span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-"
-"specific.\" groups=\"website.group_multi_website\"/>"
+"<span class=\"fa fa-lg fa-globe\" title=\"此處設定的值是特定於每個網站的。\" "
+"groups=\"website.group_multi_website\"/>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.company_description
@@ -854,7 +853,7 @@ msgid ""
 "                                    <span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-specific.\" groups=\"website.group_multi_website\"/>"
 msgstr ""
 "<span class=\"o_form_label\">Robots.txt</span>\n"
-"                                    <span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-specific.\" groups=\"website.group_multi_website\"/>"
+"                                    <span class=\"fa fa-lg fa-globe\" title=\"此處設定的值是特定於每個網站的。\" groups=\"website.group_multi_website\"/>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form
@@ -862,8 +861,8 @@ msgid ""
 "<span class=\"o_form_label\">Sitemap</span>\n"
 "                                    <span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-specific.\" groups=\"website.group_multi_website\"/>"
 msgstr ""
-"<span class=\"o_form_label\">Sitemap</span>\n"
-"                                    <span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-specific.\" groups=\"website.group_multi_website\"/>"
+"<span class=\"o_form_label\">網站地圖</span>\n"
+"                                    <span class=\"fa fa-lg fa-globe\" title=\"此處設定的值是特定於每個網站的。\" groups=\"website.group_multi_website\"/>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_badge
@@ -900,7 +899,7 @@ msgstr ""
 msgid ""
 "<span class=\"s_blockquote_author\"><b>John DOE</b> • CEO of "
 "MyCompany</span>"
-msgstr ""
+msgstr "<span class=\"s_blockquote_author\"><b>陳大文</b> • MyCompany 行政總裁</span>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_comparisons
@@ -1040,7 +1039,7 @@ msgstr ""
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_color_blocks_2
 msgid "A color block"
-msgstr "A color block"
+msgstr "顏色區塊"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_masonry_block
@@ -1262,6 +1261,8 @@ msgid ""
 "Adding a font requires a reload of the page. This will save all your "
 "changes."
 msgstr ""
+"Adding a font requires a reload of the page. This will save all your "
+"changes."
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
@@ -1315,7 +1316,7 @@ msgid ""
 "Aline is one of the iconic people in life who can say they love what they "
 "do. She mentors 100+ in-house developers and looks after the community of "
 "thousands of developers."
-msgstr "艾琳是生活中的標誌性人物之一，她可以說自己熱愛自己所做的事情。 她指導 100 多名內部開發人員，並照顧數千名開發人員的社區。"
+msgstr "Aline 是日常生活中可以自認熱愛自己所做事情的那種標誌人物。她指導 100 多名內部開發人員，並照顧數千名開發人員的社群。"
 
 #. module: website
 #: model:ir.model.fields.selection,name:website.selection__ir_ui_view__visibility__
@@ -1359,7 +1360,7 @@ msgstr "永遠底線"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_numbers
 msgid "Amazing pages"
-msgstr "Amazing pages"
+msgstr "令人驚艷的網頁"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.qweb_500
@@ -1395,7 +1396,7 @@ msgstr "錨點名稱"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_masonry_block
 msgid "And a great subtitle"
-msgstr "And a great subtitle"
+msgstr "還有精彩副標題"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_progress_bar_options
@@ -1405,12 +1406,12 @@ msgstr "動畫"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_color_blocks_2
 msgid "Another color block"
-msgstr "Another color block"
+msgstr "另一個色塊"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_showcase
 msgid "Another feature"
-msgstr "Another feature"
+msgstr "其他功能"
 
 #. module: website
 #: model:ir.actions.act_window,name:website.action_website_add_features
@@ -1600,7 +1601,7 @@ msgstr "最多 2 個使用者使用的基本銷售 &amp; 行銷"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_numbers
 msgid "Beautiful snippets"
-msgstr "Beautiful snippets"
+msgstr "美觀悅目的小資料"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_product_catalog
@@ -1720,7 +1721,7 @@ msgstr "Building blocks system"
 #: code:addons/website/static/src/js/menu/new_content.js:0
 #, python-format
 msgid "Building your %s"
-msgstr ""
+msgstr "正在組建：%s"
 
 #. module: website
 #. openerp-web
@@ -2409,7 +2410,7 @@ msgstr "建立一個新網站"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Create a link to target this section"
-msgstr ""
+msgstr "建立通往此處的連結"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_table_of_content
@@ -2676,7 +2677,7 @@ msgstr "刪除頁面"
 msgid ""
 "Delete the above image or replace it with a picture that illustrates your "
 "message. Click on the picture to change its <em>rounded corner</em> style."
-msgstr "刪除上圖或將其替換為說明消息的圖片。按一下圖片可更改圓<em>角</em>樣式。"
+msgstr "刪除上方圖片，或以一張能夠表達你的訊息的圖片取代。在圖片上按一下，可修改它的<u>圓角樣式</u>。"
 
 #. module: website
 #. openerp-web
@@ -2792,7 +2793,7 @@ msgstr "發現"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_showcase
 msgid "Discover all the features"
-msgstr "Discover all the features"
+msgstr "發掘更多功能"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_image_text
@@ -3189,12 +3190,12 @@ msgstr "Enter an API Key"
 #, python-format
 msgid ""
 "Enter code that will be added before the </body> of every page of your site."
-msgstr ""
+msgstr "以下輸入的程式碼，會加入至網站所有頁面的 </body> 之前。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Enter code that will be added into every page of your site"
-msgstr ""
+msgstr "為網站的所有頁面，加入自訂程式碼"
 
 #. module: website
 #. openerp-web
@@ -3202,7 +3203,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Enter code that will be added into the <head> of every page of your site."
-msgstr ""
+msgstr "以下輸入的程式碼，會加入至網站所有頁面的 <head> 內。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.bs_debug_view
@@ -3228,7 +3229,7 @@ msgstr "活動"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_media_list
 msgid "Event heading"
-msgstr "Event heading"
+msgstr "活動標題"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_facebook_page_options
@@ -3422,7 +3423,7 @@ msgstr "首次連接日期"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_showcase
 msgid "First feature"
-msgstr "First feature"
+msgstr "第一特色"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_features_grid
@@ -3464,7 +3465,7 @@ msgstr "Flag and Text"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
 msgid "Flat"
-msgstr "統一的"
+msgstr "平坦"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_image_gallery_options
@@ -3791,6 +3792,9 @@ msgid ""
 " story will sound fake and lack emotion. No one will be interested. Write "
 "for one person. If it’s genuine for the one, it’s genuine for the rest."
 msgstr ""
+"偉大的故事<b>適合所有人</b>，即使只是<b>為一個人編寫</b>。 "
+"如果你試圖在寫作時考慮廣泛的普通讀者，那麼你的故事聽起來就會很虛假，並且缺乏情感，沒有人會感興趣。 你應該為一個人而寫。 "
+"如果它對一個人來說是真誠的，那麼對其他人來說也是真誠的。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_text_block
@@ -3801,6 +3805,8 @@ msgid ""
 "small quirks like word choices or phrases. Write from your point of view, "
 "not from someone else's experience."
 msgstr ""
+"偉大的故事都有<b>個性</b>。 考慮講述一個具有個性的精彩故事。 為潛在客戶寫一個有個性的故事，將有助於建立客戶關係。 "
+"這體現在奇特的小處，例如單詞選擇或短語之類。 從你的角度來寫，而不是根據別人的經驗。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_image_gallery_options
@@ -4013,7 +4019,7 @@ msgstr "高"
 msgid ""
 "Hint: How to use Google Map on your website (Contact Us page and as a "
 "snippet)"
-msgstr ""
+msgstr "提示：如何在你的網站上使用 Google 地圖（「聯絡我們」頁面、用作小資料等）"
 
 #. module: website
 #. openerp-web
@@ -4091,7 +4097,7 @@ msgstr "如何取得我的追蹤 ID"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
 msgid "Hybrid"
-msgstr "混合"
+msgstr "混合（預設道路圖配衛星影像）"
 
 #. module: website
 #. openerp-web
@@ -4323,6 +4329,8 @@ msgid ""
 "Insert text styles like headers, bold, italic, lists, and fonts with\n"
 "                            a simple WYSIWYG editor. Flexible and easy to use."
 msgstr ""
+"利用簡單方便的「所見即所得」編輯工具，以實時預覽方式編輯，隨心運用不同樣式文字，\n"
+"                            輕鬆加入頁首、粗體、斜體、點列清單、不同字型等文字，靈活易用。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options_shadow_widgets
@@ -4413,7 +4421,7 @@ msgid ""
 "Iris, with her international experience, helps us easily understand the "
 "numbers and improves them. She is determined to drive success and delivers "
 "her professional acumen to bring the company to the next level."
-msgstr ""
+msgstr "Iris 憑藉她的國際經驗，幫助我們輕鬆理解這些數字，並改善業績。她決心推動成功，並發揮自己的專業智慧，使公司更上一層樓。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.website_visitor_view_search
@@ -4474,6 +4482,10 @@ msgid ""
 "            we recommend you to try to use the new color system, which is\n"
 "            still customizable."
 msgstr ""
+"你的網站某些地方似乎仍在使用 \n"
+"            Odoo 13.0 舊有的顏色系統。我們確保它仍然能運作，\n"
+"            但我們建議你嘗試使用新的顏色系統，\n"
+"            新系統仍然可以自訂的。"
 
 #. module: website
 #. openerp-web
@@ -4561,7 +4573,7 @@ msgstr "語言"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Language Selector"
-msgstr ""
+msgstr "語言選擇"
 
 #. module: website
 #: model:ir.model.fields,help:website.field_website_visitor__lang_id
@@ -4578,7 +4590,7 @@ msgstr "語系"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form
 msgid "Languages available on your website"
-msgstr "在您的網站上可以使用的語系"
+msgstr "網站可用語言"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.bs_debug_view
@@ -4604,7 +4616,7 @@ msgstr "上次連接"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_showcase
 msgid "Last Feature"
-msgstr "Last Feature"
+msgstr "上一功能"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_mega_menu_multi_menus
@@ -4772,7 +4784,7 @@ msgstr "左側選單"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.footer_custom
 msgid "Legal"
-msgstr "Legal"
+msgstr "法律"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_chart_options
@@ -4924,7 +4936,7 @@ msgstr "低"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Magazine"
-msgstr "Magazine"
+msgstr "雜誌"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_product_catalog
@@ -4948,7 +4960,7 @@ msgstr "主要行動"
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "Make sure billing is enabled"
-msgstr ""
+msgstr "請確保賬單功能已啟用"
 
 #. module: website
 #. openerp-web
@@ -4957,14 +4969,14 @@ msgstr ""
 msgid ""
 "Make sure to wait if errors keep being shown: sometimes enabling an API "
 "allows to use it immediately but Google keeps triggering errors for a while"
-msgstr ""
+msgstr "若繼續顯示錯誤，請務必等待：有時啟用 API 後可以立即使用，但 Google 會持續觸發錯誤一段時間"
 
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "Make sure your settings are properly configured:"
-msgstr ""
+msgstr "請確保設定已正確配置："
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.user_navbar
@@ -4991,19 +5003,19 @@ msgstr "管理此頁面"
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "Maps JavaScript API"
-msgstr ""
+msgstr "地圖 JavaScript API"
 
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "Maps Static API"
-msgstr ""
+msgstr "地圖靜態 API"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
 msgid "Marker style"
-msgstr "Marker style"
+msgstr "地圖標記樣式"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.template_footer_links
@@ -5018,7 +5030,7 @@ msgstr "石匠"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_media_list
 msgid "Media heading"
-msgstr "Media heading"
+msgstr "媒體標題"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_alert_options
@@ -5099,7 +5111,7 @@ msgid ""
 "Mich loves taking on challenges. With his multi-year experience as "
 "Commercial Director in the software industry, Mich has helped the company to"
 " get where it is today. Mich is among the best minds."
-msgstr ""
+msgstr "Mich 喜歡接受挑戰。 憑藉在軟件行業擔任商務總監的多年經驗，Mich 幫助公司取得了今天的成就。 Mich 是最聰明的人之一。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_popup_options
@@ -5111,7 +5123,7 @@ msgstr "中間"
 #: code:addons/website/static/src/js/editor/snippets.options.js:0
 #, python-format
 msgid "Min-Height"
-msgstr ""
+msgstr "最小高度"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_blockquote_options
@@ -5191,11 +5203,13 @@ msgid ""
 "push notification. If they have completed one of your forms, you can send "
 "them an SMS, or call them right away while they are browsing your website."
 msgstr ""
+"使用 Odoo 社交管理應用程式，監察網站訪客的瀏覽活動。 使用實時聊天請求或推送通知，只需單擊一下即可與他們互動。 "
+"如果他們填寫了你的一份表格，你可以向他們發送短訊，或在他們瀏覽你的網站時立即打電話給他們。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_color_blocks_2
 msgid "More Details"
-msgstr "More Details"
+msgstr "更多詳情"
 
 #. module: website
 #. openerp-web
@@ -5497,7 +5511,7 @@ msgstr "好了, 別再給我看這個"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "On Click"
-msgstr ""
+msgstr "On Click"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_popup_options
@@ -5538,7 +5552,7 @@ msgstr "只要選好網址可用網站，你就可以依國家群組篩選。"
 msgid ""
 "Once the user closes the popup, it won't be shown again for that period of "
 "time."
-msgstr ""
+msgstr "用戶關閉彈出方塊後，等待多久才會重新再顯示。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.website_visitor_view_kanban
@@ -5667,7 +5681,7 @@ msgstr "頁面已被索引"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Page Layout"
-msgstr ""
+msgstr "排版佈局"
 
 #. module: website
 #. openerp-web
@@ -5835,14 +5849,14 @@ msgstr "藥丸"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Pills"
-msgstr "Pills"
+msgstr "藥丸形狀"
 
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "Places API"
-msgstr ""
+msgstr "地點 API"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_countdown_options
@@ -5870,7 +5884,7 @@ msgstr "崗位"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_media_list
 msgid "Post heading"
-msgstr "Post heading"
+msgstr "帖文標題"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
@@ -6052,7 +6066,7 @@ msgstr "用途"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_text_highlight
 msgid "Put the focus on what you have to say!"
-msgstr ""
+msgstr "把重點放在你要說的話上！"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_rating
@@ -6257,7 +6271,7 @@ msgstr "Ripple Effect"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
 msgid "RoadMap"
-msgstr "RoadMap"
+msgstr "預設道路圖"
 
 #. module: website
 #: code:addons/website/models/res_config_settings.py:0
@@ -6326,7 +6340,7 @@ msgstr "範例圖示"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
 msgid "Satellite"
-msgstr "Satellite"
+msgstr "衛星影像"
 
 #. module: website
 #. openerp-web
@@ -6358,7 +6372,7 @@ msgstr "Save & copy"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Save the block to use it elsewhere"
-msgstr ""
+msgstr "儲存此區塊，供其他頁面使用"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_rating_options
@@ -6433,6 +6447,8 @@ msgid ""
 "free and high quality photos, makes it possible for you to get the perfect "
 "picture, in just a few clicks."
 msgstr ""
+"需要照片來說明網站時，請在媒體對話窗中搜尋。 Odoo 與 Unsplash "
+"集成，擁有數百萬張免版稅的高品質照片，讓你只需點擊幾下，即可獲得完美的照片。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.website_search_box
@@ -6452,7 +6468,7 @@ msgstr "第二個功能表"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_showcase
 msgid "Second feature"
-msgstr "Second feature"
+msgstr "第二功能"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_features_grid
@@ -6509,12 +6525,12 @@ msgstr "選擇社群分享用圖片"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_process_steps
 msgid "Select and delete blocks <br/>to remove some steps."
-msgstr ""
+msgstr "選擇並刪除區塊<br/>以移除步驟。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_features_grid
 msgid "Select and delete blocks to remove features."
-msgstr ""
+msgstr "選擇並刪除區塊，以移除特色。"
 
 #. module: website
 #. openerp-web
@@ -6571,7 +6587,7 @@ msgstr "序號"
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "Serve font from Google servers"
-msgstr ""
+msgstr "使用 Google 伺服器提供字型"
 
 #. module: website
 #: model:ir.model,name:website.model_ir_actions_server
@@ -6685,7 +6701,7 @@ msgid ""
 "Sitemap.xml: Help search engine crawlers to find out what pages are present "
 "and which have recently changed, and to crawl your site accordingly. This "
 "file is automatically generated by Odoo."
-msgstr ""
+msgstr "Sitemap.xml：幫助搜尋引擎抓取工具找出目前存在的頁面、最近更改的頁面，並相應地抓取你的網站。 該文件由 Odoo 自動生成。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_alert_options
@@ -6819,10 +6835,7 @@ msgid ""
 "Speakers from all over the world will join our experts to give inspiring "
 "talks on various topics. Stay on top of the latest business management "
 "trends &amp; technologies"
-msgstr ""
-"Speakers from all over the world will join our experts to give inspiring "
-"talks on various topics. Stay on top of the latest business management "
-"trends &amp; technologies"
+msgstr "來自世界各地的演講者將與我們的專家一起，就各種主題發表鼓舞人心的演講。 掌握最新的商業管理趨勢及技術"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_res_config_settings__specific_user_account
@@ -6889,7 +6902,7 @@ msgstr "開始你的旅程"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_product_catalog
 msgid "Starter"
-msgstr "Starter"
+msgstr "開胃小吃"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
@@ -6916,7 +6929,7 @@ msgstr "說故事有強大的魔力。<br/>可以吸引讀者並與他們交流�
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "Stretch to Equal Height"
-msgstr "Stretch to Equal Height"
+msgstr "拉長至等高"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_progress_bar_options
@@ -7050,12 +7063,12 @@ msgstr "服務條款"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
 msgid "Terrain"
-msgstr "Terrain"
+msgstr "地形、山勢"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.view_edit_robots
 msgid "Test your robots.txt with Google Search Console"
-msgstr ""
+msgstr "使用 Google 搜尋終端測試您的 robots.txt"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
@@ -7075,7 +7088,7 @@ msgstr "Text Color"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_text_highlight
 msgid "Text Highlight"
-msgstr "Text Highlight"
+msgstr "焦點文字"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_countdown_options
@@ -7261,7 +7274,7 @@ msgstr "目前您的網站沒有頁面。"
 #: code:addons/website/models/website_visitor.py:0
 #, python-format
 msgid "There are no contact and/or no email linked to this visitor."
-msgstr ""
+msgstr "沒有與該訪客相關的聯繫方式和/或電子郵件."
 
 #. module: website
 #. openerp-web
@@ -7353,7 +7366,7 @@ msgstr ""
 msgid ""
 "This font already exists, you can only add it as a local font to replace the"
 " server version."
-msgstr ""
+msgstr "該字型已存在，只能加入為本地字體以取代伺服器版本。"
 
 #. module: website
 #. openerp-web
@@ -7361,7 +7374,7 @@ msgstr ""
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "This font is hosted and served to your visitors by Google servers"
-msgstr ""
+msgstr "此字型由 Google 伺服器寄存及向你的網站訪客提供"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.bs_debug_view
@@ -7374,7 +7387,7 @@ msgstr "這是一個 \""
 msgid ""
 "This is a simple hero unit, a simple jumbotron-style component for calling "
 "extra attention to featured content or information."
-msgstr ""
+msgstr "這是一個簡單的超大螢幕樣式組件，用於引起對特色內容或信息的額外關注."
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_popup_options
@@ -7443,7 +7456,7 @@ msgstr "Time to cache the page. (0 = no cache)"
 #: code:addons/website/static/src/snippets/s_countdown/000.xml:0
 #, python-format
 msgid "Time's up! You can now visit"
-msgstr ""
+msgstr "時間到！你現在可以訪問"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_facebook_page_options
@@ -7501,6 +7514,8 @@ msgid ""
 "will recommend you the best keywords to target. Then adapt your title and "
 "description accordingly to boost your traffic."
 msgstr ""
+"為了吸引更多訪客，你應該針對經常在 Google 被搜尋的關鍵字。借助內置的 SEO 工具，當你定義了一些關鍵字，Odoo "
+"會向你推薦最佳的目標關鍵字。然後你可以相應地調整標題和描述以增加流量。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form
@@ -7621,7 +7636,7 @@ msgstr "翻譯屬性"
 #: code:addons/website/static/src/js/editor/wysiwyg_multizone_translate.js:0
 #, python-format
 msgid "Translate Selection Option"
-msgstr ""
+msgstr "翻譯選取選項"
 
 #. module: website
 #. openerp-web
@@ -7656,7 +7671,7 @@ msgstr "讓每一個功能變成對你的讀者有利。"
 #: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:website.template_footer_links
 msgid "Twitter"
-msgstr "推特"
+msgstr "Twitter"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_res_config_settings__social_twitter
@@ -7667,7 +7682,7 @@ msgstr "Twitter 帳號"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.external_snippets
 msgid "Twitter Scroller"
-msgstr "推特捲軸"
+msgstr "Twitter 捲軸"
 
 #. module: website
 #. openerp-web
@@ -7825,7 +7840,7 @@ msgstr "在你的網站使用 Google 地圖（"
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "Use Google Map on your website (Contact Us page, snippets, etc)."
-msgstr ""
+msgstr "在你的網站上使用 Google 地圖（「聯絡我們」頁面、小資料等）。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form
@@ -7835,7 +7850,7 @@ msgstr "使用 CDN 最佳化網站的可用性"
 #. module: website
 #: model:ir.model.fields,field_description:website.field_res_config_settings__has_default_share_image
 msgid "Use a image by default for sharing"
-msgstr ""
+msgstr "分享時預設使用圖片"
 
 #. module: website
 #. openerp-web
@@ -7854,7 +7869,7 @@ msgstr "Cookie 的使用"
 msgid ""
 "Use this component for creating a list of featured elements to which you "
 "want to bring attention."
-msgstr ""
+msgstr "用此組件創建清單，列舉你想人注意的特色元素。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_media_list
@@ -7862,14 +7877,14 @@ msgid ""
 "Use this snippet to build various types of components that feature a left- "
 "or right-aligned image alongside textual content. Duplicate the element to "
 "create a list that fits your needs."
-msgstr ""
+msgstr "使用此小片段建構各類型組件，這些組件有向左或向右對齊的圖像，旁邊附以文字內容。複製該元素以建立適合你需要的列表。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_carousel
 msgid ""
 "Use this snippet to presents your content in a slideshow-like format. Don't "
 "write about products or services here, write about solutions."
-msgstr ""
+msgstr "使用此小片段以類似幻燈片形式呈現你的內容。 不要在這裏寫產品或服務簡介，而是寫解決方案。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.theme_view_kanban
@@ -7881,7 +7896,7 @@ msgstr "使用此主題"
 msgid ""
 "Use this timeline as a part of your resume, to show your visitors what "
 "you've done in the past."
-msgstr ""
+msgstr "使用此時間線作為履歷的一部份，向訪客展示你過去所做的事情。"
 
 #. module: website
 #. openerp-web
@@ -8206,7 +8221,7 @@ msgstr "我們就快完成了！"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_references
 msgid "We are in good company."
-msgstr ""
+msgstr "有很多人都是這樣。"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.cookie_policy
@@ -8255,7 +8270,7 @@ msgstr "我們使用它們儲存有關你使用我們網站習慣的資料。資
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.website_visitor_view_tree
 msgid "Web Visitors"
-msgstr "網站訪問者"
+msgstr "網絡訪客"
 
 #. module: website
 #. openerp-web
@@ -8414,20 +8429,20 @@ msgstr "網站網址"
 #: model:ir.model,name:website.model_website_visitor
 #: model_terms:ir.ui.view,arch_db:website.website_visitor_view_form
 msgid "Website Visitor"
-msgstr "網站訪問者"
+msgstr "網站訪客"
 
 #. module: website
 #: code:addons/website/models/website_visitor.py:0
 #, python-format
 msgid "Website Visitor #%s"
-msgstr "網站訪問者 #%s"
+msgstr "網站訪客 #%s"
 
 #. module: website
 #: model:ir.actions.server,name:website.website_visitor_cron_ir_actions_server
 #: model:ir.cron,cron_name:website.website_visitor_cron
 #: model:ir.cron,name:website.website_visitor_cron
 msgid "Website Visitor : Archive old visitors"
-msgstr "網站訪問者 ： 老訪客歸檔"
+msgstr "網站訪客：封存舊訪客"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_faq_collapse
@@ -8546,7 +8561,7 @@ msgstr ""
 #. module: website
 #: model:ir.model.fields.selection,name:website.selection__ir_ui_view__visibility__password
 msgid "With Password"
-msgstr ""
+msgstr "使用密碼"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_blockquote
@@ -8764,7 +8779,7 @@ msgstr "YouTube 帳號"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
 msgid "Zoom"
-msgstr "Zoom"
+msgstr "縮放比例"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.cookie_policy
@@ -8887,7 +8902,7 @@ msgstr "例如，關於我們"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_google_map_options
 msgid "e.g. De Brouckere, Brussels, Belgium"
-msgstr "e.g. De Brouckere, Brussels, Belgium"
+msgstr "例：台北市信義路5段7號"
 
 #. module: website
 #: model:ir.ui.menu,name:website.menu_website_dashboard
@@ -8926,7 +8941,7 @@ msgstr "frontend_lang（由 Odoo 使用）"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippets
 msgid "gallery, carousel"
-msgstr ""
+msgstr "圖庫, 相片冊, 相冊, 幻燈片, 投影片, 輪播, 圖片輪播, 旋轉木馬"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form

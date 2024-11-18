@@ -6,7 +6,7 @@
 # Cécile Collart <cco@odoo.com>, 2021
 # Braulio D. López Vázquez <bdl@odoo.com>, 2022
 # Patricia Gutiérrez Capetillo <pagc@odoo.com>, 2023
-# Fernanda Alvarez, 2023
+# Fernanda Alvarez, 2024
 # 
 msgid ""
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-17 10:35+0000\n"
 "PO-Revision-Date: 2020-09-07 08:12+0000\n"
-"Last-Translator: Fernanda Alvarez, 2023\n"
+"Last-Translator: Fernanda Alvarez, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/odoo/teams/41243/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -235,7 +235,7 @@ msgstr "Alcance los objetivos de ventas mensuales"
 #: model:ir.model.fields,field_description:hr.field_hr_employee__message_needaction
 #: model:ir.model.fields,field_description:hr.field_hr_job__message_needaction
 msgid "Action Needed"
-msgstr "Acción requerida"
+msgstr "Se requiere una acción"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_department__active
@@ -1533,7 +1533,7 @@ msgstr "Cohabitante legal"
 #. module: hr
 #: model_terms:ir.actions.act_window,help:hr.action_hr_job
 msgid "Let's create a job position."
-msgstr "Vamos a crear un puesto de trabajo."
+msgstr "Creemos un puesto de trabajo."
 
 #. module: hr
 #: model_terms:ir.ui.view,arch_db:hr.hr_employee_public_view_form
@@ -2147,7 +2147,7 @@ msgstr "Reportes"
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_job__requirements
 msgid "Requirements"
-msgstr "Requerimientos"
+msgstr "Requisitos"
 
 #. module: hr
 #: model:ir.model.fields.selection,name:hr.selection__hr_departure_wizard__departure_reason__resigned
@@ -2354,7 +2354,7 @@ msgstr "Detener reclutamiento"
 #: model_terms:hr.job,website_description:hr.job_marketing
 #: model_terms:hr.job,website_description:hr.job_trainee
 msgid "Strong analytical skills"
-msgstr "Fuertes habilidades analíticas"
+msgstr "Habilidades analíticas avanzadas"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_plan_activity_type__summary
